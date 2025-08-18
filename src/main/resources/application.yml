@@ -1,0 +1,5 @@
+# 가독성을 위해 .properties 에서 .yml 로 변경했습니다.
+# .yml 을 쓰는 이유는 계층형식으로 프로젝트를 설정할 수 있으며 덕분에 가독성이 좋아집니다.
+spring:
+  application:
+    name: jslarticle
