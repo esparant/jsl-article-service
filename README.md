@@ -12,7 +12,7 @@
 | 김민규 | [kowaicode](https://github.com/kowaicode) | 팀원 | canon2440@gmail.com |
 | 김슬찬 | [Lancer](https://github.com/LancerAlert) | 팀원 | tmfcks20@gmail.com |
 | 정규진 | [je0ng-gyujin](https://github.com/je0ng-gyujin) | 팀원 | l0ve5sayaka@gmail.com |
-| 정민재 | (기입예정) | 팀원 | mj2sdev@gmail.com |
+| 정민재 | [mj2sdev](https://github.com/mj2sdev) | 팀원 | mj2sdev@gmail.com |
 | 탁영복 | [esparant](https://github.com/esparant) | 팀원 | esparant2@gmail.com |
 ## 2. 기술스택
 ### 💻 백엔드 기술스택
