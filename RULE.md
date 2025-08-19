@@ -46,3 +46,6 @@ public String getName() {
     return name;
 }
 ~~~
+# Git flow 전략
+- [링크](https://youtu.be/EV3FZ3cWBp8)
+  - 한번씩 봐주세요.
