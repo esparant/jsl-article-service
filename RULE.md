@@ -19,9 +19,9 @@ public class User {
 ### 2. if 문은 한줄로 끝나도 항상 {} 를 추가한다.  
 - 예시
 ~~~ java
-if (condition) doSomething(); //NG
+if (condition) doSomething(); // NG
 
-if (condition) } // OK
+if (condition) { // OK
   doSomething();
 }
 ~~~
