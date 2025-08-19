@@ -46,7 +46,7 @@ public String getName() {
     return name;
 }
 ~~~
-# 협업 전력
+# Git branch 전략
 - [링크](https://youtu.be/EV3FZ3cWBp8)
   - 한번씩 봐주세요.
 ### Github flow? vs Git flow?
