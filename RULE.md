@@ -33,3 +33,14 @@ if (condition) } // OK
 ### 4. 들여쓰기는 스페이스 4칸으로 설정한다.
 ### 5. 불필요한 코드는 제거한다.
 - 사용하지 않는 import, 메서드, 변수는 삭제한다.
+### 6. 메서드에 parameter 와 return 값이 있다면 Javadoc 을 활용해 주석을 적는다.
+- 예시
+~~~java
+/**
+ * 사용자 이름을 반환합니다.
+ * @return 사용자 이름
+ */
+public String getName() {
+    return name;
+}
+~~~
