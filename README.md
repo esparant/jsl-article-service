@@ -21,7 +21,7 @@
 | 프로그래밍 언어 | Java            | JDK 17  |     가장 대중적인 LTS 버전     |
 | 백엔드 프레임워크 | Spring Boot     | 3.5.4  |     가정 최신 LTS  |
 | ORM        | JPA             |  3.5.4    |    Spring Data JPA               |
-| 데이터 접근 기술 | MyBatis         |  - |                   |
+| 데이터 접근 기술 | MyBatis         |  3.0.5 |    mybatis-spring             |
 | 운영 DB    | MariaDB         |  3.5.4  |                   |
 | 테스트 DB  | H2DB            |   2.3.232   |                   |
 | 템플릿 엔진 | Thymeleaf       |    3.1.3.RELEASE|                   |
@@ -35,7 +35,7 @@
 | 마크업     | HTML                   |  최신  |              |
 | 디자인    | CSS                    |  최신 |                   |
 | 스크립트 언어 | JavaScript             | ES6 이상 |                   |
-| UI 프레임워크 | Bootstrap             |      |                   |
+| UI 프레임워크 | Bootstrap             |  5.2.x |                   |
 | 화면 설계 도구 | Google 프레젠테이션    |   -   |                   |
 | ERD 작성 도구 | ERDCloud              |  -    | [링크](https://www.erdcloud.com/d/NP5AQzpvCAXhcpeKk)  |
 | 협업 도구   | Git, Google Cloud       |   -   |                   |
