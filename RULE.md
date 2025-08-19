@@ -17,7 +17,7 @@
  */
 public class User {
 ~~~
-### 2. if 문은 한줄로 끝나도 항상 {} 를 추가한다.  
+### 2. 조건문은 한줄로 끝나도 항상 {} 를 추가한다.  
 - 예시
 ~~~ java
 if (condition) doSomething(); // NG
@@ -46,6 +46,7 @@ public String getName() {
     return name;
 }
 ~~~
-# Git flow 전략
+# 협업 전력
 - [링크](https://youtu.be/EV3FZ3cWBp8)
   - 한번씩 봐주세요.
+### Github flow? vs Git flow?
