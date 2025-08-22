@@ -51,6 +51,7 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
+// 개발환경마다 인코딩이 달라지는 것을 방지하기 위한 프로젝트 문자 인코딩 명시 설정
 // Author: 정규진
 java {
 	sourceCompatibility = '17'
