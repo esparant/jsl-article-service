@@ -31,10 +31,9 @@ if (condition) { // OK
   -  클래스명: UpperCamelCase → UserManager, OrderService
   -  메서드/변수명: lowerCamelCase → getUserName(), userEmail
   - 상수: UPPER_SNAKE_CASE → MAX_SIZE, DEFAULT_TIMEOUT
-### 4. 들여쓰기는 스페이스 4칸으로 설정한다.
-### 5. 불필요한 코드는 제거한다.
+### 4. 불필요한 코드는 제거한다.
 - 사용하지 않는 import, 메서드, 변수는 삭제한다.
-### 6. Javadoc 은 적절한 곳에 활용한다.
+### 5. Javadoc 은 적절한 곳에 활용한다.
 - 복잡한 메서드, 예외처리 등
 - 예시
 ~~~java
