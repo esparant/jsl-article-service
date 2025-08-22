@@ -3,3 +3,10 @@
 spring:
   application:
     name: jslarticle
+
+# mybatis 설정
+mybatis:
+  mapper-locations: classpath:/mapper/**/*.xml   # 매퍼 XML 파일 위치
+  type-aliases-package: com.projects.jslarticle  # 도메인 객체 패키지
+  configuration:
+    map-underscore-to-camel-case: true           # DB 컬럼명(snake_case) ↔ 자바필드(camelCase) 자동 매핑
