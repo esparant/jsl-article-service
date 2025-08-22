@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.projects'
 version = '0.0.1-SNAPSHOT'
-description = 'JSL Article Project '
+description = 'JSL Article Project'
 
 java {
 	toolchain {
