@@ -50,3 +50,13 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// Author: 정규진
+java {
+	sourceCompatibility = '17'
+	targetCompatibility = '17'
+}
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
