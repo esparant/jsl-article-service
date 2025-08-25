@@ -1,1 +1,7 @@
 # 테스트에서 쓰이는 프로젝트 설정 파일입니다.
+
+# JPA 설정
+# Author: 탁영복
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDBDialect
