@@ -6,6 +6,13 @@ import org.hibernate.engine.jdbc.internal.FormatStyle;
 
 import java.util.Locale;
 
+/**
+ * @author 탁영복
+ * @since 2025-08-25
+ * @version 1.0
+ * @description p6spy 가 출력하는 쿼리의 formatter 를 만들었습니다.
+ * formatter 란? 데이터나 문자열을 사람이 보기 좋게 정리하는 도구
+ */
 public class P6SpyFormatter implements MessageFormattingStrategy {
 
     private static final String NEW_LINE = "\n";
