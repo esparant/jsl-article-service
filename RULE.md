@@ -48,6 +48,9 @@ public String getName() {
     return name;
 }
 ~~~
+### 7. 패키지 구조는 계층형으로 작성한다.
+- 패키지 구조가 뭡니까.
+  - [링크](https://ksh-coding.tistory.com/96)
 # Git branch 전략 
 ### 그게 뭐죠?
 - [링크](https://youtu.be/EV3FZ3cWBp8)
