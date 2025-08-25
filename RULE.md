@@ -51,6 +51,8 @@ public String getName() {
 ### 7. 패키지 구조는 계층형으로 작성한다.
 - 패키지 구조가 뭡니까.
   - [링크](https://ksh-coding.tistory.com/96)
+- 예외: 예외방식은 도메인형으로 작성한다.
+  1. p6spy
 # Git branch 전략 
 ### 그게 뭐죠?
 - [링크](https://youtu.be/EV3FZ3cWBp8)
