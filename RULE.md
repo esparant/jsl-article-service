@@ -6,7 +6,7 @@
 /**
  * @author Yeongbok Tak
  * @modifier Gyujin Jeong   
- * @date 2025-08-19
+ * @since 2025-08-19
  * @version 1.2
  * @description 사용자 정보를 처리하는 클래스
  * 
