@@ -4,4 +4,5 @@
 # Author: 탁영복
 spring:
   jpa:
+    # hibernate 방언 설정
     database-platform: org.hibernate.dialect.MariaDBDialect
