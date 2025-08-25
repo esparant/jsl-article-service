@@ -24,6 +24,8 @@ spring:
       ddl-auto: validate
     # hibernate 방언 설정
     database-platform: org.hibernate.dialect.MariaDBDialect
+    # 실제 운영시 이것을 주석을 해제한다.
+#    open-in-view: false
 
 # mybatis 설정
 mybatis:
