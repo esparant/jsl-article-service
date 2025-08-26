@@ -24,7 +24,9 @@ body {
 .bg-secondary-custom {
   background-color: var(--secondary-color) !important;
 }
-
+.bg-gradient-custom {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
 .hero-section {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   color: white;
@@ -191,4 +193,16 @@ body {
 
 .scroll-btn-right {
   right: 10px;
+}
+
+.h-dvh {
+  height: 100dvh;
+}
+
+.min-h-dvh {
+  min-height: 100dvh;
+}
+
+html, body {
+  min-height: 100vh;
 }
