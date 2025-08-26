@@ -53,6 +53,7 @@ public String getName() {
   - [링크](https://ksh-coding.tistory.com/96)
 - 예외: 예외방식은 도메인형으로 작성한다.
   1. p6spy
+  2. spring security
 # Git branch 전략 
 ### 그게 뭐죠?
 - [링크](https://youtu.be/EV3FZ3cWBp8)
