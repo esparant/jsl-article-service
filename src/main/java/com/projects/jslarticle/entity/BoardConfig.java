@@ -5,6 +5,8 @@ import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import java.time.LocalDateTime;
 import lombok.Getter;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -25,11 +27,16 @@ public class BoardConfig {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToOne
+    @JoinColumn(name = "board_id")
+    private Board board;
+
     private int bestLeast;
 
     private boolean dislikeAvailable;
 
     private boolean dislikeInfluence;
+
 
     @LastModifiedDate
     private LocalDateTime updatedAt;
