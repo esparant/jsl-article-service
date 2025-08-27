@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/clean}">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<th:block layout:fragment="head">
+		<link rel="stylesheet" href="/css/account.css">
+		<script defer src="/js/account.js"></script>
+	</th:block>
+</head>
+
+<body>
+	<th:block layout:fragment="content">
+		<div class=" bg-gradient-custom">
+
+			<div class="container h-dvh">
+				<div class="d-flex h-100 justify-content-center align-items-center">
+
+					<div class="login">
+
+						<div class="card shadow-sm">
+							<div class="card-body">
+								<h2 class="text-center py-4">로그인</h2>
+								<form method="post" th:action="@{login}" class="needs-validation" novalidate>
+									<div class="mb-3">
+										<label for="email" class="form-label">이메일</label>
+										<input type="email" class="form-control" id="email" placeholder="youremail@example.com" required>
+										<div class="invalid-feedback">정확한 이메일을 입력해주세요.</div>
+									</div>
+									<div class="mb-3">
+										<label for="password" class="form-label">비밀번호</label>
+										<input type="password" class="form-control" id="password" placeholder="**********" required>
+										<div class="invalid-feedback">비밀번호를 입력해주세요.</div>
+									</div>
+									<div class="mb-3">
+										<a href="find">비밀번호를 잊어버리셨습니까?</a>
+									</div>
+									<button type="submit" class="btn bg-primary-custom w-100">로그인</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</th:block>
+</body>
+
+</html>
