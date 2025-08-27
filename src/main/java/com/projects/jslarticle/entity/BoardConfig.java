@@ -31,6 +31,10 @@ public class BoardConfig {
     @JoinColumn(name = "board_id")
     private Board board;
 
+    @OneToOne
+    @JoinColumn(name = "board_icon_id")
+    private BoardIcon boardIcon;
+
     private int bestLeast;
 
     private boolean dislikeAvailable;
