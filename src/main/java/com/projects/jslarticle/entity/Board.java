@@ -6,8 +6,10 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import java.time.LocalDateTime;
+import java.util.List;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -31,15 +33,18 @@ public class Board {
     @OneToOne(mappedBy = "board")
     private BoardConfig boardConfig;
 
+    @OneToMany(mappedBy = "board")
+    private List<ArticleCategory> articleCategoryList;
+
     private String boardName;
 
     private String boardDescription;
+
+    private boolean isDeleted;
 
     @CreatedDate
     private LocalDateTime createdAt;
 
     @LastModifiedDate
     private LocalDateTime updatedAt;
-
-    private boolean isDeleted;
 }
