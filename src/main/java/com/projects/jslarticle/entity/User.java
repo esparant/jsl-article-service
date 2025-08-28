@@ -48,7 +48,7 @@ public class User {
     @Column(nullable = false)
     private Long point;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 255)
     private String profileImageUrl;
 
     @Column(nullable = false)
