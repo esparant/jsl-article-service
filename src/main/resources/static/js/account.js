@@ -98,3 +98,8 @@ function changePassword(event) {
 	alert(message);
 	location.href = "login";
 }
+
+function passwordValidate() {
+	const password = document.querySelector("#password").value;
+	document.querySelector("#repassword").setAttribute("pattern", password);
+}
