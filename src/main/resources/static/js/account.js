@@ -72,3 +72,29 @@ function signup() {
 	const nickname = document.querySelector("#nickname").value || "익명"
 	alert(`${nickname}님 환영합니다.`);
 }
+
+function sendRepasswordLink(event) {
+	event.preventDefault();
+	const form = event.target;
+	if (!form.checkValidity()) return;
+	/**
+	 * 신나는 이메일 링크 관련 보내는 로직
+	 */
+	const message = "입력하신 이메일로 비밀번호 변경링크를 보냈습니다.";
+	const inputElement = document.querySelector(".inputBox");
+	const messageElement = document.querySelector(".messageBox");
+
+	inputElement.setAttribute("hidden", true);
+	messageElement.classList.add("text-success");
+	messageElement.innerHTML = message;
+}
+
+function changePassword(event) {
+	event.preventDefault();
+	const form = event.target;
+	const message = "비밀번호가 변경되었습니다.";
+
+	if (!form.checkValidity()) return;
+	alert(message);
+	location.href = "login";
+}
