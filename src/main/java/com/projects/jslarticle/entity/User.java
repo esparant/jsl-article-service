@@ -34,7 +34,7 @@ public class User {
 
     private String tag;
 
-    private Long point;
+    private long point;
 
     private String profileImageUrl;
 
