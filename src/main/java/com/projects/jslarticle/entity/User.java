@@ -1,5 +1,6 @@
 package com.projects.jslarticle.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
@@ -39,9 +40,8 @@ public class User {
 
     private boolean isDeleted;
 
-    @CreatedDate
+    @Column(updatable = false)
     private LocalDateTime createdAt;
 
-    @LastModifiedDate
     private LocalDateTime updatedAt;
 }

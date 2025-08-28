@@ -1,5 +1,6 @@
 package com.projects.jslarticle.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.FetchType;
@@ -41,9 +42,8 @@ public class Board {
 
     private boolean isDeleted;
 
-    @CreatedDate
+    @Column(updatable = false)
     private LocalDateTime createdAt;
 
-    @LastModifiedDate
     private LocalDateTime updatedAt;
 }

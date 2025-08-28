@@ -1,5 +1,6 @@
 package com.projects.jslarticle.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
@@ -34,9 +35,8 @@ public class BoardIcon {
 
     private String previousIconUrl;
 
-    @CreatedDate
+    @Column(updatable = false)
     private LocalDateTime createdAt;
 
-    @LastModifiedDate
     private LocalDateTime updatedAt;
 }

@@ -40,6 +40,5 @@ public class BoardConfig {
 
     private boolean dislikeInfluence;
 
-    @LastModifiedDate
     private LocalDateTime updatedAt;
 }
