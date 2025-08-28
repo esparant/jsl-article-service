@@ -38,6 +38,10 @@ public class Article {
     @OneToMany(mappedBy = "article")
     private List<Comment> comments;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
     private Boolean isNotice;
 
     private String title;

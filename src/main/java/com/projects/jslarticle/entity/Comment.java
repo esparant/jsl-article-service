@@ -38,6 +38,10 @@ public class Comment {
     @OneToMany(mappedBy = "parent")
     private List<Comment> children;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
     private String content;
 
     @Column(updatable = false)
