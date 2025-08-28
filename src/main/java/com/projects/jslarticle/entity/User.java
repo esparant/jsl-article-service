@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import java.time.LocalDateTime;
 import lombok.Getter;
 
@@ -16,27 +18,43 @@ import lombok.Getter;
  */
 @Entity
 @Getter
+@Table(
+        name = "user",
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        name = "uk_user_email",
+                        columnNames = "email"
+                )
+        }
+)
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false)
     private String email;
 
+    @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
     private String nickname;
 
+    @Column(nullable = false)
     private String tag;
 
+    @Column(nullable = false)
     private Long point;
 
+    @Column(nullable = false)
     private String profileImageUrl;
 
+    @Column(nullable = false)
     private Boolean isDeleted;
 
-    @Column(updatable = false)
+    @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
