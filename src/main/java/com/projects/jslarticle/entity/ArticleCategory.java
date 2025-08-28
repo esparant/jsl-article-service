@@ -21,7 +21,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
  * @description Article Category 엔티티입니다. 추가 엔티티 제작후 수정필요 합니다.
  */
 @Entity
-@EntityListeners(AuditingEntityListener.class)
 @Getter
 public class ArticleCategory {
 
