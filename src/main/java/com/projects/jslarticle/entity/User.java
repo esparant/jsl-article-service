@@ -36,14 +36,13 @@ public class User {
 
     private Long point;
 
+    private String profileImageUrl;
+
+    private boolean isDeleted;
+
     @CreatedDate
     private LocalDateTime createdAt;
 
     @LastModifiedDate
     private LocalDateTime updatedAt;
-
-    private String profileImageUrl;
-
-    private boolean isDeleted;
-
 }
