@@ -22,8 +22,8 @@ import lombok.Getter;
         name = "user",
         uniqueConstraints = {
                 @UniqueConstraint(
-                        name = "uk_user_email",
-                        columnNames = "email"
+                        name = "uk_user_nickname_tag",
+                        columnNames = {"nickname", "tag"}
                 )
         }
 )
@@ -33,16 +33,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true, length = 100)
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 256)
     private String password;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 20)
     private String nickname;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 20)
     private String tag;
 
     @Column(nullable = false)
