@@ -2,7 +2,6 @@ package com.projects.jslarticle.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EntityListeners;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,46 +12,33 @@ import jakarta.persistence.OneToMany;
 import java.time.LocalDateTime;
 import java.util.List;
 import lombok.Getter;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 /**
  * @author 탁영복
  * @since 2025-08-27
  * @version 1.0
- * @description Article 엔티티입니다. 추가 엔티티 제작후 수정필요 합니다.
+ * @description Comment 엔티티입니다. 추가 엔티티 제작후 수정필요 합니다.
  */
 @Entity
 @Getter
-public class Article {
+public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "article_category_id")
-    private ArticleCategory articleCategory;
+    @JoinColumn(name = "article_id")
+    private Article article;
 
-    @OneToMany(mappedBy = "article")
-    private List<Comment> comments;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_id")
+    private Comment parent;
 
-    private Boolean isNotice;
-
-    private String title;
+    @OneToMany(mappedBy = "parent")
+    private List<Comment> children;
 
     private String content;
-
-    private String imageUrl;
-
-    private Integer views;
-
-    private Integer likeCount;
-
-    private Integer dislikeCount;
-
-    private Boolean isDeleted;
 
     @Column(updatable = false)
     private LocalDateTime createdAt;
