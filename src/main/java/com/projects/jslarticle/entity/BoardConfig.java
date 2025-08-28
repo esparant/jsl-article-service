@@ -34,11 +34,11 @@ public class BoardConfig {
     @JoinColumn(name = "board_icon_id")
     private BoardIcon boardIcon;
 
-    private int bestLeast;
+    private Integer bestLeast;
 
-    private boolean dislikeAvailable;
+    private Boolean dislikeAvailable;
 
-    private boolean dislikeInfluence;
+    private Boolean dislikeInfluence;
 
     private LocalDateTime updatedAt;
 }

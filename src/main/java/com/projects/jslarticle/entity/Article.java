@@ -33,7 +33,7 @@ public class Article {
     @JoinColumn(name = "article_category_id")
     private ArticleCategory articleCategory;
 
-    private boolean isNotice;
+    private Boolean isNotice;
 
     private String title;
 
@@ -41,13 +41,13 @@ public class Article {
 
     private String imageUrl;
 
-    private int views;
+    private Integer views;
 
-    private int likeCount;
+    private Integer likeCount;
 
-    private int dislikeCount;
+    private Integer dislikeCount;
 
-    private boolean isDeleted;
+    private Boolean isDeleted;
 
     @Column(updatable = false)
     private LocalDateTime createdAt;

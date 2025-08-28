@@ -38,7 +38,7 @@ public class User {
 
     private String profileImageUrl;
 
-    private boolean isDeleted;
+    private Boolean isDeleted;
 
     @Column(updatable = false)
     private LocalDateTime createdAt;

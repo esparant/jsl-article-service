@@ -39,7 +39,7 @@ public class ArticleCategory {
 
     private String categoryName;
 
-    private int sortOrder;
+    private Integer sortOrder;
 
     @Column(updatable = false)
     private LocalDateTime createdAt;

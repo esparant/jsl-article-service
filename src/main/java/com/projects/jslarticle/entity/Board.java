@@ -40,7 +40,7 @@ public class Board {
 
     private String boardDescription;
 
-    private boolean isDeleted;
+    private Boolean isDeleted;
 
     @Column(updatable = false)
     private LocalDateTime createdAt;
