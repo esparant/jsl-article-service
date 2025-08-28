@@ -37,6 +37,8 @@ public class ArticleCategory {
 
     private Integer sortOrder;
 
+    private Boolean isDeleted;
+
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
