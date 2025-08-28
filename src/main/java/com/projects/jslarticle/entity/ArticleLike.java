@@ -14,33 +14,27 @@ import lombok.Getter;
 /**
  * @author 탁영복
  * @version 1.0
- * @description ArticleCategory 엔티티입니다. 추가 엔티티 제작후 수정필요 합니다.
+ * @description ArticleLike 엔티티입니다. 추가 엔티티 제작후 수정필요 합니다.
  * @since 2025-08-27
  */
 @Entity
 @Getter
-public class ArticleCategory {
+public class ArticleLike {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "board_id")
-    private Board board;
+    @JoinColumn(name = "article_id")
+    private Article article;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "role_id")
-    private Role role;
-
-    private String categoryName;
-
-    private Integer sortOrder;
-
-    private Boolean isDeleted;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
-    private LocalDateTime updatedAt;
+    private Boolean isBad;
 }
