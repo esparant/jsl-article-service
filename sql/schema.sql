@@ -44,7 +44,6 @@ CREATE TABLE article_category (
     sort_order    INT         NOT NULL    DEFAULT 0,                                             -- 카테고리 표시순서
     created_at    DATETIME    NOT NULL    DEFAULT CURRENT_TIMESTAMP,                             -- 생성일시
     updated_at    DATETIME    NOT NULL    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- 수정일시
-    is_deleted    BOOLEAN     NOT NULL    DEFAULT FALSE,                                         -- 삭제여부
 
     CONSTRAINT fk_article_category_board               FOREIGN KEY (board_id) REFERENCES board(id),
     CONSTRAINT fk_article_category_role                FOREIGN KEY (role_id)  REFERENCES role(id),
@@ -52,15 +51,29 @@ CREATE TABLE article_category (
 );
 
 CREATE TABLE board_icon (
-    id         BIGINT       PRIMARY KEY AUTO_INCREMENT,
-    board_id   BIGINT       NOT NULL,                              -- 게시판
-    admin_id   BIGINT       NOT NULL,                              -- 생성한 관리자
-    current    VARCHAR(255) NOT NULL,                              -- 현재 아이콘 URL
-    previous   VARCHAR(255),                                       -- 이전 아이콘 URL
-    created_at DATETIME     NOT NULL    DEFAULT CURRENT_TIMESTAMP, -- 생성일시
+    id         BIGINT       PRIMARY KEY  AUTO_INCREMENT,
+    board_id   BIGINT       NOT NULL,                                                           -- 게시판
+    admin_id   BIGINT       NOT NULL,                                                           -- 생성한 관리자
+    current_icon_url        VARCHAR(255) NOT NULL,                                              -- 현재 아이콘 URL
+    previous_icon_url       VARCHAR(255),                                                       -- 이전 아이콘 URL
+    created_at DATETIME     NOT NULL     DEFAULT CURRENT_TIMESTAMP,                             -- 생성일시
+    updated_at DATETIME     NOT NULL     DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- 수정일시
 
     CONSTRAINT fk_board_icon_board FOREIGN KEY (board_id) REFERENCES board(id),
     CONSTRAINT fk_board_icon_admin FOREIGN KEY (admin_id) REFERENCES admin(id)
+);
+
+CREATE TABLE board_config (
+    id                BIGINT   PRIMARY KEY AUTO_INCREMENT,
+    board_id          BIGINT   NOT NULL,
+    board_icon_id     BIGINT   NOT NULL,
+    pop_least_like    BIGINT   NOT NULL    DEFAULT 0,
+    dislike_available BOOLEAN  NOT NULL    DEFAULT TRUE,
+    dislike_influence BOOLEAN  NOT NULL    DEFAULT TRUE,
+    updated_at        DATETIME NOT NULL    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_board_config_board      FOREIGN KEY (board_id)      REFERENCES board(id),
+    CONSTRAINT fk_board_config_board_icon FOREIGN KEY (board_icon_id) REFERENCES board_config(id)
 );
 
 CREATE TABLE subscribe (
@@ -80,15 +93,15 @@ CREATE TABLE subscribe (
 
 -- 게시글
 CREATE TABLE article (
-    id                  BIGINT      PRIMARY KEY,
-    article_category_id BIGINT      NOT NULL,               -- 카테고리
-    is_notice           BOOLEAN     NOT NULL DEFAULT FALSE, -- 공지여부
-    title               VARCHAR(50) NOT NULL,               -- 제목
-    content             TEXT        NOT NULL,               -- 내용
-    image               VARCHAR(255),                       -- 썸네일
-    views               INT         NOT NULL DEFAULT 0,     -- 조회수
-    like_count          INT         NOT NULL DEFAULT 0,     -- 개추
-    bad_count           INT         NOT NULL DEFAULT 0,     -- 비추
+    id                      BIGINT      PRIMARY KEY,
+    article_category_id     BIGINT      NOT NULL,               -- 카테고리
+    is_notice               BOOLEAN     NOT NULL DEFAULT FALSE, -- 공지여부
+    title                   VARCHAR(50) NOT NULL,               -- 제목
+    content                 TEXT        NOT NULL,               -- 내용
+    image_url               VARCHAR(255),                       -- 썸네일
+    views                   INT         NOT NULL DEFAULT 0,     -- 조회수
+    like_count              INT         NOT NULL DEFAULT 0,     -- 개추
+    bad_count               INT         NOT NULL DEFAULT 0,     -- 비추
 
     CONSTRAINT fk_article_content    FOREIGN KEY (id)                  REFERENCES content(id),
     CONSTRAINT fk_article_category   FOREIGN KEY (article_category_id) REFERENCES article_category(id),
