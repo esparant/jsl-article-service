@@ -1,5 +1,5 @@
 # 코드 작성 규칙
-### 1. 모듈을 작성시 클래스 상단에 uthor, date, description, version, history 를 표기한다.
+### 1. 모듈을 작성시 클래스 상단에 author, date, description, version, history 를 표기한다.
 - Javadoc 기능을 활용한다.
 - 예시
 ~~~java
