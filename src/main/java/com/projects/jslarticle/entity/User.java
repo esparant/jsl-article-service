@@ -16,8 +16,6 @@ import lombok.Getter;
  * @description User Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
  * @since 2025-08-27
  */
-@Entity
-@Getter
 @Table(
         name = "user",
         uniqueConstraints = {
@@ -28,6 +26,8 @@ import lombok.Getter;
                 )
         }
 )
+@Entity
+@Getter
 public class User {
 
     @Id
