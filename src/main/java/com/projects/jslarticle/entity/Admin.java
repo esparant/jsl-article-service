@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 import lombok.Getter;
@@ -49,6 +50,14 @@ public class Admin {
             foreignKey = @ForeignKey(name = "fk_admin_role_id")
     )
     private Role role;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(
+            name = "admin_config_id",
+            nullable = false,
+            foreignKey = @ForeignKey(name = "fk_admin_admin_config_id")
+    )
+    private AdminConfig adminConfig;
 
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;

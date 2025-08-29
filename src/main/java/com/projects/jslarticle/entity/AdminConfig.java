@@ -10,19 +10,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import java.time.LocalDateTime;
 import lombok.Getter;
 
 /**
  * @author 탁영복
  * @version 1.0.0
- * @description BoardConfig Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
- * @since 2025-08-27
+ * @description AdminConfig Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
+ * @since 2025-08-29
  */
-@Table(name = "board_config")
+@Table(name = "admin_config")
 @Entity
 @Getter
-public class BoardConfig {
+public class AdminConfig {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,28 +29,30 @@ public class BoardConfig {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(
-            name = "board_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_board_config_board_id")
+            name = "owner_admin_id",
+            foreignKey = @ForeignKey(name = "fk_admin_config_owner_admin_id")
     )
-    private Board board;
+    private Admin ownerAdmin;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "board_icon_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_board_config_board_icon_id")
-    )
-    private BoardIcon boardIcon;
+    @OneToOne(mappedBy = "adminConfig")
+    private Admin admin;
+
 
     @Column(nullable = false)
-    private Integer popLeastLike;
+    private Integer availableBanDays;
 
     @Column(nullable = false)
-    private Boolean dislikeAvailable;
+    private Integer availableBanUserCount;
 
     @Column(nullable = false)
-    private Boolean dislikeInfluence;
+    private Boolean availableAdminAddition;
 
-    private LocalDateTime updatedAt;
+    @Column(nullable = false)
+    private Boolean availableAdminDismissal;
+
+    @Column(nullable = false)
+    private Boolean availableCategoryModification;
+
+    @Column(nullable = false)
+    private Boolean availableCategoryCreation;
 }
