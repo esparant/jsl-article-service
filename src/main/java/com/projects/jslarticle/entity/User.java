@@ -54,11 +54,11 @@ public class User {
     @Column(nullable = false, length = 255)
     private String profileImageUrl;
 
-    @Column(nullable = false)
-    private Boolean isDeleted;
 
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
+
+    private LocalDateTime deletedAt;
 }

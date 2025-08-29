@@ -39,11 +39,11 @@ public class Board {
     @Column(nullable = false, length = 255)
     private String boardDescription;
 
-    @Column(nullable = false)
-    private Boolean isDeleted;
 
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
-    
+
     private LocalDateTime updatedAt;
+
+    private LocalDateTime deletedAt;
 }

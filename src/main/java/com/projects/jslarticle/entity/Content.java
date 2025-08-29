@@ -51,6 +51,5 @@ public class Content {
 
     private LocalDateTime updatedAt;
 
-    @Column(nullable = false)
-    private Boolean isDeleted;
+    private LocalDateTime deletedAt;
 }

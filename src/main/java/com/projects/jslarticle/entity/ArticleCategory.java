@@ -50,11 +50,11 @@ public class ArticleCategory {
     @Column(nullable = false)
     private Integer sortOrder;
 
-    @Column(nullable = false)
-    private Boolean isDeleted;
 
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
+
+    private LocalDateTime deletedAt;
 }
