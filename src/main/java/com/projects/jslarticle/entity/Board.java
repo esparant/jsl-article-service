@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 import java.util.List;
 import lombok.Getter;
@@ -17,6 +18,7 @@ import lombok.Getter;
  * @description Board Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
  * @since 2025-08-27
  */
+@Table(name = "board")
 @Entity
 @Getter
 public class Board {
@@ -31,14 +33,18 @@ public class Board {
     @OneToMany(mappedBy = "board")
     private List<ArticleCategory> articleCategoryList;
 
+    @Column(nullable = false, length = 50)
     private String boardName;
 
+    @Column(nullable = false, length = 255)
     private String boardDescription;
 
+    @Column(nullable = false)
     private Boolean isDeleted;
 
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
+    @Column(nullable = true)
     private LocalDateTime updatedAt;
 }
