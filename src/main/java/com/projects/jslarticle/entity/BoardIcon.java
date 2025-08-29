@@ -31,12 +31,11 @@ public class BoardIcon {
     @Column(nullable = false, length = 255)
     private String currentIconUrl;
 
-    @Column(nullable = true, length = 255)
+    @Column(length = 255)
     private String previousIconUrl;
 
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
 
-    @Column(nullable = true)
     private LocalDateTime updatedAt;
 }

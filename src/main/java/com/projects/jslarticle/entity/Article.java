@@ -18,9 +18,9 @@ import lombok.Getter;
  * @description Article Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
  * @since 2025-08-27
  */
+@Table(name = "article")
 @Entity
 @Getter
-@Table(name = "article")
 public class Article extends Content {
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -52,7 +52,7 @@ public class Article extends Content {
     @Column(nullable = false)
     private String content;
 
-    @Column(nullable = true, length = 255)
+    @Column(length = 255)
     private String imageUrl;
 
     @Column(nullable = false)

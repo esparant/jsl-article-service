@@ -44,9 +44,9 @@ public class ArticleLike {
     )
     private User user;
 
-    @Column(updatable = false)
+    @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
 
-    @Column(updatable = false)
+    @Column(nullable = false)
     private Boolean isBad;
 }

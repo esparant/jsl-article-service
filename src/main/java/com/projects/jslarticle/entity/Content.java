@@ -49,7 +49,6 @@ public class Content {
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
 
-    @Column(updatable = true)
     private LocalDateTime updatedAt;
 
     @Column(nullable = false)

@@ -52,6 +52,5 @@ public class BoardConfig {
     @Column(nullable = false)
     private Boolean dislikeInfluence;
 
-    @Column(nullable = true)
     private LocalDateTime updatedAt;
 }
