@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 import lombok.Getter;
 
@@ -15,6 +16,7 @@ import lombok.Getter;
  * @description BoardIcon Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
  * @since 2025-08-27
  */
+@Table(name = "board_icon")
 @Entity
 @Getter
 public class BoardIcon {
@@ -26,12 +28,15 @@ public class BoardIcon {
     @OneToOne(mappedBy = "boardIcon")
     private Board board;
 
+    @Column(nullable = false, length = 255)
     private String currentIconUrl;
 
+    @Column(nullable = true, length = 255)
     private String previousIconUrl;
 
-    @Column(updatable = false)
+    @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
 
+    @Column(nullable = true)
     private LocalDateTime updatedAt;
 }
