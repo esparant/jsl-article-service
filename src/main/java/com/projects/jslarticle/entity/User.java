@@ -57,5 +57,6 @@ public class User {
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
 
+    @Column(nullable = true)
     private LocalDateTime updatedAt;
 }

@@ -3,13 +3,15 @@ package com.projects.jslarticle.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import java.time.LocalDateTime;
+import jakarta.persistence.Table;
 import java.util.List;
 import lombok.Getter;
 
@@ -21,6 +23,7 @@ import lombok.Getter;
  */
 @Entity
 @Getter
+@Table(name = "article")
 public class Article {
 
     @Id
@@ -28,38 +31,43 @@ public class Article {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "article_category_id")
+    @JoinColumn(
+            name = "article_category_id",
+            nullable = false,
+            foreignKey = @ForeignKey(name = "fk_article_article_category_id")
+    )
     private ArticleCategory articleCategory;
 
     @OneToMany(mappedBy = "article")
     private List<Comment> comments;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "role_id")
+    @JoinColumn(
+            name = "role_id",
+            nullable = false,
+            foreignKey = @ForeignKey(name = "fk_article_role_id")
+    )
     private Role role;
 
+    @Column(nullable = false)
     private Boolean isNotice;
 
+    @Column(nullable = false, length = 50)
     private String title;
 
+    @Lob
+    @Column(nullable = false)
     private String content;
 
+    @Column(nullable = true, length = 255)
     private String imageUrl;
 
+    @Column(nullable = false)
     private Integer views;
 
+    @Column(nullable = false)
     private Integer likeCount;
 
+    @Column(nullable = false)
     private Integer dislikeCount;
-
-    private Boolean isDeleted;
-
-    @Column(updatable = false)
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
 }
