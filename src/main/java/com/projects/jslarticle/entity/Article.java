@@ -4,9 +4,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.ForeignKey;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
@@ -17,18 +14,14 @@ import lombok.Getter;
 
 /**
  * @author 탁영복
- * @version 1.0
- * @description Article 엔티티입니다. 추가 엔티티 제작후 수정필요 합니다.
+ * @version 1.0.0
+ * @description Article Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
  * @since 2025-08-27
  */
 @Entity
 @Getter
 @Table(name = "article")
-public class Article {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Article extends Content {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
