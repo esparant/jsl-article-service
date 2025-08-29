@@ -22,6 +22,7 @@ import lombok.Getter;
         name = "user",
         uniqueConstraints = {
                 @UniqueConstraint(
+                        // 복합 유니크키 설정
                         name = "uk_user_nickname_tag",
                         columnNames = {"nickname", "tag"}
                 )
