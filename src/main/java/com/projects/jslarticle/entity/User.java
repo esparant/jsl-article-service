@@ -23,7 +23,9 @@ import lombok.Getter;
                         // 복합 유니크키 설정
                         name = "uk_user_nickname_tag",
                         columnNames = {"nickname", "tag"}
-                )
+                ),
+                @UniqueConstraint(name = "uk_user_email",
+                        columnNames = {"email"})
         }
 )
 @Entity
@@ -34,7 +36,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false, unique = true, length = 100)
+    @Column(nullable = false, length = 100)
     private String email;
 
     @Column(nullable = false, length = 256)
