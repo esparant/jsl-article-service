@@ -46,7 +46,12 @@ public class TemplateGlobalViewerController {
 	}
 
 	@GetMapping("{folder:account}/{filename}")
-	String show(@PathVariable("folder") String folder, @PathVariable("filename") String filename) {
+	String showAccount(@PathVariable("folder") String folder, @PathVariable("filename") String filename) {
+		return folder + "/" + filename;
+	}
+	
+	@GetMapping("{folder:users}/{filename}")
+	String showUsers(@PathVariable("folder") String folder, @PathVariable("filename") String filename) {
 		return folder + "/" + filename;
 	}
 }

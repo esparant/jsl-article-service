@@ -24,9 +24,11 @@ body {
 .bg-secondary-custom {
   background-color: var(--secondary-color) !important;
 }
+
 .bg-gradient-custom {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
 }
+
 .hero-section {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   color: white;
@@ -203,6 +205,83 @@ body {
   min-height: 100dvh;
 }
 
-html, body {
+html,
+body {
   min-height: 100vh;
+}
+
+
+.profile-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-header {
+  background-color: #d3d3d3;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.profile-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.profile-info h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.edit-btn {
+  margin-left: auto;
+  background-color: var(--secondary-color) !important;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.edit-btn:hover {
+  background-color: #e6d875;
+  color: #333;
+}
+
+.info-section {
+  margin-bottom: 15px;
+}
+
+.section-label {
+  background-color: var(--primary-color) !important;
+  padding: 10px 15px;
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+  border-radius: 4px 4px 0 0;
+  font-size: 0.95rem;
+}
+
+.section-content {
+  background-color: #f8f9fa;
+  padding: 15px;
+  margin: 0;
+  border-radius: 0 0 4px 4px;
+  border: 1px solid #ddd;
+  border-top: none;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.section-content.intro {
+  background-color: #f8f9fa;
 }

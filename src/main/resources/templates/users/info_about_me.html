@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/base}">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>회원정보</title>
+	<th:block layout:fragment="head">
+
+	</th:block>
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<div class="profile-container">
+			<!-- 프로필 헤더 -->
+			<div class="profile-header">
+				<img src="/img/uploads/icon/sakiko.png" alt="사용자 아이콘" class="profile-icon">
+				<div class="profile-info">
+					<h2>사키코사랑개 #1557</h2>
+				</div>
+				<a href="/user/edit" class="edit-btn">편집</a>
+			</div>
+
+			<!-- 자기소개 -->
+			<div class="info-section">
+				<div class="section-label">자기소개</div>
+				<div class="section-content intro">
+					안녕하세요. 사키코를 좋아하는 군필여고생 입니다.
+				</div>
+			</div>
+
+			<!-- 작성글 -->
+			<div class="info-section">
+				<div class="section-label">작성글 <span>48</span>개</div>
+				<div class="section-content">
+					작성글 짧음
+				</div>
+			</div>
+
+			<!-- 작성댓글 -->
+			<div class="info-section">
+				<div class="section-label">작성댓글 <span>48</span>개</div>
+				<div class="section-content">
+					작성댓글 짧음
+				</div>
+			</div>
+
+			<!-- 스크랩목록 -->
+			<div class="info-section">
+				<div class="section-label">스크랩목록 <span>48</span>개</div>
+				<div class="section-content">
+					스크랩한 게시글 짧음
+				</div>
+			</div>
+
+			<!-- 구독게시판목록 -->
+			<div class="info-section">
+				<div class="section-label">구독게시판목록 <span>48</span>개</div>
+				<div class="section-content">
+					구독한 게시판 짧음
+				</div>
+			</div>
+
+			<!-- 보유 이모티콘 -->
+			<div class="info-section">
+				<div class="section-label">보유 이모티콘 <span>48</span>개</div>
+				<div class="section-content">
+					보유한 이모티콘 짧음
+				</div>
+			</div>
+
+			<!-- 차단 이용자 목록 -->
+			<div class="info-section">
+				<div class="section-label">차단 이용자 목록 <span>48</span>개</div>
+				<div class="section-content intro">
+					차단한 이용자 짧음
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
