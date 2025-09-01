@@ -5,7 +5,7 @@ CREATE TABLE content (
      content_type VARCHAR(20) NOT NULL,                                                           -- 컨텐츠 종류(ARTICLE, COMMENT, EMOJI)
      created_at   DATETIME    NOT NULL    DEFAULT CURRENT_TIMESTAMP,                              -- 생성일시
      updated_at   DATETIME    NOT NULL    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  -- 수정일시
-     is_deleted   BOOLEAN     NOT NULL    DEFAULT FALSE,                                          -- 삭제여부
+     deleted_at   DATETIME,                                                                       -- 삭제여부
      is_visible   BOOLEAN     NOT NULL    DEFAULT FALSE,                                          -- 숨김여부
 
      CONSTRAINT fk_content_user_id FOREIGN KEY (user_id)      REFERENCES user(id),
