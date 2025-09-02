@@ -98,3 +98,9 @@ function changePassword(event) {
 	alert(message);
 	location.href = "login";
 }
+
+function passwordBlur(event) {
+	const password = event.target.value;
+	const repasswordElement = document.querySelector("#repassword");
+	repasswordElement.setAttribute("pattern", password);
+}
