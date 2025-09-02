@@ -1,0 +1,69 @@
+
+
+<!-- board list -->
+<div class="list-group mb-2">
+	<div></div>
+	<div class="list-group-item">
+
+		<div class="d-flex">
+			<div class="d-flex gap-4 flex-grow-1">
+				<div>번호</div>
+				<div class="flex-grow-1">제목</div>
+			</div>
+			<div class="d-flex gap-4">
+				<div>닉네임</div>
+				<div>작성일</div>
+				<div>조회수</div>
+				<div>개추</div>
+			</div>
+		</div>
+
+	</div>
+	
+	<li class="list-group-item list-group-item-action" th:each="item : ${#numbers.sequence(1, 10)}">
+		<div class="row">
+			<div class="col-1">12345</div>
+			<div class="col">
+				<span class="text-truncate">
+					제목이구요
+				</span>
+				<span>
+					[10]
+				</span>
+			</div>
+			<div class="col-2 text-truncate">김삿갓</div>
+			<div class="col-2">2022-05-05</div>
+			<div class="col-2">2523</div>
+			<div class="col-1">33</div>
+		</div>
+	</li>
+</div>
+
+<!-- pagination -->
+<div class="d-flex justify-content-between mb-2">
+	<div></div>
+	<nav>
+		<ul class="pagination m-0">
+
+			<li class="page-item">
+				<a href="" class="page-link">
+					<span>&laquo;</span>
+				</a>
+			</li>
+
+			<li class="page-item" th:each="item : ${#numbers.sequence(1,5)}">
+				<a href="" class="page-link" th:text="${ item }">
+
+				</a>
+			</li>
+
+			<li class="page-item">
+				<a href="" class="page-link">
+					<span>&raquo;</span>
+				</a>
+			</li>
+
+		</ul>
+	</nav>
+	<button class="btn bg-primary-custom text-white">글쓰기</button>
+</div>
