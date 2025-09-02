@@ -61,6 +61,4 @@ public class ArticleCategory {
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
-
-    private LocalDateTime deletedAt;
 }
