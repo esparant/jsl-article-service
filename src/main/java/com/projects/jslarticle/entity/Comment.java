@@ -32,7 +32,6 @@ public class Comment extends Content {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id",
-            nullable = true,
             foreignKey = @ForeignKey(name = "fk_comment_parent_id")
     )
     private Comment parent;
