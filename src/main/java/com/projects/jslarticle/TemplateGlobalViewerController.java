@@ -36,7 +36,7 @@ public class TemplateGlobalViewerController {
 	
 	/**
 	 * 모든 페이지 보기용 함수
-	 * (프론트전용)
+	 * (프론트 전용)
 	 * @param filename
 	 * @return
 	 */
@@ -45,7 +45,15 @@ public class TemplateGlobalViewerController {
 		return filename;
 	}
 
-	@GetMapping("{folder:account}/{filename}")
+	/**
+	 * 폴더별 페이지 보기용 함수
+	 * (프론트 전용)
+	 * @usage folder: 여기에 폴더명을 추가해야 작동합니다.
+	 * @param folder
+	 * @param filename
+	 * @return
+	 */
+	@GetMapping("{folder:account|board}/{filename}")
 	String show(@PathVariable("folder") String folder, @PathVariable("filename") String filename) {
 		return folder + "/" + filename;
 	}
