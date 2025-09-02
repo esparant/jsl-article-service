@@ -17,19 +17,18 @@ import lombok.Getter;
 /**
  * @author 탁영복
  * @version 1.0.0
- * @description ArticleCategory Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
- * @since 2025-08-27
+ * @description Subscribe Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
+ * @since 2025-09-02
  */
 @Table(
-        name = "article_category",
+        name = "role",
         uniqueConstraints = {
-                @UniqueConstraint(name = "uk_article_category_board_id_category_name", columnNames = {"board_id",
-                        "category_name"})
+                @UniqueConstraint(name = "uk_subscribe_user_id_board_id", columnNames = {"user_id", "board_id"})
         }
 )
 @Entity
 @Getter
-public class ArticleCategory {
+public class Subscribe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,30 +36,26 @@ public class ArticleCategory {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
-            name = "board_id",
+            name = "user_id",
             nullable = false,
-            foreignKey = @ForeignKey(name = "fk_article_category_board_id")
+            foreignKey = @ForeignKey(name = "fk_subscribe_user_id")
     )
-    private Board board;
+    private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
-            name = "role_id",
+            name = "board_id",
             nullable = false,
-            foreignKey = @ForeignKey(name = "fk_article_category_role_id")
+            foreignKey = @ForeignKey(name = "fk_subscribe_board_id")
     )
-    private Role role;
-
-    @Column(nullable = false, length = 20)
-    private String categoryName;
+    private Board board;
 
     @Column(nullable = false)
     private Integer sortOrder;
 
+    @Column(nullable = false)
+    private Boolean notification;
+
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
-
-    private LocalDateTime deletedAt;
 }
