@@ -1,5 +1,7 @@
 /* Custom CSS */
 :root {
+  --bs-link-hover-color: #137262 !important;
+  --bs-link-color: #65DFAD !important;
   --primary-color: #65DFAD;
   --secondary-color: #137262;
   --dark-color: #01180D;
@@ -206,3 +208,4 @@ body {
 html, body {
   min-height: 100vh;
 }
+* { scroll-behavior: smooth; }
