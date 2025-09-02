@@ -55,6 +55,7 @@ public class Report {
     @Column(nullable = false)
     private String description;
 
+    @Column(length = 255)
     private String imageUrl;
 
     @Column(length = 255)
