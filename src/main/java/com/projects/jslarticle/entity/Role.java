@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import lombok.Getter;
 
 /**
@@ -14,7 +15,12 @@ import lombok.Getter;
  * @description Role Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
  * @since 2025-08-28
  */
-@Table(name = "role")
+@Table(
+        name = "role",
+        uniqueConstraints = {
+                @UniqueConstraint(name = "uk_role_role_name", columnNames = {"role_name"})
+        }
+)
 @Entity
 @Getter
 public class Role {
