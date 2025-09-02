@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import java.time.LocalDateTime;
 import lombok.Getter;
 
@@ -19,7 +20,12 @@ import lombok.Getter;
  * @description ArticleLike Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
  * @since 2025-08-28
  */
-@Table(name = "article_like")
+@Table(
+        name = "article_like",
+        uniqueConstraints = {
+                @UniqueConstraint(name = "uk_article_like_user_id_article_id", columnNames = {"user_id", "article_id"})
+        }
+)
 @Entity
 @Getter
 public class ArticleLike {
@@ -48,5 +54,5 @@ public class ArticleLike {
     private LocalDateTime createdAt;
 
     @Column(nullable = false)
-    private Boolean isBad;
+    private Boolean isDislike;
 }
