@@ -1,12 +1,12 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.5.4'
+	id 'org.springframework.boot' version '3.5.5'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
 group = 'com.projects'
 version = '0.0.1-SNAPSHOT'
-description = 'JSL Article Project '
+description = 'JSL Article Project'
 
 java {
 	toolchain {
@@ -33,15 +33,35 @@ dependencies {
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
 	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
-	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.5'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// Test 용 Lombok 의존성 주입
+	// Author: 탁영복
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+
+	// p6spy 추가: 쿼리추적용 라이브러리
+	// Author: 탁영복
+	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+// 개발환경마다 인코딩이 달라지는 것을 방지하기 위한 프로젝트 문자 인코딩 명시 설정
+// Author: 정규진
+java {
+	sourceCompatibility = '17'
+	targetCompatibility = '17'
+}
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
 }

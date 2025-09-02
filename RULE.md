@@ -6,7 +6,7 @@
 /**
  * @author Yeongbok Tak
  * @modifier Gyujin Jeong   
- * @date 2025-08-19
+ * @since 2025-08-19
  * @version 1.2
  * @description 사용자 정보를 처리하는 클래스
  * 
@@ -31,12 +31,14 @@ if (condition) { // OK
   -  클래스명: UpperCamelCase → UserManager, OrderService
   -  메서드/변수명: lowerCamelCase → getUserName(), userEmail
   - 상수: UPPER_SNAKE_CASE → MAX_SIZE, DEFAULT_TIMEOUT
-### 4. 들여쓰기는 스페이스 4칸으로 설정한다.
-### 5. 불필요한 코드는 제거한다.
+### 4. 불필요한 코드는 제거한다.
 - 사용하지 않는 import, 메서드, 변수는 삭제한다.
-### 6. Javadoc 은 적절한 곳에 활용한다.
+### 5. Javadoc 은 적절한 곳에 활용한다.
 - 복잡한 메서드, 예외처리 등
 - 예시
+### 6. 들여쓰기는 탭 한칸으로 구분한다.
+- 예외 목록: 예외 목록에 있는 것들은 띄어쓰기로 구분한다.
+  - 1. application.yml
 ~~~java
 /**
  * 사용자 이름을 반환합니다.
@@ -46,6 +48,12 @@ public String getName() {
     return name;
 }
 ~~~
+### 7. 패키지 구조는 계층형으로 작성한다.
+- 패키지 구조가 뭡니까.
+  - [링크](https://ksh-coding.tistory.com/96)
+- 예외: 예외방식은 도메인형으로 작성한다.
+  1. p6spy
+  2. spring security
 # Git branch 전략 
 ### 그게 뭐죠?
 - [링크](https://youtu.be/EV3FZ3cWBp8)
