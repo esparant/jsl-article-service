@@ -85,20 +85,6 @@ CREATE TABLE IF NOT EXISTS article_category (
     CONSTRAINT uk_article_category_board_id_category_name UNIQUE      (board_id, category_name)  -- 중복 카테고리 제약
 );
 
-CREATE TABLE IF NOT EXISTS board_config (
-    id                BIGINT   PRIMARY KEY AUTO_INCREMENT,
-    board_id          BIGINT   NOT NULL,
-    board_icon_id     BIGINT   NOT NULL,
-    pop_least_like    BIGINT   NOT NULL    DEFAULT 0,
-    dislike_available BOOLEAN  NOT NULL    DEFAULT TRUE,
-    dislike_influence BOOLEAN  NOT NULL    DEFAULT TRUE,
-    updated_at        DATETIME NOT NULL    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-
-    CONSTRAINT fk_board_config_board_id      FOREIGN KEY (board_id)      REFERENCES board(id),
-    CONSTRAINT fk_board_config_board_icon_id FOREIGN KEY (board_icon_id) REFERENCES board_icon(id),
-    CONSTRAINT uk_board_config_board_id      UNIQUE      (board_id) -- 게시판 설정 중복 제약
-);
-
 CREATE TABLE IF NOT EXISTS subscribe (
     id           BIGINT   PRIMARY KEY AUTO_INCREMENT,
     user_id      BIGINT   NOT NULL,                              -- 생성자
@@ -139,11 +125,25 @@ CREATE TABLE IF NOT EXISTS board_icon (
     CONSTRAINT fk_board_icon_admin_id FOREIGN KEY (admin_id) REFERENCES admin(id)
 );
 
+CREATE TABLE IF NOT EXISTS board_config (
+    id                BIGINT   PRIMARY KEY AUTO_INCREMENT,
+    board_id          BIGINT   NOT NULL,
+    board_icon_id     BIGINT   NOT NULL,
+    pop_least_like    BIGINT   NOT NULL    DEFAULT 0,
+    dislike_available BOOLEAN  NOT NULL    DEFAULT TRUE,
+    dislike_influence BOOLEAN  NOT NULL    DEFAULT TRUE,
+    updated_at        DATETIME NOT NULL    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_board_config_board_id      FOREIGN KEY (board_id)      REFERENCES board(id),
+    CONSTRAINT fk_board_config_board_icon_id FOREIGN KEY (board_icon_id) REFERENCES board_icon(id),
+    CONSTRAINT uk_board_config_board_id      UNIQUE      (board_id) -- 게시판 설정 중복 제약
+);
+
 CREATE TABLE IF NOT EXISTS admin_config (
     id                              BIGINT  PRIMARY KEY AUTO_INCREMENT, -- 고유ID
     owner_admin_id                  BIGINT,                             -- 담당관리자ID
     available_ban_days              BIGINT  NOT NULL DEFAULT 0,         -- 최대차단가능일수
-    available_ban_user_count       BIGINT  NOT NULL DEFAULT 0,         -- 최대차단이용자수
+    available_ban_user_count        BIGINT  NOT NULL DEFAULT 0,         -- 최대차단이용자수
     available_admin_addition        BOOLEAN NOT NULL DEFAULT FALSE,     -- 관리자 추가부여 가능 여부
     available_admin_dismissal       BOOLEAN NOT NULL DEFAULT FALSE,     -- 관리자 해임 가능 여부
     available_category_modification BOOLEAN NOT NULL DEFAULT FALSE,     -- 카테고리 권한 변경 가능 여부
