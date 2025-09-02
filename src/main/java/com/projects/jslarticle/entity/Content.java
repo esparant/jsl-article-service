@@ -46,6 +46,9 @@ public class Content {
     @Enumerated(EnumType.STRING)
     private ContentType contentType;
 
+    @Column(nullable = false)
+    private Boolean isVisible;
+
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
 
