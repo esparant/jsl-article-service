@@ -29,11 +29,8 @@ public class Article extends Content {
             nullable = false,
             foreignKey = @ForeignKey(name = "fk_article_article_category_id")
     )
+
     private ArticleCategory articleCategory;
-
-    @OneToMany(mappedBy = "article")
-    private List<Comment> comments;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "role_id",
@@ -41,6 +38,9 @@ public class Article extends Content {
             foreignKey = @ForeignKey(name = "fk_article_role_id")
     )
     private Role role;
+
+    @OneToMany(mappedBy = "article")
+    private List<Comment> comments;
 
     @Column(nullable = false)
     private Boolean isNotice;
