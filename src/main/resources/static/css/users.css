@@ -1,0 +1,120 @@
+/* 사용자 정보 표시 css > start */
+.profile-container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.profile-header {
+	background-color: white;
+	box-shadow: 1px 1px 3px #ccc;
+	display: flex;
+	align-items: center;
+	margin-bottom: 30px;
+	padding: 20px;
+	border-radius: 8px;
+}
+
+.profile-icon {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	margin-right: 20px;
+	object-fit: cover;
+}
+
+.profile-info h2 {
+	margin: 0;
+	color: #333;
+	font-size: 1.5rem;
+}
+
+.edit-btn {
+	margin-left: auto;
+	background-color: var(--primary-color) !important;
+	transition: background-color .3s ease-out, color .3s ease-out;
+	border: 1px solid #ddd;
+	padding: 8px 16px;
+	border-radius: 4px;
+	text-decoration: none;
+	color: #333;
+	font-size: 0.9rem;
+}
+
+.edit-btn:hover {
+	background-color: var(--secondary-color) !important;
+	color: #f8f9fa;
+}
+
+.info-section {
+	margin-bottom: 15px;
+	transition: transform .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.info-section:hover {
+	transform: scale(1.05);
+}
+
+.section-label {
+	background-color: var(--primary-color) !important;
+	padding: 10px 15px;
+	margin: 0;
+	font-weight: bold;
+	color: #333;
+	border-radius: 4px 4px 0 0;
+	font-size: 0.95rem;
+}
+
+.section-content {
+	background-color: #f8f9fa;
+	padding: 2px;
+	margin: 0;
+	border-radius: 0 0 4px 4px;
+	border: 1px solid #ddd;
+	border-top: none;
+	min-height: 40px;
+	display: flex;
+	flex-direction: column;
+}
+.section-line {
+	padding: 1px 0;
+	display: flex;
+}
+.section-line > div {
+	margin: 0 !important;
+	padding: 0 8px !important;
+}
+
+.section-line .flex-grow-1 {
+	white-space: nowrap; /* 줄바꿈을 방지합니다. */
+	overflow: hidden; /* 영역을 벗어나는 텍스트를 숨깁니다. */
+	text-overflow: ellipsis; /* 숨겨진 텍스트를 '...'로 표시합니다. */
+}
+
+.info-section .section-line .p-2:first-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* 화면 너비가 줄어들면 시간부분 숨김 */
+@media (max-width: 750px) {
+    .anchor-time {
+        display: none;
+    }
+}
+
+.anchor-day {
+    white-space: nowrap;
+}
+
+.section-anchor {
+	text-decoration: none;
+}
+
+.section-content.intro {
+	background-color: #f8f9fa;
+	padding: 10px;
+}
+/* 사용자 정보 표시 css > end */
