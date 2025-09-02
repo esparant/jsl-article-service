@@ -49,7 +49,7 @@ public class User {
     private String tag;
 
     @Column(nullable = false)
-    private Long point;
+    private Integer point;
 
     @Column(nullable = false, length = 255)
     private String profileImageUrl;
