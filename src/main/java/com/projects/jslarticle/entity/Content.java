@@ -23,6 +23,7 @@ import java.time.LocalDateTime;
  * @description Content Entity 입니다. 상속을 할 수 있는 부모 Entity 입니다. 상속 받는 Entity 는 See 태그를 참고해주세요.
  * @see Comment
  * @see Article
+ * @see Board
  * @since 2025-08-29
  */
 @Table(name = "cotent")
