@@ -282,5 +282,6 @@ CREATE TABLE IF NOT EXISTS emoji_folder_content (
     emoji_folder_id BIGINT NOT NULL,                    -- 이모지 폴더 고유ID
 
     CONSTRAINT fk_emoji_folder_content_emoji_id         FOREIGN KEY (emoji_id)         REFERENCES emoji(id),
-    CONSTRAINT fk_emoji_folder_content_emoji_folder_id  FOREIGN KEY (emoji_folder_id)  REFERENCES emoji_folder(id)
+    CONSTRAINT fk_emoji_folder_content_emoji_folder_id  FOREIGN KEY (emoji_folder_id)  REFERENCES emoji_folder(id),
+    CONSTRAINT uk_emoji_folder_content_emoji_id_emoji_folder_id UNIQUE(emoji_id, emoji_folder_id) -- 폴더 동일 이미지 중복 제약
 );
