@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import java.time.LocalDateTime;
 import lombok.Getter;
 
@@ -19,7 +20,15 @@ import lombok.Getter;
  * @description BoardConfig Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
  * @since 2025-08-27
  */
-@Table(name = "board_config")
+@Table(
+        name = "board_config",
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        name = "uk_board_config_board_id",
+                        columnNames = {"board_id"}
+                )
+        }
+)
 @Entity
 @Getter
 public class BoardConfig {

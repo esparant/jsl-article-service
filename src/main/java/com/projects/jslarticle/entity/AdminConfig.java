@@ -37,7 +37,6 @@ public class AdminConfig {
     @OneToOne(mappedBy = "adminConfig")
     private Admin admin;
 
-
     @Column(nullable = false)
     private Integer availableBanDays;
 
