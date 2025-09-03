@@ -24,6 +24,7 @@ import java.time.LocalDateTime;
  * @see Comment
  * @see Article
  * @see Board
+ * @see Emoji
  * @since 2025-08-29
  */
 @Table(name = "cotent")
