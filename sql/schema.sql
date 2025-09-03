@@ -273,7 +273,8 @@ CREATE TABLE IF NOT EXISTS emoji_folder (
     created_at  DATETIME    NOT NULL DEFAULT CURRENT_TIMESTAMP,  -- 생성일
     sort_order  INT NOT     NULL DEFAULT 101,                    -- 정렬순서
 
-    CONSTRAINT fk_emoji_folder_user_id FOREIGN KEY (user_id) REFERENCES user(id)
+    CONSTRAINT fk_emoji_folder_user_id FOREIGN KEY (user_id) REFERENCES user(id),
+    CONSTRAINT uk_emoji_folder_user_id_folder_name UNIQUE(user_id, folder_name)
 );
 
 CREATE TABLE IF NOT EXISTS emoji_folder_content (
