@@ -6,7 +6,7 @@
 }
 
 .profile-header {
-	background-color: white;
+	background-color: var(--bs-primary);
 	box-shadow: 1px 1px 3px #ccc;
 	display: flex;
 	align-items: center;
@@ -29,22 +29,6 @@
 	font-size: 1.5rem;
 }
 
-.edit-btn {
-	margin-left: auto;
-	background-color: var(--primary-color) !important;
-	transition: background-color .3s ease-out, color .3s ease-out;
-	border: 1px solid #ddd;
-	padding: 8px 16px;
-	border-radius: 4px;
-	text-decoration: none;
-	color: #333;
-	font-size: 0.9rem;
-}
-
-.edit-btn:hover {
-	background-color: var(--secondary-color) !important;
-	color: #f8f9fa;
-}
 
 .info-section {
 	margin-bottom: 15px;
@@ -56,7 +40,7 @@
 }
 
 .section-label {
-	background-color: var(--primary-color) !important;
+	background-color: var(--bs-primary) !important;
 	padding: 10px 15px;
 	margin: 0;
 	font-weight: bold;
@@ -91,6 +75,9 @@
 	text-overflow: ellipsis; /* 숨겨진 텍스트를 '...'로 표시합니다. */
 }
 
+.section-count {
+	color: var(--bs-secondary-emphasis)}
+
 .info-section .section-line .p-2:first-child {
     white-space: nowrap;
     overflow: hidden;
@@ -107,10 +94,6 @@
 
 .anchor-day {
     white-space: nowrap;
-}
-
-.section-anchor {
-	text-decoration: none;
 }
 
 .section-content.intro {
