@@ -3,7 +3,7 @@
     role_name VARCHAR(20) NOT NULL, -- 권한명
 
     CONSTRAINT uk_role_role_name UNIQUE (role_name),                                                 -- 권한 중복 제약
-    CONSTRAINT ck_role_role_name CHECK  (role_name IN ('SUPER ADMIN', 'ADMIN', 'SUB ADMIN', 'NONE')) -- 권한 제약
+    CONSTRAINT ck_role_role_name CHECK  (role_name IN ('SUPER_ADMIN', 'ADMIN', 'SUB_ADMIN', 'NONE')) -- 권한 제약
 );
 
 -- 이용자
