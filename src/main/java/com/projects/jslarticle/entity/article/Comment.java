@@ -8,6 +8,7 @@ import jakarta.persistence.ForeignKey;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import java.util.List;
 import lombok.Getter;
@@ -21,6 +22,10 @@ import lombok.Getter;
 @Table(name = "comment")
 @Entity
 @Getter
+@PrimaryKeyJoinColumn(
+        name = "id",
+        foreignKey = @ForeignKey(name = "fk_comment_content_id")
+)
 public class Comment extends Content {
 
     @ManyToOne(fetch = FetchType.LAZY)

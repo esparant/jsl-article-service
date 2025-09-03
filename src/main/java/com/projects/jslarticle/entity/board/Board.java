@@ -1,11 +1,13 @@
 package com.projects.jslarticle.entity.board;
 
-import com.projects.jslarticle.entity.content.Content;
 import com.projects.jslarticle.entity.article.ArticleCategory;
+import com.projects.jslarticle.entity.content.Content;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ForeignKey;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import java.util.List;
 import lombok.Getter;
@@ -19,6 +21,10 @@ import lombok.Getter;
 @Table(name = "board")
 @Entity
 @Getter
+@PrimaryKeyJoinColumn(
+        name = "id",
+        foreignKey = @ForeignKey(name = "fk_board_content_id")
+)
 public class Board extends Content {
 
     @OneToOne(mappedBy = "board")

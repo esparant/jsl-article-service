@@ -1,7 +1,7 @@
 package com.projects.jslarticle.entity.article;
 
-import com.projects.jslarticle.entity.content.Content;
 import com.projects.jslarticle.entity.admin.Role;
+import com.projects.jslarticle.entity.content.Content;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -10,6 +10,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import java.util.List;
 import lombok.Getter;
@@ -23,6 +24,10 @@ import lombok.Getter;
 @Table(name = "article")
 @Entity
 @Getter
+@PrimaryKeyJoinColumn(
+        name = "id",
+        foreignKey = @ForeignKey(name = "fk_article_content_id")
+)
 public class Article extends Content {
 
     @ManyToOne(fetch = FetchType.LAZY)
