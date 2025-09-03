@@ -20,7 +20,6 @@ import lombok.Getter;
         name = "user",
         uniqueConstraints = {
                 @UniqueConstraint(
-                        // 복합 유니크키 설정
                         name = "uk_user_nickname_tag",
                         columnNames = {"nickname", "tag"}
                 ),
@@ -53,7 +52,6 @@ public class User {
 
     @Column(nullable = false, length = 255)
     private String profileImageUrl;
-
 
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
