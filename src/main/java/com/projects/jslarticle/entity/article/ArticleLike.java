@@ -1,5 +1,6 @@
-package com.projects.jslarticle.entity;
+package com.projects.jslarticle.entity.article;
 
+import com.projects.jslarticle.entity.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

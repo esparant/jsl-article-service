@@ -1,6 +1,7 @@
-package com.projects.jslarticle.entity;
+package com.projects.jslarticle.entity.user;
 
-import jakarta.persistence.Column;
+import com.projects.jslarticle.entity.admin.Admin;
+import com.projects.jslarticle.entity.board.Board;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.ForeignKey;
@@ -10,19 +11,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import java.time.LocalDateTime;
 import lombok.Getter;
 
 /**
  * @author 탁영복
  * @version 1.0.0
- * @description EmojiUser Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
- * @since 2025-09-03
+ * @description Ban Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
+ * @since 2025-09-02
  */
-@Table(name = "emoji_user")
+@Table(name = "ban")
 @Entity
 @Getter
-public class EmojiUser {
+public class Ban {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,23 +30,29 @@ public class EmojiUser {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
-            name = "emoji_id",
+            name = "admin_id",
             nullable = false,
-            foreignKey = @ForeignKey(name = "fk_emoji_user_emoji_id")
+            foreignKey = @ForeignKey(name = "fk_ban_admin_id")
     )
-    private Emoji emoji;
+    private Admin admin;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(
+            name = "board_id",
+            nullable = false,
+            foreignKey = @ForeignKey(name = "fk_ban_board_id")
+    )
+    private Board board;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "user_id",
             nullable = false,
-            foreignKey = @ForeignKey(name = "fk_emoji_user_user_id")
+            foreignKey = @ForeignKey(name = "fk_ban_user_id")
     )
     private User user;
 
-    @Column(updatable = false, nullable = false)
-    private LocalDateTime createdAt;
+    private String content;
 
-    @Column(nullable = false)
-    private Integer sortOrder;
+    private Boolean isBlocked;
 }

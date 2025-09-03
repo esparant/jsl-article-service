@@ -1,4 +1,4 @@
-package com.projects.jslarticle.entity;
+package com.projects.jslarticle.entity.content;
 
 /**
  * @author 탁영복

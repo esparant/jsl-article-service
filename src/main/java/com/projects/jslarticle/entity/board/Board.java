@@ -1,5 +1,7 @@
-package com.projects.jslarticle.entity;
+package com.projects.jslarticle.entity.board;
 
+import com.projects.jslarticle.entity.content.Content;
+import com.projects.jslarticle.entity.article.ArticleCategory;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;

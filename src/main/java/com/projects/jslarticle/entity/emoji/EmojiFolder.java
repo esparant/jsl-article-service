@@ -1,5 +1,6 @@
-package com.projects.jslarticle.entity;
+package com.projects.jslarticle.entity.emoji;
 
+import com.projects.jslarticle.entity.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -17,18 +18,21 @@ import lombok.Getter;
 /**
  * @author 탁영복
  * @version 1.0.0
- * @description Bookmark Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
- * @since 2025-08-29
+ * @description EmojiFolder Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
+ * @since 2025-09-03
  */
 @Table(
-        name = "bookmark",
+        name = "emoji_folder",
         uniqueConstraints = {
-                @UniqueConstraint(name = "uk_bookmark_user_id_article_id", columnNames = {"user_id", "artilce_id"})
+                @UniqueConstraint(
+                        name = "uk_emoji_folder_user_id_folder_name",
+                        columnNames = {"user_id", "folder_name"}
+                )
         }
 )
 @Entity
 @Getter
-public class Bookmark {
+public class EmojiFolder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,17 +42,21 @@ public class Bookmark {
     @JoinColumn(
             name = "user_id",
             nullable = false,
-            foreignKey = @ForeignKey(name = "fk_bookmark_user_id")
+            foreignKey = @ForeignKey(name = "fk_emoji_folder_user_id")
     )
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "article_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_bookmark_article_id")
-    )
-    private Article article;
+    @Column(nullable = false)
+    private String folderName;
+
+    @Column(length = 255)
+    private String description;
+
+    @Column(nullable = false)
+    private Boolean isPublic;
+
+    @Column(nullable = false)
+    private Integer sortOrder;
 
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;

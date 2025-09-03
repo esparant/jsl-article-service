@@ -1,5 +1,7 @@
-package com.projects.jslarticle.entity;
+package com.projects.jslarticle.entity.content;
 
+import com.projects.jslarticle.entity.board.Board;
+import com.projects.jslarticle.entity.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -17,20 +19,18 @@ import lombok.Getter;
 /**
  * @author 탁영복
  * @version 1.0.0
- * @description UserBlock Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
- * @since 2025-08-29
+ * @description Subscribe Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
+ * @since 2025-09-02
  */
 @Table(
-        name = "user_block",
+        name = "role",
         uniqueConstraints = {
-                @UniqueConstraint(
-                        name = "uk_user_block_user_id_blocked_user_id",
-                        columnNames = {"user_id", "blocked_user_id"})
+                @UniqueConstraint(name = "uk_subscribe_user_id_board_id", columnNames = {"user_id", "board_id"})
         }
 )
 @Entity
 @Getter
-public class UserBlock {
+public class Subscribe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,17 +40,23 @@ public class UserBlock {
     @JoinColumn(
             name = "user_id",
             nullable = false,
-            foreignKey = @ForeignKey(name = "fk_user_block_user_id")
+            foreignKey = @ForeignKey(name = "fk_subscribe_user_id")
     )
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
-            name = "blocked_user_id",
+            name = "board_id",
             nullable = false,
-            foreignKey = @ForeignKey(name = "fk_user_blocked_user_id")
+            foreignKey = @ForeignKey(name = "fk_subscribe_board_id")
     )
-    private User blockedUser;
+    private Board board;
+
+    @Column(nullable = false)
+    private Integer sortOrder;
+
+    @Column(nullable = false)
+    private Boolean notification;
 
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;

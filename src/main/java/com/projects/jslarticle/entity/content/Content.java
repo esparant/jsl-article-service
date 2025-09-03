@@ -1,5 +1,10 @@
-package com.projects.jslarticle.entity;
+package com.projects.jslarticle.entity.content;
 
+import com.projects.jslarticle.entity.emoji.Emoji;
+import com.projects.jslarticle.entity.article.Article;
+import com.projects.jslarticle.entity.article.Comment;
+import com.projects.jslarticle.entity.board.Board;
+import com.projects.jslarticle.entity.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

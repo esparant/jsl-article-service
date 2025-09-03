@@ -1,4 +1,4 @@
-package com.projects.jslarticle.entity;
+package com.projects.jslarticle.entity.emoji;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

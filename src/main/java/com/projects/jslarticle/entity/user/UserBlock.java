@@ -1,4 +1,4 @@
-package com.projects.jslarticle.entity;
+package com.projects.jslarticle.entity.user;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,21 +17,20 @@ import lombok.Getter;
 /**
  * @author 탁영복
  * @version 1.0.0
- * @description EmojiFolder Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
- * @since 2025-09-03
+ * @description UserBlock Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
+ * @since 2025-08-29
  */
 @Table(
-        name = "emoji_folder",
+        name = "user_block",
         uniqueConstraints = {
                 @UniqueConstraint(
-                        name = "uk_emoji_folder_user_id_folder_name",
-                        columnNames = {"user_id", "folder_name"}
-                )
+                        name = "uk_user_block_user_id_blocked_user_id",
+                        columnNames = {"user_id", "blocked_user_id"})
         }
 )
 @Entity
 @Getter
-public class EmojiFolder {
+public class UserBlock {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,21 +40,17 @@ public class EmojiFolder {
     @JoinColumn(
             name = "user_id",
             nullable = false,
-            foreignKey = @ForeignKey(name = "fk_emoji_folder_user_id")
+            foreignKey = @ForeignKey(name = "fk_user_block_user_id")
     )
     private User user;
 
-    @Column(nullable = false)
-    private String folderName;
-
-    @Column(length = 255)
-    private String description;
-
-    @Column(nullable = false)
-    private Boolean isPublic;
-
-    @Column(nullable = false)
-    private Integer sortOrder;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(
+            name = "blocked_user_id",
+            nullable = false,
+            foreignKey = @ForeignKey(name = "fk_user_blocked_user_id")
+    )
+    private User blockedUser;
 
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;

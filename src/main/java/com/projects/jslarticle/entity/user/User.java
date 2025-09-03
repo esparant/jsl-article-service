@@ -1,4 +1,4 @@
-package com.projects.jslarticle.entity;
+package com.projects.jslarticle.entity.user;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
