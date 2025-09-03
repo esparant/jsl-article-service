@@ -7,13 +7,13 @@
  * @author Yeongbok Tak
  * @modifier Gyujin Jeong   
  * @since 2025-08-19
- * @version 1.2
+ * @version 1.2.0
  * @description 사용자 정보를 처리하는 클래스
  * 
  * @history
- *   v1.0 - 2025-08-10: 최초 작성 (Yeongbok Tak)
- *   v1.1 - 2025-08-15: 이메일 검증 기능 추가 (Yeongbok Tak)
- *   v1.2 - 2025-08-19: 성별 필드 추가 (Gyujin Jeong)
+ *   v1.0.0 - 2025-08-10: 최초 작성 (Yeongbok Tak)
+ *   v1.1.0 - 2025-08-15: 이메일 검증 기능 추가 (Yeongbok Tak)
+ *   v1.2.0 - 2025-08-19: 성별 필드 추가 (Gyujin Jeong)
  */
 public class User {
 ~~~
