@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS point (
 
     CONSTRAINT fk_point_user_id      FOREIGN KEY (user_id)     REFERENCES user(id),
     CONSTRAINT fk_point_content_id   FOREIGN KEY (content_id)  REFERENCES content(id),
-    CONSTRAINT ck_point_content_type CHECK       (content_type IN ('BOARD','ARTICLE', 'COMMENT', 'EMOJI')) -- 변경 종류 제약
+    CONSTRAINT ck_point_content_type CHECK       (content_type IN ('BOARD','ARTICLE', 'ARTICLE_LIKE', 'COMMENT', 'EMOJI')) -- 변경 종류 제약
 );
 
 CREATE TABLE IF NOT EXISTS user_block (
