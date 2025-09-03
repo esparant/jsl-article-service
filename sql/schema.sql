@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS user (
     password          VARCHAR(256) NOT NULL,                                                          -- 비밀번호
     nickname          VARCHAR(20)  NOT NULL,                                                          -- 닉네임
     tag               VARCHAR(20)  NOT NULL,                                                          -- 태그
-    profile_image_url VARCHAR(256) NOT NULL,                                                          -- 프로필 이미지[URL]
+    profile_image_url VARCHAR(255) NOT NULL,                                                          -- 프로필 이미지[URL]
     point             INT          NOT NULL    DEFAULT 0,                                             -- 포인트
     created_at        DATETIME     NOT NULL    DEFAULT CURRENT_TIMESTAMP,                             -- 생성일
     updated_at        DATETIME     NOT NULL    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- 수정일
@@ -244,11 +244,11 @@ CREATE TABLE IF NOT EXISTS report (
 
 -- 이모지
 CREATE TABLE IF NOT EXISTS emoji (
-    id          BIGINT      PRIMARY KEY, -- 고유ID
-    name        VARCHAR(50) NOT NULL, 	 -- 이모지 이름
-    image       BLOB        NOT NULL, 	 -- 이모지 이미지
-    description TINYTEXT,             	 -- 설명
-    point       INT         NOT NULL, 	 -- 포인트[가격]
+    id          BIGINT       PRIMARY KEY, -- 고유ID
+    name        VARCHAR(50)  NOT NULL, 	  -- 이모지 이름
+    image_url   VARCHAR(255) NOT NULL, 	  -- 이모지 이미지
+    description TINYTEXT,             	  -- 설명
+    point       INT         NOT NULL, 	  -- 포인트[가격]
 
     CONSTRAINT fk_emoji_content FOREIGN KEY (id) REFERENCES content(id)
 );
