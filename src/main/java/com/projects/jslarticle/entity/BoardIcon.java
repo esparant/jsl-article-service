@@ -2,9 +2,13 @@ package com.projects.jslarticle.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
@@ -27,6 +31,14 @@ public class BoardIcon {
 
     @OneToOne(mappedBy = "boardIcon")
     private Board board;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(
+            name = "admin_id",
+            updatable = false,
+            foreignKey = @ForeignKey(name = "fk_board_icon_admin_id")
+    )
+    private Admin admin;
 
     @Column(nullable = false, length = 255)
     private String currentIconUrl;
