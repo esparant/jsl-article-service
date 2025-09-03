@@ -17,7 +17,7 @@ import lombok.Getter;
  * @author 탁영복
  * @version 1.0.0
  * @description EmojiUser Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
- * @since 2025-08-28
+ * @since 2025-09-03
  */
 @Table(name = "emoji_user")
 @Entity
