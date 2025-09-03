@@ -265,13 +265,13 @@ CREATE TABLE IF NOT EXISTS emoji_user (
 );
 
 CREATE TABLE IF NOT EXISTS emoji_folder (
-    id          BIGINT      PRIMARY KEY AUTO_INCREMENT, -- 고유ID
-    user_id     BIGINT      NOT NULL,                   -- 이용자 고유ID
-    folder_name VARCHAR(50) NOT NULL,                   -- 폴더명
-    description TINYTEXT,                               -- 설명
-    is_public   BOOLEAN     DEFAULT FALSE,              -- 공개여부
-    created_at  DATETIME    DEFAULT CURRENT_TIMESTAMP,  -- 생성일
-    sort_order  INT,                               		-- 정렬순서
+    id          BIGINT      PRIMARY KEY AUTO_INCREMENT,          -- 고유ID
+    user_id     BIGINT      NOT NULL,                            -- 이용자 고유ID
+    folder_name VARCHAR(50) NOT NULL,                            -- 폴더명
+    description TINYTEXT,                                        -- 설명
+    is_public   BOOLEAN     NOT NULL DEFAULT FALSE,              -- 공개여부
+    created_at  DATETIME    NOT NULL DEFAULT CURRENT_TIMESTAMP,  -- 생성일
+    sort_order  INT NOT     NULL DEFAULT 101,                    -- 정렬순서
 
     CONSTRAINT fk_emoji_folder_user_id FOREIGN KEY (user_id) REFERENCES user(id)
 );
