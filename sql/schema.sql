@@ -254,11 +254,11 @@ CREATE TABLE IF NOT EXISTS emoji (
 );
 
 CREATE TABLE IF NOT EXISTS emoji_user (
-    id         BIGINT   PRIMARY KEY AUTO_INCREMENT, -- 고유ID
-    emoji_id   BIGINT   NOT NULL,                   -- 이모지 고유ID
-    user_id    BIGINT   NOT NULL,                   -- 이용자 고유ID
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,  -- 구매일
-    sort_order INT,                            		-- 정렬순서
+    id         BIGINT   PRIMARY KEY AUTO_INCREMENT,         -- 고유ID
+    emoji_id   BIGINT   NOT NULL,                           -- 이모지 고유ID
+    user_id    BIGINT   NOT NULL,                           -- 이용자 고유ID
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, -- 구매일
+    sort_order INT,                                         -- 정렬순서
 
     CONSTRAINT fk_emoji_user_emoji_id FOREIGN KEY (emoji_id) REFERENCES emoji(id),
     CONSTRAINT fk_emoji_user_user_id  FOREIGN KEY (user_id)  REFERENCES user(id)
