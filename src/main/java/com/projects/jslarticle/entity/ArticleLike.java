@@ -23,7 +23,10 @@ import lombok.Getter;
 @Table(
         name = "article_like",
         uniqueConstraints = {
-                @UniqueConstraint(name = "uk_article_like_user_id_article_id", columnNames = {"user_id", "article_id"})
+                @UniqueConstraint(
+                        name = "uk_article_like_user_id_article_id",
+                        columnNames = {"user_id", "article_id"}
+                )
         }
 )
 @Entity
