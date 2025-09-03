@@ -23,8 +23,9 @@ import lombok.Getter;
 @Table(
         name = "article_category",
         uniqueConstraints = {
-                @UniqueConstraint(name = "uk_article_category_board_id_category_name", columnNames = {"board_id",
-                        "category_name"})
+                @UniqueConstraint(
+                        name = "uk_article_category_board_id_category_name",
+                        columnNames = {"board_id", "category_name"})
         }
 )
 @Entity
