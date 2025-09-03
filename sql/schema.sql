@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS article_category (
     board_id      BIGINT      NOT NULL,                                                          -- 게시판
     role_id       BIGINT      NOT NULL,                                                          -- 열람 권한
     category_name VARCHAR(20) NOT NULL,                                                          -- 카테고리 이름
-    sort_order    INT         NOT NULL    DEFAULT 0,                                             -- 카테고리 표시순서
+    sort_order    INT         NOT NULL    DEFAULT 101,                                           -- 카테고리 표시순서
     created_at    DATETIME    NOT NULL    DEFAULT CURRENT_TIMESTAMP,                             -- 생성일시
     updated_at    DATETIME    NOT NULL    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- 수정일시
 
@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS subscribe (
     id           BIGINT   PRIMARY KEY AUTO_INCREMENT,
     user_id      BIGINT   NOT NULL,                              -- 생성자
     board_id     BIGINT   NOT NULL,                              -- 게시판
-    sort_order   INT      NOT NULL    DEFAULT 0,                 -- 표시순서
+    sort_order   INT      NOT NULL    DEFAULT 101,               -- 표시순서
     notification BOOLEAN  NOT NULL    DEFAULT TRUE,              -- 알림여부
     created_at   DATETIME NOT NULL    DEFAULT CURRENT_TIMESTAMP, -- 생성일시
 
@@ -248,7 +248,7 @@ CREATE TABLE IF NOT EXISTS emoji (
     name        VARCHAR(50)  NOT NULL, 	  -- 이모지 이름
     image_url   VARCHAR(255) NOT NULL, 	  -- 이모지 이미지
     description TINYTEXT,             	  -- 설명
-    point       INT         NOT NULL, 	  -- 포인트[가격]
+    point       INT          NOT NULL, 	  -- 포인트[가격]
 
     CONSTRAINT fk_emoji_content FOREIGN KEY (id) REFERENCES content(id)
 );
@@ -258,7 +258,7 @@ CREATE TABLE IF NOT EXISTS emoji_user (
     emoji_id   BIGINT   NOT NULL,                           -- 이모지 고유ID
     user_id    BIGINT   NOT NULL,                           -- 이용자 고유ID
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, -- 구매일
-    sort_order INT,                                         -- 정렬순서
+    sort_order INT NOT NULL DEFAULT 101,                    -- 정렬순서
 
     CONSTRAINT fk_emoji_user_emoji_id FOREIGN KEY (emoji_id) REFERENCES emoji(id),
     CONSTRAINT fk_emoji_user_user_id  FOREIGN KEY (user_id)  REFERENCES user(id)
