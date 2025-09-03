@@ -48,6 +48,7 @@ public class EmojiFolder {
     @Column(nullable = false)
     private String folderName;
 
+    @Column(length = 255)
     private String description;
 
     @Column(nullable = false)
