@@ -37,13 +37,13 @@ CREATE TABLE IF NOT EXISTS content (
 );
 
 CREATE TABLE IF NOT EXISTS point (
-    id            BIGINT      PRIMARY KEY AUTO_INCREMENT,
-    content_id    BIGINT      NOT NULL,                              -- 참조 컨텐츠
-    user_id       BIGINT      NOT NULL,                              -- 이용자
-    content_type  VARCHAR(20) NOT NULL,                              -- 변경 종류 (ARTICLE, COMMENT, EMOJI)
-    change_amount INT         NOT NULL,                              -- 변동량
-    description   VARCHAR(255),                                      -- 변동 상세설명
-    created_at    DATETIME    NOT NULL    DEFAULT CURRENT_TIMESTAMP, -- 생성일시
+    id            BIGINT       PRIMARY KEY AUTO_INCREMENT,
+    content_id    BIGINT       NOT NULL,                           -- 참조 컨텐츠
+    user_id       BIGINT       NOT NULL,                           -- 이용자
+    content_type  VARCHAR(20)  NOT NULL,                           -- 변경 종류 (ARTICLE, COMMENT, EMOJI)
+    change_amount INT          NOT NULL,                           -- 변동량
+    description   VARCHAR(255) NOT NULL DEFAULT '',                -- 변동 상세설명
+    created_at    DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP, -- 생성일시
 
     CONSTRAINT fk_point_user_id      FOREIGN KEY (user_id)     REFERENCES user(id),
     CONSTRAINT fk_point_content_id   FOREIGN KEY (content_id)  REFERENCES content(id),
@@ -63,9 +63,9 @@ CREATE TABLE IF NOT EXISTS user_block (
 
 -- 게시판
 CREATE TABLE IF NOT EXISTS board (
-    id                BIGINT       PRIMARY KEY,
-    board_name        VARCHAR(50)  NOT NULL, -- 이름
-    board_description VARCHAR(255) NOT NULL, -- 상세설명
+    id          BIGINT       PRIMARY KEY,
+    board_name  VARCHAR(50)  NOT NULL,            -- 이름
+    description VARCHAR(255) NOT NULL DEFAULT '', -- 상세설명
 
     CONSTRAINT fk_board_content_id FOREIGN KEY (id) REFERENCES content(id),
     CONSTRAINT uk_board_board_name UNIQUE (board_name) -- 게시판 이름 중복 제약
@@ -230,7 +230,7 @@ CREATE TABLE IF NOT EXISTS report (
     user_id      BIGINT    NOT NULL,                                                          -- 생성자
     content_id   BIGINT    NOT NULL,                                                          -- 콘텐츠
     admin_id     BIGINT,                                                                      -- 관리자
-    description  TEXT      NOT NULL,                                                          -- 사유
+    description  TEXT      NOT NULL    DEFAULT '',                                            -- 사유
     image_url    VARCHAR(255),                                                                -- 이미지
     result       VARCHAR(255),                                                                -- 결과
     is_processed BOOLEAN   NOT NULL    DEFAULT FALSE,                                         -- 처리여부
@@ -244,11 +244,11 @@ CREATE TABLE IF NOT EXISTS report (
 
 -- 이모지
 CREATE TABLE IF NOT EXISTS emoji (
-    id          BIGINT       PRIMARY KEY, -- 고유ID
-    name        VARCHAR(50)  NOT NULL, 	  -- 이모지 이름
-    image_url   VARCHAR(255) NOT NULL, 	  -- 이모지 이미지
-    description TINYTEXT,             	  -- 설명
-    point       INT          NOT NULL, 	  -- 포인트[가격]
+    id          BIGINT       PRIMARY KEY,         -- 고유ID
+    name        VARCHAR(50)  NOT NULL, 	          -- 이모지 이름
+    image_url   VARCHAR(255) NOT NULL, 	          -- 이모지 이미지
+    description TINYTEXT     NOT NULL DEFAULT '', -- 설명
+    point       INT          NOT NULL, 	          -- 포인트[가격]
 
     CONSTRAINT fk_emoji_content FOREIGN KEY (id) REFERENCES content(id)
 );
@@ -268,7 +268,7 @@ CREATE TABLE IF NOT EXISTS emoji_folder (
     id          BIGINT      PRIMARY KEY AUTO_INCREMENT,          -- 고유ID
     user_id     BIGINT      NOT NULL,                            -- 이용자 고유ID
     folder_name VARCHAR(50) NOT NULL,                            -- 폴더명
-    description TINYTEXT,                                        -- 설명
+    description TINYTEXT    NOT NULL DEFAULT '',                 -- 설명
     is_public   BOOLEAN     NOT NULL DEFAULT FALSE,              -- 공개여부
     created_at  DATETIME    NOT NULL DEFAULT CURRENT_TIMESTAMP,  -- 생성일
     sort_order  INT NOT     NULL DEFAULT 101,                    -- 정렬순서
