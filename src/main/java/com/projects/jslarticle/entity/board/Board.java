@@ -37,5 +37,5 @@ public class Board extends Content {
     private String boardName;
 
     @Column(nullable = false, length = 255)
-    private String boardDescription;
+    private String description;
 }
