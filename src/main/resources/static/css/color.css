@@ -115,6 +115,23 @@
 	transition: color .3s cubic-bezier(0.19, 1, 0.22, 1), background-color .3s cubic-bezier(0.19, 1, 0.22, 1) !important;
 }
 
+.btn-primary-emphasis {
+	--bs-btn-color: #fff !important; /* 버튼 글자색: 흰색 */
+	--bs-btn-bg: #137262 !important; /* 배경색: 주조색 */
+	--bs-btn-border-color: #137262 !important; /* 테두리색: 주조색 */
+	--bs-btn-hover-color: #fff; /* 마우스 오버 시 글자색: 흰색 */
+	--bs-btn-hover-bg: #0d5c50 !important; /* 마우스 오버 시 배경색: 살짝 어두운 청록 */
+	--bs-btn-hover-border-color: #0d5c50 !important; /* 마우스 오버 시 테두리색: 살짝 어두운 청록 */
+	--bs-btn-focus-shadow-rgb: 19, 114, 98 !important; /* 포커스 시 그림자 색상 */
+	--bs-btn-active-color: #fff; /* 클릭 시 글자색: 흰색 */
+	--bs-btn-active-bg: #0a4940 !important; /* 클릭 시 배경색: 더 어두운 청록 */
+	--bs-btn-active-border-color: #0a4940 !important; /* 클릭 시 테두리색: 더 어두운 청록 */
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+	--bs-btn-disabled-color: #fff; /* 비활성화 시 글자색: 흰색 */
+	--bs-btn-disabled-bg: #1e8774 !important; /* 비활성화 시 배경색: 밝은 청록 */
+	--bs-btn-disabled-border-color: #1e8774 !important; /* 비활성화 시 테두리색: 밝은 청록 */
+}
+
 .btn-secondary {
 	--bs-btn-color: #333 !important; /* 버튼 글자색: 어두운 색 */
 	--bs-btn-bg: #B5CCFF !important; /* 배경색: 보조색 */
@@ -131,4 +148,21 @@
 	--bs-btn-disabled-bg: #D1DDF9 !important; /* 비활성화 시 배경색: 밝은 보라 */
 	--bs-btn-disabled-border-color: #D1DDF9 !important; /* 비활성화 시 테두리색: 밝은 보라 */
 	transition: color .3s cubic-bezier(0.19, 1, 0.22, 1), background-color .3s cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+
+.btn-secondary-emphasis {
+	--bs-btn-color: #fff !important; /* 버튼 글자색: 흰색 */
+	--bs-btn-bg: #8A5CFF !important; /* 배경색: 주조색 */
+	--bs-btn-border-color: #8A5CFF !important; /* 테두리색: 주조색 */
+	--bs-btn-hover-color: #fff; /* 마우스 오버 시 글자색: 흰색 */
+	--bs-btn-hover-bg: #6E3BD9 !important; /* 마우스 오버 시 배경색: 살짝 어두운 보라 */
+	--bs-btn-hover-border-color: #6E3BD9 !important; /* 마우스 오버 시 테두리색: 살짝 어두운 보라 */
+	--bs-btn-focus-shadow-rgb: 138, 92, 255 !important; /* 포커스 시 그림자 색상 */
+	--bs-btn-active-color: #fff; /* 클릭 시 글자색: 흰색 */
+	--bs-btn-active-bg: #592BBE !important; /* 클릭 시 배경색: 더 어두운 보라 */
+	--bs-btn-active-border-color: #592BBE !important; /* 클릭 시 테두리색: 더 어두운 보라 */
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+	--bs-btn-disabled-color: #fff; /* 비활성화 시 글자색: 흰색 */
+	--bs-btn-disabled-bg: #AE93FF !important; /* 비활성화 시 배경색: 밝은 보라 */
+	--bs-btn-disabled-border-color: #AE93FF !important; /* 비활성화 시 테두리색: 밝은 보라 */
 }
