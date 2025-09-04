@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/base}">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>회원정보</title>
+	<link rel="stylesheet" href="/css/users.css">
+	<th:block layout:fragment="head">
+
+	</th:block>
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<div class="profile-container">
+			<div class="profile-header bg-primary-gradient">
+				<img src="/img/uploads/icon/sakiko.png" alt="사용자 아이콘" class="profile-icon">
+				<div class="profile-info">
+					<h2>사키코사랑개 #1557</h2>
+				</div>
+				<a href="/user/edit" class="btn btn-primary ms-auto">편집</a>
+			</div>
+
+			<div class="info-section">
+				<div class="section-label">자기소개</div>
+				<div class="section-content intro">
+					안녕하세요. 사키코를 좋아하는 군필여고생 입니다.
+				</div>
+			</div>
+
+			<div class="info-section">
+				<div class="section-label">작성글 <span class="section-count">48</span>개</div>
+				<div class="section-content">
+					<div class="section-line d-flex">
+						<div class="p-2"><span class="badge  bg-primary-emphasis">아베무지카</span></div>
+						<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">사키코 너무 이쁜거 아님?</a></div>
+						<div class="p-2">
+							<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
+						</div>
+					</div>
+					<div class="section-line d-flex">
+						<div class="p-2"><span class="badge  bg-primary-emphasis">마이고</span></div>
+						<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">토모리 너무 이쁜거 아님?</a></div>
+						<div class="p-2">
+							<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
+						</div>
+					</div>
+					<div class="section-line d-flex">
+						<div class="p-2"><span class="badge  bg-primary-emphasis">걸즈 밴드 크라이</span></div>
+						<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">모모카 성격 진짜 나쁘다</a></div>
+						<div class="p-2">
+							<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
+						</div>
+					</div>
+					<div class="section-line d-flex">
+						<div class="p-2"><span class="badge  bg-primary-emphasis">봇치 더 락!</span></div>
+						<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">내가 보기엔 키타가 봇치 기타 니퍼질했음</a>
+						</div>
+						<div class="p-2">
+							<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="info-section">
+				<div class="section-label">작성댓글 <span class="section-count">48</span>개</div>
+				<div class="section-content">
+					<div class="section-line d-flex">
+						<div class="p-2"><span class="badge  bg-primary-emphasis">마이고</span></div>
+						<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">토모리 너무 이쁜거 아님?</a></div>
+						<div class="p-2">
+							<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
+						</div>
+					</div>
+					<div class="section-line d-flex">
+						<div class="p-2"><span class="badge  bg-primary-emphasis">마이고</span></div>
+						<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">토모리 너무 이쁜거 아님?</a></div>
+						<div class="p-2">
+							<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
+						</div>
+					</div>
+					<div class="section-line d-flex">
+						<div class="p-2"><span class="badge  bg-primary-emphasis">마이고</span></div>
+						<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">토모리 너무 이쁜거 아님?</a></div>
+						<div class="p-2">
+							<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="info-section">
+				<div class="section-label">스크랩목록 <span class="section-count">48</span>개</div>
+				<div class="section-content">
+					<div class="section-line d-flex">
+						<div class="p-2"><span class="badge  bg-primary-emphasis">아베무지카</span></div>
+						<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">사키코 너무 이쁜거 아님?</a></div>
+						<div class="p-2">
+							<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
+						</div>
+					</div>
+					<div class="section-line d-flex">
+						<div class="p-2"><span class="badge  bg-primary-emphasis">마이고</span></div>
+						<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">토모리 너무 이쁜거 아님?</a></div>
+						<div class="p-2">
+							<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
+						</div>
+					</div>
+					<div class="section-line d-flex">
+						<div class="p-2"><span class="badge  bg-primary-emphasis">최대열글자까지가능함</span></div>
+						<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">모모카 성격 진짜 나쁘다</a></div>
+						<div class="p-2">
+							<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
+						</div>
+					</div>
+					<div class="section-line d-flex">
+						<div class="p-2"><span class="badge  bg-primary-emphasis">봇치 더 락!</span></div>
+						<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">내가 보기엔 키타가 봇치 기타 니퍼질했음</a>
+						</div>
+						<div class="p-2">
+							<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="info-section">
+				<div class="section-label">구독게시판목록 <span class="section-count">48</span>개</div>
+				<div class="section-content">
+					구독한 게시판 짧음
+				</div>
+			</div>
+
+			<div class="info-section">
+				<div class="section-label">보유 이모티콘 <span class="section-count">48</span>개</div>
+				<div class="section-content intro">
+					<div class="m-2 border-bottom fw-bold">사용중</div>
+					<div class="d-flex flex-wrap">
+						<img th:each="item : ${#numbers.sequence(1, 9)}" src="/img/uploads/icon/sakiko.png" class="m-2" alt="이모티콘">
+					</div>
+					<div class="m-2 border-bottom fw-bold">보유중</div>
+					<div class="d-flex flex-wrap">
+						<img th:each="item : ${#numbers.sequence(1, 10)}" src="/img/uploads/icon/sakiko.png" class="m-2" alt="이모티콘">
+					</div>
+					<div class="m-2 border-bottom fw-bold">만료됨</div>
+					<div class="d-flex flex-wrap">
+						<img th:each="item : ${#numbers.sequence(1, 4)}" src="/img/uploads/icon/sakiko.png" class="m-2" alt="이모티콘">
+					</div>
+				</div>
+			</div>
+
+			<div class="info-section">
+				<div class="section-label">차단 이용자 목록 <span class="section-count">48</span>개</div>
+				<div class="section-content">
+					차단한 이용자 짧음
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

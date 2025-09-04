@@ -35,25 +35,22 @@ public class TemplateGlobalViewerController {
 	String favicon(){ return ""; }
 	
 	/**
-	 * 모든 페이지 보기용 함수
-	 * (프론트 전용)
-	 * @param filename
-	 * @return
+	 * @author MJ2
+	 * @modifier 정규진
+	 * @date 2025-09-02
+	 * @version 1.2
+	 * @description 메소드 추가 방식이 아닌 GetMapping 어노테이션에 파이프라인 구분자로 파일 추가 및 메소드명 원복
+	 * 
+  	 * @history v1.0 - 2025-08-10: 최초 작성 (MJ2)
+	 * @history v1.1 - 2025-09-02: 다른 패키지도 볼 수 있도록 메소드 추가
+	 * v1.1 - 2025-09-02: show 함수가 account 템플릿 패키지에만 작동하여 showAccount, showUsers 두개의 함수로 나눈 뒤 각 패키지별로 맵핑하도록 수정
 	 */
 	@GetMapping("{filename}")
 	String show(@PathVariable("filename") String filename) {
 		return filename;
 	}
 
-	/**
-	 * 폴더별 페이지 보기용 함수
-	 * (프론트 전용)
-	 * @usage folder: 여기에 폴더명을 추가해야 작동합니다.
-	 * @param folder
-	 * @param filename
-	 * @return
-	 */
-	@GetMapping("{folder:account|board}/{filename}")
+	@GetMapping("{folder:account|users}/{filename}")
 	String show(@PathVariable("folder") String folder, @PathVariable("filename") String filename) {
 		return folder + "/" + filename;
 	}
