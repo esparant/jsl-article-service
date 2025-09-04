@@ -8,5 +8,5 @@ package com.projects.jslarticle.entity.content;
  * @since 2025-08-29
  */
 public enum ContentType {
-    ARTICLE, COMMENT, EMOJI
+    ARTICLE, COMMENT, EMOJI, BOARD, ARTICLE_LIKE
 }
