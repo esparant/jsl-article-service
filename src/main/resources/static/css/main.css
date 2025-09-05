@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* color.css 파일 */
 @import url("/css/color.css");
 
@@ -215,3 +216,7 @@ body {
 	min-height: 100vh;
 }
 * { scroll-behavior: smooth; }
+
+.scrollbar-width-none {
+  scrollbar-width: none;
+}
