@@ -46,7 +46,7 @@ public class Point {
             nullable = false,
             foreignKey = @ForeignKey(name = "fk_point_user_id")
     )
-    private User user;
+    private Users users;
 
     @Column(nullable = false, length = 20)
     @Enumerated(EnumType.STRING)

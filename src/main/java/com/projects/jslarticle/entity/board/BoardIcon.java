@@ -31,7 +31,7 @@ public class BoardIcon {
     private Long id;
 
     @OneToOne(mappedBy = "boardIcon")
-    private Board board;
+    private BoardConfig board;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(

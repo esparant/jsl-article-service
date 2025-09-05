@@ -1,6 +1,6 @@
 package com.projects.jslarticle.entity.emoji;
 
-import com.projects.jslarticle.entity.user.User;
+import com.projects.jslarticle.entity.user.Users;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -43,7 +43,7 @@ public class EmojiUser {
             nullable = false,
             foreignKey = @ForeignKey(name = "fk_emoji_user_user_id")
     )
-    private User user;
+    private Users users;
 
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;

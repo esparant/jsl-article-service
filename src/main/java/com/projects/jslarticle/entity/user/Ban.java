@@ -50,7 +50,7 @@ public class Ban {
             nullable = false,
             foreignKey = @ForeignKey(name = "fk_ban_user_id")
     )
-    private User user;
+    private Users users;
 
     private String content;
 

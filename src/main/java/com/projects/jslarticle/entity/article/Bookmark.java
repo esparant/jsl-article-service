@@ -1,6 +1,6 @@
 package com.projects.jslarticle.entity.article;
 
-import com.projects.jslarticle.entity.user.User;
+import com.projects.jslarticle.entity.user.Users;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -24,7 +24,7 @@ import lombok.Getter;
 @Table(
         name = "bookmark",
         uniqueConstraints = {
-                @UniqueConstraint(name = "uk_bookmark_user_id_article_id", columnNames = {"user_id", "artilce_id"})
+                @UniqueConstraint(name = "uk_bookmark_user_id_article_id", columnNames = {"user_id", "article_id"})
         }
 )
 @Entity
@@ -41,7 +41,7 @@ public class Bookmark {
             nullable = false,
             foreignKey = @ForeignKey(name = "fk_bookmark_user_id")
     )
-    private User user;
+    private Users users;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
