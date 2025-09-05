@@ -17,7 +17,7 @@ import lombok.Getter;
  * @since 2025-08-27
  */
 @Table(
-        name = "users",
+        name = "user",
         uniqueConstraints = {
                 @UniqueConstraint(
                         name = "uk_user_nickname_tag",
@@ -29,7 +29,7 @@ import lombok.Getter;
 )
 @Entity
 @Getter
-public class Users {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

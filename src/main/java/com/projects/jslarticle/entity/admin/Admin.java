@@ -1,7 +1,7 @@
 package com.projects.jslarticle.entity.admin;
 
 import com.projects.jslarticle.entity.board.Board;
-import com.projects.jslarticle.entity.user.Users;
+import com.projects.jslarticle.entity.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -43,7 +43,7 @@ public class Admin {
             nullable = false,
             foreignKey = @ForeignKey(name = "fk_admin_user_id")
     )
-    private Users users;
+    private User users;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(

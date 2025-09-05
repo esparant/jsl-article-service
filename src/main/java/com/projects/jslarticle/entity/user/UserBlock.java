@@ -42,7 +42,7 @@ public class UserBlock {
             nullable = false,
             foreignKey = @ForeignKey(name = "fk_user_block_user_id")
     )
-    private Users users;
+    private User users;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
@@ -50,7 +50,7 @@ public class UserBlock {
             nullable = false,
             foreignKey = @ForeignKey(name = "fk_user_blocked_user_id")
     )
-    private Users blockedUsers;
+    private User blockedUsers;
 
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;

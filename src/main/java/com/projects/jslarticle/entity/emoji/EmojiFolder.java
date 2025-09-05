@@ -1,6 +1,6 @@
 package com.projects.jslarticle.entity.emoji;
 
-import com.projects.jslarticle.entity.user.Users;
+import com.projects.jslarticle.entity.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -44,7 +44,7 @@ public class EmojiFolder {
             nullable = false,
             foreignKey = @ForeignKey(name = "fk_emoji_folder_user_id")
     )
-    private Users users;
+    private User users;
 
     @Column(nullable = false)
     private String folderName;

@@ -4,7 +4,7 @@ import com.projects.jslarticle.entity.article.Article;
 import com.projects.jslarticle.entity.article.Comment;
 import com.projects.jslarticle.entity.board.Board;
 import com.projects.jslarticle.entity.emoji.Emoji;
-import com.projects.jslarticle.entity.user.Users;
+import com.projects.jslarticle.entity.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -47,7 +47,7 @@ public class Content {
             nullable = false,
             foreignKey = @ForeignKey(name = "fk_content_user_id")
     )
-    private Users users;
+    private User users;
 
     @Column(nullable = false, length = 20)
     @Enumerated(EnumType.STRING)

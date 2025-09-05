@@ -1,6 +1,6 @@
 package com.projects.jslarticle.entity.article;
 
-import com.projects.jslarticle.entity.user.Users;
+import com.projects.jslarticle.entity.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -41,7 +41,7 @@ public class Bookmark {
             nullable = false,
             foreignKey = @ForeignKey(name = "fk_bookmark_user_id")
     )
-    private Users users;
+    private User users;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
