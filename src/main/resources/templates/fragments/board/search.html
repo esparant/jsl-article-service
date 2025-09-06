@@ -1,22 +1,14 @@
-<div class="btn-group mb-2">
-	<button type="button" class="btn bg-primary text-white">추천순</button>
-	<button type="button" class="btn bg-secondary-custom text-white active">최신순</button>
-</div>
-
 <div class="row">
 	<div class="col-lg-8">
 
 		<ul class="nav nav-tabs overflow-x-auto flex-nowrap border-0">
 			<li class="nav-item">
-				<a href="" class="nav-link active">
+				<a href="" class="nav-link text-nowrap active">
 					전체
 				</a>
 			</li>
-			<!-- <li class="nav-item" th:each="item : ${ {'공지','공략','질문'} }">
+			<li class="nav-item text-nowrap" th:each="item : ${ {'공지','공략','질문'} }">
 				<a href="" class="nav-link" th:text="${ item }"></a>
-			</li> -->
-			<li class="nav-item" th:each="item : ${#numbers.sequence(1, 30)}">
-				<a href="" class="nav-link" th:text="'전체'"></a>
 			</li>
 		</ul>
 	</div>
