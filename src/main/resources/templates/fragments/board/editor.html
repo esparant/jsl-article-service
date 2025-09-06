@@ -1,0 +1,77 @@
+<form method="post" class="d-flex flex-column gap-2">
+	<div class="input-group w-50">
+		<select class="form-select" required>
+			<option value="">카테고리</option>
+			<option th:each="item : ${ {'공지','공략','질문'} }" th:value="${item}" th:text="${item}"></option>
+		</select>
+		<button type="button" class="btn btn-primary text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+			이모티콘 추가
+		</button>
+	</div>
+	<div class="bg-warning text-white rounded p-2 d-none">
+		<label>
+			<input type="checkbox" class="form-check-input me-2" name="uneditable" value="true">
+			<a class="">선택하신 카테고리는 글 작성 후 수정/삭제가 불가능합니다. 동의하십니까?</a>
+		</label>
+	</div>
+	<input name="title" class="form-control" placeholder="제목을 입력해주세요." required>
+	<ul class="pagination m-0">
+		<li class="page-item" th:each="item : ${#numbers.sequence(1,5)}">
+			<a href="" class="page-link">
+				<i class="bi bi-menu-app"></i>
+			</a>
+		</li>
+	</ul>
+	<!-- TODO: 에디터 선정이 딸 선정 후 붙여야 함 -->
+	<textarea class="form-control p-4" style="height: 15rem;" name="" id="" placeholder="뉴비들 필독) 비틱 가이드라인
+- 재련후 속17이나 인겜 템점수 90점 이상 / 공 생 방 퍼 등 몰빵(3~40%)템 차단 / 월광5성 뉴든 중복이든 차단 
+- 110점짜리 템 나왔는데 이건 누가 쓰나요?  (x)  / 공 치 치 생에 생 1번 튀었는데 이건 누구 줘야함? (o) (사진 절대 x)
+- 야심가 타이윈 운좋게 먹었는데 이거 좋은거임?  (x)  / 야타는 요즘 어디에 씀? 세팅 어케해야 하나(0) (월광은 리세티어표봐)"></textarea>
+	<div class="border rounded p-2 d-none">
+		<label>
+			<input type="checkbox" class="form-check-input me-2" name="dontPriview" value="true">
+			<span class="">미리보기를 숨기시겠습니까?</span>
+		</label>
+	</div>
+	<div class="border rounded p-2 d-none">
+		<label>
+			<input type="checkbox" class="form-check-input me-2" name="dontSpoiler" value="true">
+			<span class="">스포일러 방지</span>
+		</label>
+	</div>
+	<div class="text-end">
+		<button class="btn btn-primary-emphasis text-white px-4 ">작성</button>
+	</div>
+</form>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">이모티콘 추가</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+				<div>
+					<h5>방도리(사키코)</h5>
+					<div class="gap-2" style="display: grid; grid-template-columns: repeat(6, 1fr)">
+						<div th:each="icon : ${#numbers.sequence(1, 16)}">
+							<img class="w-100 border" src="/img/uploads/icon/sakiko.png">
+						</div>
+					</div>
+				</div>
+
+				<div class="mt-2">
+					<h5>잘자 콘</h5>
+					<div class="gap-2" style="display: grid; grid-template-columns: repeat(6, 1fr)">
+						<div th:each="icon : ${#numbers.sequence(1, 20)}">
+							<img class="w-100 border" src="/img/uploads/icon/oyasumi.webp">
+						</div>
+					</div>
+				</div>
+
+      </div>
+    </div>
+  </div>
+</div>
