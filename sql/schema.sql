@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS content (
 
 CREATE TABLE IF NOT EXISTS point (
     id            BIGINT       PRIMARY KEY AUTO_INCREMENT,
-    content_id    BIGINT       NOT NULL,                           -- 참조 컨텐츠
     user_id       BIGINT       NOT NULL,                           -- 이용자
+    content_id    BIGINT       NOT NULL,                           -- 참조 컨텐츠
     content_type  VARCHAR(20)  NOT NULL,                           -- 변경 종류 (ARTICLE, COMMENT, EMOJI)
     change_amount INT          NOT NULL,                           -- 변동량
     description   VARCHAR(255) NOT NULL DEFAULT '',                -- 변동 상세설명
@@ -51,10 +51,10 @@ CREATE TABLE IF NOT EXISTS point (
 );
 
 CREATE TABLE IF NOT EXISTS user_block (
-    id              BIGINT   PRIMARY KEY AUTO_INCREMENT ,   -- 고유ID
-    user_id         BIGINT   NOT NULL,                      -- 이용자ID
-    blocked_user_id BIGINT   NOT NULL,                      -- 차단당한 이용자ID
-    created_at      DATETIME DEFAULT     CURRENT_TIMESTAMP, -- 생성일
+    id              BIGINT   PRIMARY KEY AUTO_INCREMENT ,           -- 고유ID
+    user_id         BIGINT   NOT NULL,                              -- 차단한 사용자
+    blocked_user_id BIGINT   NOT NULL,                              -- 차단당한 사용자
+    created_at      DATETIME NOT NULL    DEFAULT CURRENT_TIMESTAMP, -- 생성일
 
     CONSTRAINT fk_user_block_user_id         		 FOREIGN KEY (user_id)         REFERENCES user(id),
     CONSTRAINT fk_user_block_blocked_user_id 		 FOREIGN KEY (blocked_user_id) REFERENCES user(id),
@@ -63,12 +63,14 @@ CREATE TABLE IF NOT EXISTS user_block (
 
 -- 게시판
 CREATE TABLE IF NOT EXISTS board (
-    id          BIGINT       PRIMARY KEY,
-    board_name  VARCHAR(50)  NOT NULL,            -- 이름
-    description VARCHAR(255) NOT NULL DEFAULT '', -- 상세설명
+    id              BIGINT       PRIMARY KEY,
+    board_config_id BIGINT       NOT NULL,            -- 게시판 설정
+    board_name      VARCHAR(50)  NOT NULL,            -- 이름
+    description     VARCHAR(255) NOT NULL DEFAULT '', -- 상세설명
 
-    CONSTRAINT fk_board_content_id FOREIGN KEY (id) REFERENCES content(id),
-    CONSTRAINT uk_board_board_name UNIQUE (board_name) -- 게시판 이름 중복 제약
+    CONSTRAINT fk_board_content_id      FOREIGN KEY (id)             REFERENCES content(id),
+    CONSTRAINT fk_board_board_config_id FOREIGN KEY(board_config_id) REFERENCES board_config(id),
+    CONSTRAINT uk_board_board_name      UNIQUE      (board_name) -- 게시판 이름 중복 제약
 );
 
 CREATE TABLE IF NOT EXISTS article_category (
@@ -127,14 +129,12 @@ CREATE TABLE IF NOT EXISTS board_icon (
 
 CREATE TABLE IF NOT EXISTS board_config (
     id                BIGINT   PRIMARY KEY AUTO_INCREMENT,
-    board_id          BIGINT   NOT NULL,
     board_icon_id     BIGINT   NOT NULL,
     pop_least_like    BIGINT   NOT NULL    DEFAULT 0,
     dislike_available BOOLEAN  NOT NULL    DEFAULT TRUE,
     dislike_influence BOOLEAN  NOT NULL    DEFAULT TRUE,
     updated_at        DATETIME NOT NULL    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-    CONSTRAINT fk_board_config_board_id      FOREIGN KEY (board_id)      REFERENCES board(id),
     CONSTRAINT fk_board_config_board_icon_id FOREIGN KEY (board_icon_id) REFERENCES board_icon(id),
     CONSTRAINT uk_board_config_board_id      UNIQUE      (board_id) -- 게시판 설정 중복 제약
 );
@@ -156,14 +156,14 @@ CREATE TABLE IF NOT EXISTS admin_config (
 ALTER TABLE admin ADD CONSTRAINT fk_admin_admin_config_id FOREIGN KEY (admin_config_id) REFERENCES admin_config(id);
 
 CREATE TABLE IF NOT EXISTS ban (
-    id         BIGINT   PRIMARY KEY AUTO_INCREMENT, -- 고유ID
-    admin_id   BIGINT   NOT NULL,                   -- 차단한 관리자ID
-    board_id   BIGINT   NOT NULL,                   -- 차단이 일어난 게시판ID
-    user_id    BIGINT   NOT NULL,                   -- 차단당한 이용자ID
-    content    TINYTEXT,                            -- 차단사유
-    is_blocked BOOLEAN  DEFAULT TRUE,               -- 차단상태
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,  -- 차단 시작일자
-    updated_at DATETIME NOT NULL,                   -- 차단 해제일자
+    id         BIGINT   PRIMARY KEY AUTO_INCREMENT,         -- 고유ID
+    admin_id   BIGINT   NOT NULL,                           -- 차단한 관리자ID
+    board_id   BIGINT   NOT NULL,                           -- 차단이 일어난 게시판ID
+    user_id    BIGINT   NOT NULL,                           -- 차단당한 이용자ID
+    content    TINYTEXT,                                    -- 차단사유
+    is_blocked BOOLEAN  NOT NULL DEFAULT TRUE,              -- 차단상태
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, -- 차단 시작일자
+    updated_at DATETIME NOT NULL,                           -- 차단 해제일자
 
     CONSTRAINT fk_ban_admin_id FOREIGN KEY (admin_id) REFERENCES admin(id),
     CONSTRAINT fk_ban_board_id FOREIGN KEY (board_id) REFERENCES board(id),
@@ -254,11 +254,11 @@ CREATE TABLE IF NOT EXISTS emoji (
 );
 
 CREATE TABLE IF NOT EXISTS emoji_user (
-    id         BIGINT   PRIMARY KEY AUTO_INCREMENT,         -- 고유ID
-    emoji_id   BIGINT   NOT NULL,                           -- 이모지 고유ID
-    user_id    BIGINT   NOT NULL,                           -- 이용자 고유ID
-    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, -- 구매일
-    sort_order INT NOT NULL DEFAULT 101,                    -- 정렬순서
+    id         BIGINT   PRIMARY KEY AUTO_INCREMENT,            -- 고유ID
+    emoji_id   BIGINT   NOT NULL,                              -- 이모지 고유ID
+    user_id    BIGINT   NOT NULL,                              -- 이용자 고유ID
+    created_at DATETIME NOT NULL    DEFAULT CURRENT_TIMESTAMP, -- 구매일
+    sort_order INT      NOT NULL    DEFAULT 101,               -- 정렬순서
 
     CONSTRAINT fk_emoji_user_emoji_id FOREIGN KEY (emoji_id) REFERENCES emoji(id),
     CONSTRAINT fk_emoji_user_user_id  FOREIGN KEY (user_id)  REFERENCES user(id)
