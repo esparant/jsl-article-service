@@ -63,12 +63,14 @@ CREATE TABLE IF NOT EXISTS user_block (
 
 -- 게시판
 CREATE TABLE IF NOT EXISTS board (
-    id          BIGINT       PRIMARY KEY,
-    board_name  VARCHAR(50)  NOT NULL,            -- 이름
-    description VARCHAR(255) NOT NULL DEFAULT '', -- 상세설명
+    id              BIGINT       PRIMARY KEY,
+    board_config_id BIGINT       NOT NULL,            -- 게시판 설정
+    board_name      VARCHAR(50)  NOT NULL,            -- 이름
+    description     VARCHAR(255) NOT NULL DEFAULT '', -- 상세설명
 
-    CONSTRAINT fk_board_content_id FOREIGN KEY (id) REFERENCES content(id),
-    CONSTRAINT uk_board_board_name UNIQUE (board_name) -- 게시판 이름 중복 제약
+    CONSTRAINT fk_board_content_id      FOREIGN KEY (id)             REFERENCES content(id),
+    CONSTRAINT fk_board_board_config_id FOREIGN KEY(board_config_id) REFERENCES board_config(id),
+    CONSTRAINT uk_board_board_name      UNIQUE      (board_name) -- 게시판 이름 중복 제약
 );
 
 CREATE TABLE IF NOT EXISTS article_category (
@@ -127,14 +129,12 @@ CREATE TABLE IF NOT EXISTS board_icon (
 
 CREATE TABLE IF NOT EXISTS board_config (
     id                BIGINT   PRIMARY KEY AUTO_INCREMENT,
-    board_id          BIGINT   NOT NULL,
     board_icon_id     BIGINT   NOT NULL,
     pop_least_like    BIGINT   NOT NULL    DEFAULT 0,
     dislike_available BOOLEAN  NOT NULL    DEFAULT TRUE,
     dislike_influence BOOLEAN  NOT NULL    DEFAULT TRUE,
     updated_at        DATETIME NOT NULL    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-    CONSTRAINT fk_board_config_board_id      FOREIGN KEY (board_id)      REFERENCES board(id),
     CONSTRAINT fk_board_config_board_icon_id FOREIGN KEY (board_icon_id) REFERENCES board_icon(id),
     CONSTRAINT uk_board_config_board_id      UNIQUE      (board_id) -- 게시판 설정 중복 제약
 );
