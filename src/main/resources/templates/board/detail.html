@@ -6,9 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>게시판</title>
-	<th:block layout:fragment="head">
-		
-	</th:block>
+	<script defer src="/js/board.js"></script>
 </head>
 
 <body>
@@ -16,8 +14,8 @@
 		<div class="container-fluid mt-4">
 			<div class="row">
 				<div class="col-lg-9">
-					<th:block th:replace="~{ fragments/board/search }" />
-					<th:block th:replace="~{ fragments/board/articlelist }"/>
+					<th:block th:replace="~{ fragments/board/article }" />
+					<th:block th:replace="~{ fragments/board/comment }" />
 				</div>
 				<div class="col-lg-3 d-none d-lg-block">
 					<th:block th:replace="~{ fragments/sidebar }"/>
