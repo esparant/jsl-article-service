@@ -35,6 +35,7 @@
 | 마크업     | HTML                   |  최신  |              |
 | 디자인    | CSS                    |  최신 |                   |
 | 스크립트 언어 | JavaScript             | ES6 이상 |                   |
+| JS 라이브러리 | JQuery             | 3.7.0 |   JQuery Sortable 포함   |
 | UI 프레임워크 | Bootstrap             |  5.2.x |                   |
 | 화면 설계 도구 | Google 프레젠테이션    |   -   |                   |
 | ERD 작성 도구 | ERDCloud              |  -    | [링크](https://www.erdcloud.com/d/NP5AQzpvCAXhcpeKk)  |
