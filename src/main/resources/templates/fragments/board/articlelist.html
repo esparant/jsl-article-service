@@ -9,40 +9,41 @@
 			</div>
 			<div class="col-auto">
 				<div style="width: 20rem;">
-					<div class="row fs-6">
+					<div class="row g-0">
 						<div class="col-3">닉네임</div>
-						<div class="col-5">작성일</div>
-						<div class="col">조회수</div>
+						<div class="col-4">작성일</div>
+						<div class="col-3">조회수</div>
 						<div class="col">개추</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-	<li
-		th:each="item : ${#numbers.sequence(1, 25)}"
+	<th:block th:each="index : ${#numbers.sequence(0, 4)}">
+		<li
+		th:each="item, stat : ${ {'(공략) 터져버린 수박같은 사슴.jpg', '(질문) 나는 야갓규진', '봇치더락은 케이온 파쿠리임', '봇치더락 보는 사람있나? ㅋㅋ', '안녕하세요', '아지부카메 반자이'} }"
 		class="list-group-item list-group-item-action">
-		<a href="/sdfsdf" class="stretched-link"></a>
-		<div class="row">
-			<div class="col">
-				<div class="row">
-					<div class="col-auto d-none d-sm-block">12345</div>
-					<div class="col">제목입니다.</div>
-				</div>
-			</div>
-			<div class="col-12 col-sm-auto">
-				<div style="width: 20rem;">
+			<a href="/sdfsdf" class="stretched-link"></a>
+			<div class="row">
+				<div class="col">
 					<div class="row">
-						<div class="col col-sm-3">김삿갓</div>
-						<div class="col-auto col-sm-5">2022-05-05</div>
-						<div class="col-auto col-sm">2523</div>
-						<div class="col-auto col-sm">33</div>
+						<div class="col-auto d-none d-sm-block" th:text="${ 1557 - (index * 6) - stat.index }">12345</div>
+						<div class="col text-truncate" th:text="${ item}">제목입니다.</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-auto">
+					<div style="width: 20rem;">
+						<div class="row g-2 g-sm-0">
+							<div class="col col-sm-3 text-truncate">ㅇㅇ</div>
+							<div class="col-auto col-sm-4 text-truncate" th:text="'25.09.0' + ${7 - index}">25.09.07</div>
+							<div class="col-auto col-sm-3 text-truncate" th:text="${(T(java.lang.Math).random() * 6974).intValue()}">2523</div>
+							<div class="col-auto col-sm text-truncate" th:text="${(T(java.lang.Math).random() * 100).intValue()}">12345</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</li>
+		</li>
+	</th:block>
 </div>
 
 <!-- 버튼 그룹 -->
@@ -52,7 +53,7 @@
 		<button type="button" class="btn btn-primary active">최신순</button>
 	</div>
 	
-	<a class="btn btn-primary-emphasis" role="button">글쓰기</a>
+	<a href="/board/write" class="btn btn-primary-emphasis" role="button">글쓰기</a>
 </div>
 
 <!-- 페이지네이션 -->
