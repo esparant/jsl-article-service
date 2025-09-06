@@ -93,3 +93,9 @@
 .section-content::-webkit-scrollbar-thumb:hover {
     background: #a8a8a8;
 }
+
+.delete-button {
+    width: 100px;
+    height: 100px;
+    padding: 0; /* 버튼 내 기본 패딩 제거 */
+}
