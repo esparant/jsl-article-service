@@ -100,4 +100,14 @@
 	background-color: #f8f9fa;
 	padding: 10px;
 }
+
+.section-content.intro-edit {
+	padding-bottom: 0px !important;
+	background-color: #f8f9fa;
+	padding: 13px;
+}
+
+.section-content.outro { /* section-content중에 줄넘기면 안되는 애들 */
+	flex-direction: row; /* 기본값으로 돌림 */
+}
 /* 사용자 정보 표시 css > end */
