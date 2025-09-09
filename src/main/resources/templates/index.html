@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/base}">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>메인</title>
+	<th:block layout:fragment="head">
+
+	</th:block>
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<div class="container-fluid mt-4 main-content">
+			<div class="row">
+				<!-- 메인 컨텐츠 -->
+				<div class="col-lg-9">
+					<!-- 구독 채널 섹션 -->
+					<div class="bg-primary-gradient rounded-4 p-4 mb-4">
+						<div class="row align-items-center position-relative">
+							<div class="col-md-12 z-1">
+								<h1 class="display-6 fw-bold mb-3">MinaBoard</h1>
+								<div class="subscribed-channels">
+									<div class="scroll-btn scroll-btn-left" onclick="scrollChannels(-1)">
+										<i class="bi bi-chevron-left text-primary"></i>
+									</div>
+									<div class="channel-scroll" id="channelScroll">
+										<a href="/board/1" class="channel-item">
+											<img src="/img/uploads/icon/fire.webp" alt="자유게시판" class="channel-avatar">
+											<div class="channel-name">자유게시판</div>
+										</a>
+										<a href="/board/2" class="channel-item">
+											<img src="/img/uploads/icon/robot.webp" alt="IT/개발" class="channel-avatar">
+											<div class="channel-name">IT/개발</div>
+										</a>
+										<a href="/board/3" class="channel-item">
+											<div
+												class="channel-avatar bg-secondary d-flex align-items-center justify-content-center  fw-bold">
+												사</div>
+											<div class="channel-name">사진/갤러리</div>
+										</a>
+										<a href="/board/4" class="channel-item">
+											<div
+												class="channel-avatar bg-warning d-flex align-items-center justify-content-center  fw-bold">
+												독</div>
+											<div class="channel-name">독서/리뷰</div>
+										</a>
+										<a href="/board/5" class="channel-item">
+											<div
+												class="channel-avatar bg-info d-flex align-items-center justify-content-center  fw-bold">
+												게</div>
+											<div class="channel-name">게임</div>
+										</a>
+										<a href="/board/6" class="channel-item">
+											<div
+												class="channel-avatar bg-danger d-flex align-items-center justify-content-center  fw-bold">
+												연</div>
+											<div class="channel-name">연애/관계</div>
+										</a>
+										<a href="/board/7" class="channel-item">
+											<div
+												class="channel-avatar bg-success d-flex align-items-center justify-content-center  fw-bold">
+												여</div>
+											<div class="channel-name">여행</div>
+										</a>
+										<a href="/board/8" class="channel-item">
+											<div
+												class="channel-avatar bg-primary d-flex align-items-center justify-content-center  fw-bold">
+												취</div>
+											<div class="channel-name">취업/커리어</div>
+										</a>
+										<a href="/board/9" class="channel-item">
+											<div
+												class="channel-avatar bg-dark d-flex align-items-center justify-content-center  fw-bold">
+												음</div>
+											<div class="channel-name">음악</div>
+										</a>
+										<a href="/board/10" class="channel-item">
+											<div
+												class="channel-avatar bg-purple d-flex align-items-center justify-content-center  fw-bold">
+												요</div>
+											<div class="channel-name">요리</div>
+										</a>
+										<a href="/board/11" class="channel-item">
+											<div
+												class="channel-avatar bg-orange d-flex align-items-center justify-content-center  fw-bold">
+												스</div>
+											<div class="channel-name">스포츠</div>
+										</a>
+									</div>
+									<div class="scroll-btn scroll-btn-right" onclick="scrollChannels(1)">
+										<i class="bi bi-chevron-right"></i>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 text-center position-absolute top-50 end-0 translate-middle-y">
+								<img src="/img/MinnaBoard-logo-transparent_cut.png" alt="MinnaBoard Logo" class="img-fluid"
+									style="max-height: 200px;">
+							</div>
+						</div>
+					</div>
+
+					<!-- 상위 게시판 섹션 -->
+					<div class="mb-5">
+						<h2 class="h4 fw-bold mb-4"><i class="bi bi-fire text-danger"></i> 인기 게시판 TOP 8</h2>
+
+						<div class="row">
+							<!-- 게시판 1 -->
+							<div class="col-md-6 mb-4">
+								<div class="card h-100 board-card">
+									<div class="card-body">
+										<div class="d-flex align-items-center mb-3">
+											<img src="/img/uploads/icon/fire.webp" alt="자유게시판" class="board-icon me-2">
+											<h5 class="card-title mb-0"><a href="/board/1" class="text-decoration-none">자유게시판</a></h5>
+										</div>
+										<p class="card-text text-muted small">자유로운 소통의 공간</p>
+										<div class="mb-3">
+											<span class="badge bg-success me-1">회원 1,234명</span>
+											<span class="badge bg-primary">오늘 글 45개</span>
+										</div>
+										<div class="list-group list-group-flush">
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/1/post/123" class="text-decoration-none">오늘 날씨가 정말 좋네요!</a>
+															<span class="text-muted small">[3]</span>
+														</h6>
+														<small class="text-muted">닉네임1</small>
+													</div>
+													<small class="text-muted ms-2">5분전</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/1/post/124" class="text-decoration-none">주말 계획 있으신가요?</a>
+															<span class="text-muted small">[7]</span>
+														</h6>
+														<small class="text-muted">닉네임2</small>
+													</div>
+													<small class="text-muted ms-2">23분전</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/1/post/125" class="text-decoration-none">맛집 추천 부탁드려요</a>
+															<span class="text-muted small">[0]</span>
+														</h6>
+														<small class="text-muted">닉네임3</small>
+													</div>
+													<small class="text-muted ms-2">1시간전</small>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- 게시판 2 -->
+							<div class="col-md-6 mb-4">
+								<div class="card h-100 board-card">
+									<div class="card-body">
+										<div class="d-flex align-items-center mb-3">
+											<img src="/img/uploads/icon/robot.webp" alt="IT/개발" class="board-icon me-2">
+											<h5 class="card-title mb-0"><a href="/board/2" class="text-decoration-none">IT/개발</a></h5>
+										</div>
+										<p class="card-text text-muted small">개발자들의 정보 공유</p>
+										<div class="mb-3">
+											<span class="badge bg-success me-1">회원 856명</span>
+											<span class="badge bg-primary">오늘 글 23개</span>
+										</div>
+										<div class="list-group list-group-flush">
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/2/post/201" class="text-decoration-none">Spring Boot 질문입니다</a>
+															<span class="text-muted small">[15]</span>
+														</h6>
+														<small class="text-muted">개발자A</small>
+													</div>
+													<small class="text-muted ms-2">12분전</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/2/post/202" class="text-decoration-none">MySQL 성능 최적화 팁</a>
+															<span class="text-muted small">[23]</span>
+														</h6>
+														<small class="text-muted">DB전문가</small>
+													</div>
+													<small class="text-muted ms-2">45분전</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/2/post/203" class="text-decoration-none">신입 개발자 취업 후기</a>
+															<span class="text-muted small">[8]</span>
+														</h6>
+														<small class="text-muted">신입개발자</small>
+													</div>
+													<small class="text-muted ms-2">2시간전</small>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- 게시판 3 -->
+							<div class="col-md-6 mb-4">
+								<div class="card h-100 board-card">
+									<div class="card-body">
+										<div class="d-flex align-items-center mb-3">
+											<div class="board-icon-text bg-secondary me-2">사</div>
+											<h5 class="card-title mb-0"><a href="/board/3" class="text-decoration-none">사진/갤러리</a></h5>
+										</div>
+										<p class="card-text text-muted small">아름다운 순간들을 공유</p>
+										<div class="mb-3">
+											<span class="badge bg-success me-1">회원 623명</span>
+											<span class="badge bg-primary">오늘 글 18개</span>
+										</div>
+										<div class="list-group list-group-flush">
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/3/post/301" class="text-decoration-none">벚꽃 사진 찍었어요</a>
+															<span class="text-muted small">[12]</span>
+														</h6>
+														<small class="text-muted">사진작가</small>
+													</div>
+													<small class="text-muted ms-2">30분전</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/3/post/302" class="text-decoration-none">카메라 추천 받습니다</a>
+															<span class="text-muted small">[5]</span>
+														</h6>
+														<small class="text-muted">초보사진러</small>
+													</div>
+													<small class="text-muted ms-2">1시간전</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/3/post/303" class="text-decoration-none">풍경사진 보정 팁</a>
+															<span class="text-muted small">[18]</span>
+														</h6>
+														<small class="text-muted">포토샵러</small>
+													</div>
+													<small class="text-muted ms-2">3시간전</small>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- 게시판 4 -->
+							<div class="col-md-6 mb-4">
+								<div class="card h-100 board-card">
+									<div class="card-body">
+										<div class="d-flex align-items-center mb-3">
+											<div class="board-icon-text bg-warning me-2">독</div>
+											<h5 class="card-title mb-0"><a href="/board/4" class="text-decoration-none">독서/리뷰</a></h5>
+										</div>
+										<p class="card-text text-muted small">책과 함께하는 지식 공유</p>
+										<div class="mb-3">
+											<span class="badge bg-success me-1">회원 445명</span>
+											<span class="badge bg-primary">오늘 글 12개</span>
+										</div>
+										<div class="list-group list-group-flush">
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/4/post/401" class="text-decoration-none">이번 달 읽은 책 추천</a>
+															<span class="text-muted small">[6]</span>
+														</h6>
+														<small class="text-muted">독서왕</small>
+													</div>
+													<small class="text-muted ms-2">어제</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/4/post/402" class="text-decoration-none">SF 소설 좋아하시는 분?</a>
+															<span class="text-muted small">[11]</span>
+														</h6>
+														<small class="text-muted">SF매니아</small>
+													</div>
+													<small class="text-muted ms-2">어제</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/4/post/403" class="text-decoration-none">독서 모임 만들어요</a>
+															<span class="text-muted small">[0]</span>
+														</h6>
+														<small class="text-muted">모임장</small>
+													</div>
+													<small class="text-muted ms-2">일주일이내</small>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- 게시판 5 -->
+							<div class="col-md-6 mb-4">
+								<div class="card h-100 board-card">
+									<div class="card-body">
+										<div class="d-flex align-items-center mb-3">
+											<div class="board-icon-text bg-info me-2">게</div>
+											<h5 class="card-title mb-0"><a href="/board/5" class="text-decoration-none">게임</a></h5>
+										</div>
+										<p class="card-text text-muted small">게임 소식과 공략</p>
+										<div class="mb-3">
+											<span class="badge bg-success me-1">회원 789명</span>
+											<span class="badge bg-primary">오늘 글 31개</span>
+										</div>
+										<div class="list-group list-group-flush">
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/5/post/501" class="text-decoration-none">신작 게임 리뷰</a>
+															<span class="text-muted small">[25]</span>
+														</h6>
+														<small class="text-muted">게이머</small>
+													</div>
+													<small class="text-muted ms-2">15분전</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/5/post/502" class="text-decoration-none">같이 게임하실 분?</a>
+															<span class="text-muted small">[4]</span>
+														</h6>
+														<small class="text-muted">파티원모집</small>
+													</div>
+													<small class="text-muted ms-2">35분전</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/5/post/503" class="text-decoration-none">보스 공략법 공유</a>
+															<span class="text-muted small">[19]</span>
+														</h6>
+														<small class="text-muted">공략러</small>
+													</div>
+													<small class="text-muted ms-2">1시간전</small>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- 게시판 6 -->
+							<div class="col-md-6 mb-4">
+								<div class="card h-100 board-card">
+									<div class="card-body">
+										<div class="d-flex align-items-center mb-3">
+											<div class="board-icon-text bg-danger me-2">연</div>
+											<h5 class="card-title mb-0"><a href="/board/6" class="text-decoration-none">연애/관계</a></h5>
+										</div>
+										<p class="card-text text-muted small">소중한 관계에 대한 이야기</p>
+										<div class="mb-3">
+											<span class="badge bg-success me-1">회원 567명</span>
+											<span class="badge bg-primary">오늘 글 19개</span>
+										</div>
+										<div class="list-group list-group-flush">
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/6/post/601" class="text-decoration-none">첫 데이트 장소 추천</a>
+															<span class="text-muted small">[13]</span>
+														</h6>
+														<small class="text-muted">설렘이</small>
+													</div>
+													<small class="text-muted ms-2">25분전</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/6/post/602" class="text-decoration-none">연애 상담 부탁드려요</a>
+															<span class="text-muted small">[27]</span>
+														</h6>
+														<small class="text-muted">고민이</small>
+													</div>
+													<small class="text-muted ms-2">1시간전</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/6/post/603" class="text-decoration-none">오랜 친구와의 갈등</a>
+															<span class="text-muted small">[9]</span>
+														</h6>
+														<small class="text-muted">우정러</small>
+													</div>
+													<small class="text-muted ms-2">2시간전</small>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- 게시판 7 -->
+							<div class="col-md-6 mb-4">
+								<div class="card h-100 board-card">
+									<div class="card-body">
+										<div class="d-flex align-items-center mb-3">
+											<div class="board-icon-text bg-success me-2">여</div>
+											<h5 class="card-title mb-0"><a href="/board/7" class="text-decoration-none">여행</a></h5>
+										</div>
+										<p class="card-text text-muted small">세계 곳곳의 여행 이야기</p>
+										<div class="mb-3">
+											<span class="badge bg-success me-1">회원 698명</span>
+											<span class="badge bg-primary">오늘 글 27개</span>
+										</div>
+										<div class="list-group list-group-flush">
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/7/post/701" class="text-decoration-none">제주도 3박 4일 후기</a>
+															<span class="text-muted small">[32]</span>
+														</h6>
+														<small class="text-muted">여행러버</small>
+													</div>
+													<small class="text-muted ms-2">40분전</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/7/post/702" class="text-decoration-none">유럽 배낭여행 계획</a>
+															<span class="text-muted small">[14]</span>
+														</h6>
+														<small class="text-muted">배낭객</small>
+													</div>
+													<small class="text-muted ms-2">1시간전</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/7/post/703" class="text-decoration-none">숨은 맛집 발견!</a>
+															<span class="text-muted small">[21]</span>
+														</h6>
+														<small class="text-muted">맛집헌터</small>
+													</div>
+													<small class="text-muted ms-2">3시간전</small>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- 게시판 8 -->
+							<div class="col-md-6 mb-4">
+								<div class="card h-100 board-card">
+									<div class="card-body">
+										<div class="d-flex align-items-center mb-3">
+											<div class="board-icon-text bg-primary me-2">취</div>
+											<h5 class="card-title mb-0"><a href="/board/8" class="text-decoration-none">취업/커리어</a></h5>
+										</div>
+										<p class="card-text text-muted small">취업과 커리어 개발</p>
+										<div class="mb-3">
+											<span class="badge bg-success me-1">회원 923명</span>
+											<span class="badge bg-primary">오늘 글 35개</span>
+										</div>
+										<div class="list-group list-group-flush">
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/8/post/801" class="text-decoration-none">면접 후기 공유합니다</a>
+															<span class="text-muted small">[17]</span>
+														</h6>
+														<small class="text-muted">취준생A</small>
+													</div>
+													<small class="text-muted ms-2">20분전</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/8/post/802" class="text-decoration-none">이직 고민중입니다</a>
+															<span class="text-muted small">[24]</span>
+														</h6>
+														<small class="text-muted">직장인B</small>
+													</div>
+													<small class="text-muted ms-2">50분전</small>
+												</div>
+											</div>
+											<div class="list-group-item px-0 py-2 border-0">
+												<div class="d-flex justify-content-between align-items-start">
+													<div class="flex-grow-1">
+														<h6 class="mb-1 text-truncate">
+															<a href="/board/8/post/803" class="text-decoration-none">자격증 추천 부탁</a>
+															<span class="text-muted small">[8]</span>
+														</h6>
+														<small class="text-muted">스펙업</small>
+													</div>
+													<small class="text-muted ms-2">2시간전</small>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="text-center mt-4">
+							<a href="/board/list" class="btn btn-outline-primary btn-lg">
+								<i class="bi bi-grid"></i> 모든 게시판 보기
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- 사이드바 -->
+				<div class="col-lg-3">
+					<div class="sticky-top" style="top: 20px;">
+						<!-- 현재 게시판 인기글 -->
+						<div class="card mb-4">
+							<div class="card-header bg-primary ">
+								<h6 class="mb-0">
+									<i class="bi bi-star-fill"></i> 이 게시판 인기글
+								</h6>
+							</div>
+							<div class="list-group list-group-flush">
+								<a href="/board/2/post/999" class="list-group-item list-group-item-action">
+									<div class="d-flex w-100 justify-content-between">
+										<h6 class="mb-1 text-truncate">Spring Boot 완벽 가이드</h6>
+										<small>2시간전</small>
+									</div>
+									<p class="mb-1 small text-muted">개발 | 추천 125</p>
+								</a>
+								<a href="/board/2/post/998" class="list-group-item list-group-item-action">
+									<div class="d-flex w-100 justify-content-between">
+										<h6 class="mb-1 text-truncate">MySQL 성능 최적화 노하우</h6>
+										<small>4시간전</small>
+									</div>
+									<p class="mb-1 small text-muted">개발 | 추천 89</p>
+								</a>
+								<a href="/board/8/post/997" class="list-group-item list-group-item-action">
+									<div class="d-flex w-100 justify-content-between">
+										<h6 class="mb-1 text-truncate">개발자 취업 성공기</h6>
+										<small>어제</small>
+									</div>
+									<p class="mb-1 small text-muted">취업 | 추천 156</p>
+								</a>
+								<a href="/board/3/post/996" class="list-group-item list-group-item-action">
+									<div class="d-flex w-100 justify-content-between">
+										<h6 class="mb-1 text-truncate">벚꽃 사진 촬영 팁</h6>
+										<small>일주일이내</small>
+									</div>
+									<p class="mb-1 small text-muted">사진 | 추천 78</p>
+								</a>
+							</div>
+						</div>
+
+						<!-- 다른 게시판 인기글 -->
+						<div class="card mb-4">
+							<div class="card-header bg-secondary ">
+								<h6 class="mb-0">
+									<i class="bi bi-fire"></i> 다른 게시판 인기글
+								</h6>
+							</div>
+							<div class="list-group list-group-flush">
+								<a href="/board/7/post/995" class="list-group-item list-group-item-action">
+									<div class="d-flex w-100 justify-content-between">
+										<h6 class="mb-1 text-truncate">제주도 숨은 맛집 대공개</h6>
+										<small>1시간전</small>
+									</div>
+									<p class="mb-1 small text-muted">여행 | 추천 234</p>
+								</a>
+								<a href="/board/5/post/994" class="list-group-item list-group-item-action">
+									<div class="d-flex w-100 justify-content-between">
+										<h6 class="mb-1 text-truncate">신작 게임 완전 정복</h6>
+										<small>3시간전</small>
+									</div>
+									<p class="mb-1 small text-muted">게임 | 추천 189</p>
+								</a>
+								<a href="/board/4/post/993" class="list-group-item list-group-item-action">
+									<div class="d-flex w-100 justify-content-between">
+										<h6 class="mb-1 text-truncate">독서 취미 시작하기</h6>
+										<small>5시간전</small>
+									</div>
+									<p class="mb-1 small text-muted">독서 | 추천 145</p>
+								</a>
+								<a href="/board/6/post/992" class="list-group-item list-group-item-action">
+									<div class="d-flex w-100 justify-content-between">
+										<h6 class="mb-1 text-truncate">연애 고수의 데이트 팁</h6>
+										<small>어제</small>
+									</div>
+									<p class="mb-1 small text-muted">연애 | 추천 267</p>
+								</a>
+								<a href="/board/8/post/991" class="list-group-item list-group-item-action">
+									<div class="d-flex w-100 justify-content-between">
+										<h6 class="mb-1 text-truncate">취업 면접 필승 전략</h6>
+										<small>07-25</small>
+									</div>
+									<p class="mb-1 small text-muted">취업 | 추천 198</p>
+								</a>
+							</div>
+						</div>
+
+						<!-- 공지사항 -->
+						<div class="card mb-4">
+							<div class="card-header bg-warning text-dark">
+								<h6 class="mb-0">
+									<i class="bi bi-megaphone"></i> 공지사항
+								</h6>
+							</div>
+							<div class="card-body">
+								<div class="small">
+									<div class="mb-2">
+										<a href="#" class="text-decoration-none">• 게시판 개설 비용 할인 이벤트</a>
+										<div class="text-muted">07-25</div>
+									</div>
+									<div class="mb-2">
+										<a href="#" class="text-decoration-none">• 이모티콘 시스템 업데이트</a>
+										<div class="text-muted">07-20</div>
+									</div>
+									<div class="mb-2">
+										<a href="#" class="text-decoration-none">• 포인트 적립 방식 개선</a>
+										<div class="text-muted">07-15</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 통계 정보 -->
+						<div class="card">
+							<div class="card-header bg-info ">
+								<h6 class="mb-0">
+									<i class="bi bi-graph-up"></i> 사이트 통계
+								</h6>
+							</div>
+							<div class="card-body">
+								<div class="row text-center">
+									<div class="col-6">
+										<div class="h5 text-primary">156</div>
+										<div class="small text-muted">게시판 수</div>
+									</div>
+									<div class="col-6">
+										<div class="h5 text-primary">12,847</div>
+										<div class="small text-muted">총 회원 수</div>
+									</div>
+								</div>
+								<hr>
+								<div class="row text-center">
+									<div class="col-6">
+										<div class="h5 text-secondary-custom">2,156</div>
+										<div class="small text-muted">오늘 게시글</div>
+									</div>
+									<div class="col-6">
+										<div class="h5 text-secondary-custom">456</div>
+										<div class="small text-muted">접속자 수</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

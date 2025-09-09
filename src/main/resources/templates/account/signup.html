@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/clean}">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<th:block layout:fragment="head">
+		<link rel="stylesheet" href="/css/account.css">
+		<script defer src="/js/account.js"></script>
+	</th:block>
+</head>
+
+<body>
+	<th:block layout:fragment="content">
+		<div class=" bg-gradient-custom">
+
+			<div class="container h-dvh">
+				<div class="d-flex h-100 justify-content-center align-items-center">
+
+					<div class="login">
+
+						<div class="card shadow-sm">
+							<div class="card-body">
+								<h2 class="text-center py-4">회원가입</h2>
+								<form method="post" th:action="@{signup}" class="needs-validation" novalidate>
+									<div class="mb-3">
+										<label for="email" class="form-label">이메일</label>
+										<div class="input-group">
+											<input type="email" class="form-control" id="email" placeholder="youremail@example.com" required>
+											<button class="btn btn-outline-success" type="button" onclick="sendConfirmCode()">전송</button>
+											<div class="invalid-feedback">정확한 이메일을 입력해주세요.</div>
+										</div>
+									</div>
+									<div class="mb-3 confirmLine" hidden>
+										<label for="emailConfirmKey" class="form-label">인증번호</label>
+										<div class="input-group">
+											<input type="email" class="form-control" id="emailConfirmKey" placeholder="000000" required maxlength="6">
+											<button class="btn btn-outline-success" type="button" onclick="verifyConfirmCode()">인증</button>
+											<div class="invalid-feedback">정확한 인증코드를 입력해주세요.</div>
+										</div>
+									</div>
+									<div class="mb-3">
+										<label for="nickname" class="form-label">닉네임</label>
+										<input type="text" class="form-control" id="nickname" placeholder="minboong" required>
+										<div class="invalid-feedback">닉네임을 입력해주세요.</div>
+									</div>
+									<div class="mb-3">
+										<label for="password" class="form-label">비밀번호</label>
+										<input type="password" class="form-control" id="password" placeholder="**********" required>
+										<div class="invalid-feedback">비밀번호를 입력해주세요.</div>
+									</div>
+									<div class="mb-3">
+										<label for="repassword" class="form-label">비밀번호 확인</label>
+										<input type="password" class="form-control" id="repassword" placeholder="**********" required>
+										<div class="invalid-feedback">비밀번호를 확인해주세요.</div>
+									</div>
+									<button type="submit" class="btn bg-primary w-100" onclick="signup()">회원가입</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</th:block>
+</body>
+
+</html>

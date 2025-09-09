@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html
+	lang="ko"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">ANONBOARD</title>
+	<th:block th:replace="~{ fragments/resource }"></th:block>
+	<th:block layout:fragment="head"/>
+</head>
+<body>
+	<th:block th:replace="~{ fragments/header }"/>
+	<th:block layout:fragment="content"/>
+	<th:block th:replace="~{ fragments/footer }"/>
+</body>
+</html>
