@@ -1,20 +1,98 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="~{layouts/base}">
+	  layout:decorate="~{layouts/base}">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>이모티콘 샵</title>
 	<th:block layout:fragment="head">
-		
+		<link rel="stylesheet" href="/css/emoji.css">
 	</th:block>
 </head>
 
 <body>
-	<div layout:fragment="content">
-		<h1>템플릿</h1>
-	</div>
-</body>
+<div layout:fragment="content" class="emoticon-shop-container">
+	<h1>이모티콘 샵</h1>
 
+	<div class="header-section">
+		<div class="popular-emoticons">
+			<h2>인기 이모티콘</h2>
+			<div class="tabs">
+				<button class="tab-button">일간</button>
+				<button class="tab-button">주간</button>
+				<button class="tab-button">월간</button>
+			</div>
+			<div class="emoticon-display-container">
+				<div class="emoticon-item">
+					<img src="..." alt="이모티콘 사진" class="emoticon-img">
+					<span class="emoticon-name">이모티콘 이름</span>
+					<span class="emoticon-author">작성자</span>
+					<span class="emoticon-sales">판매수</span>
+					<button class="buy-button">구매버튼</button>
+				</div>
+				<div class="emoticon-item">
+					<img src="..." alt="이모티콘 사진" class="emoticon-img">
+					<span class="emoticon-name">이모티콘 이름</span>
+					<span class="emoticon-author">작성자</span>
+					<span class="emoticon-sales">판매수</span>
+					<button class="buy-button">구매버튼</button>
+				</div>
+			</div>
+			<button class="full-list-button">전체 이모티콘</button>
+		</div>
+
+		<div class="popular-emoticon-sets">
+			<h2>인기 이모티콘 모음</h2>
+			<div class="tabs">
+				<button class="tab-button">일간</button>
+				<button class="tab-button">주간</button>
+				<button class="tab-button">월간</button>
+			</div>
+			<div class="emoticon-display-container">
+				<div class="emoticon-item">
+					<img src="..." alt="이모티콘 사진" class="emoticon-img">
+					<span class="emoticon-name">이모티콘 이름</span>
+					<span class="emoticon-author">작성자</span>
+					<span class="emoticon-sales">판매수</span>
+					<button class="buy-button">구매버튼</button>
+				</div>
+				<div class="emoticon-item">
+					<img src="..." alt="이모티콘 사진" class="emoticon-img">
+					<span class="emoticon-name">이모티콘 이름</span>
+					<span class="emoticon-author">작성자</span>
+					<span class="emoticon-sales">판매수</span>
+					<button class="buy-button">구매버튼</button>
+				</div>
+			</div>
+			<button class="full-list-button">전체 이모티콘 모음</button>
+		</div>
+	</div>
+
+	<div class="search-and-register">
+		<input type="text" placeholder="이모티콘 검색" class="search-input">
+		<button class="register-button">등록하기</button>
+	</div>
+
+	<div class="latest-emoticons-section">
+		<h3>최신순 이모티콘 쨔르륵 (4행 5열)</h3>
+		<div class="emoticon-grid">
+			<div class="emoticon-item-grid">
+				<img src="..." alt="이모티콘 사진" class="emoticon-img">
+				<span class="emoticon-name">이모티콘 이름</span>
+				<span class="emoticon-author">작성자</span>
+				<span class="emoticon-sales">판매수</span>
+				<button class="buy-button">구매버튼</button>
+			</div>
+			<div class="emoticon-item-grid">
+				<img src="..." alt="이모티콘 사진" class="emoticon-img">
+				<span class="emoticon-name">이모티콘 이름</span>
+				<span class="emoticon-author">작성자</span>
+				<span class="emoticon-sales">판매수</span>
+				<button class="buy-button">구매버튼</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
 </html>
