@@ -99,3 +99,13 @@
     height: 100px;
     padding: 0; /* 버튼 내 기본 패딩 제거 */
 }
+
+.anchor-primary.on-delete {
+    color: var(--bs-danger); /* 예: 빨간색으로 변경 */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.undo-btn {
+    margin-left: 10px;
+}
