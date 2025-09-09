@@ -30,8 +30,8 @@
 					<div class="section-label hstack">자기소개</div>
 					<div class="section-content intro-edit">
 						<div class="input-group mb-3">
-							<input type="text" class="form-control" id="introduce" name="introduce"
-								placeholder="자기소개를 작성하지 않았습니다." value="안녕하세요. 사키코를 좋아하는 군필여고생 입니다.">
+							<input type="text" class="form-control" id="introduce" name="introduce" placeholder="자기소개를 작성하지 않았습니다."
+								value="안녕하세요. 사키코를 좋아하는 군필여고생 입니다.">
 						</div>
 
 					</div>
@@ -41,7 +41,7 @@
 					<div class="section-label hstack">작성글&nbsp;<span class="section-count">48</span>&nbsp;개<span
 							class="ms-auto text-secondary-emphasis">글 제목 클릭 시 삭제됩니다</span></div>
 					<input type="hidden" id="article-delete" name="article-delete" value="">
-					<div class="section-content">
+					<div class="section-content" id="article-list">
 						<div class="section-line d-flex">
 							<div class="p-2"><span class="badge bg-primary-emphasis">아베무지카</span></div>
 							<div class="p-2 flex-grow-1">
@@ -92,24 +92,48 @@
 				<div class="info-section">
 					<div class="section-label hstack">작성댓글&nbsp;<span class="section-count">48</span>&nbsp;개<span
 							class="ms-auto text-secondary-emphasis">댓글 클릭 시 삭제됩니다</span></div>
-					<div class="section-content">
+					<input type="hidden" id="comment-delete" name="comment-delete" value="">
+					<div class="section-content" id="comment-list">
 						<div class="section-line d-flex">
-							<div class="p-2"><span class="badge bg-primary-emphasis">마이고</span></div>
-							<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">토모리 너무 이쁜거 아님?</a></div>
+							<div class="p-2"><span class="badge bg-primary-emphasis">아베무지카</span></div>
+							<div class="p-2 flex-grow-1">
+								<a class="anchor-primary" href="#" data-id="123">사키코 너무 이쁜거 아님?</a>
+							</div>
+							<button type="button" class="btn btn-sm btn-outline-danger undo-btn d-none" data-id="123"
+								style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">되돌리기</button>
 							<div class="p-2">
 								<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
 							</div>
 						</div>
 						<div class="section-line d-flex">
 							<div class="p-2"><span class="badge bg-primary-emphasis">마이고</span></div>
-							<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">토모리 너무 이쁜거 아님?</a></div>
+							<div class="p-2 flex-grow-1">
+								<a class="anchor-primary" href="#" data-id="456">토모리 너무 이쁜거 아님?</a>
+							</div>
+							<button type="button" class="btn btn-sm btn-outline-danger undo-btn d-none" data-id="456"
+								style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">되돌리기</button>
 							<div class="p-2">
 								<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
 							</div>
 						</div>
 						<div class="section-line d-flex">
-							<div class="p-2"><span class="badge bg-primary-emphasis">마이고</span></div>
-							<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">토모리 너무 이쁜거 아님?</a></div>
+							<div class="p-2"><span class="badge bg-primary-emphasis">걸즈 밴드 크라이</span></div>
+							<div class="p-2 flex-grow-1">
+								<a class="anchor-primary" href="#" data-id="789">모모카 성격 진짜 나쁘다</a>
+							</div>
+							<button type="button" class="btn btn-sm btn-outline-danger undo-btn d-none" data-id="789"
+								style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">되돌리기</button>
+							<div class="p-2">
+								<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
+							</div>
+						</div>
+						<div class="section-line d-flex">
+							<div class="p-2"><span class="badge bg-primary-emphasis">봇치 더 락!</span></div>
+							<div class="p-2 flex-grow-1">
+								<a class="anchor-primary" href="#" data-id="1557">내가 보기엔 키타가 봇치 기타 니퍼질했음</a>
+							</div>
+							<button type="button" class="btn btn-sm btn-outline-danger undo-btn d-none" data-id="1557"
+								style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">되돌리기</button>
 							<div class="p-2">
 								<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
 							</div>
@@ -120,32 +144,48 @@
 				<div class="info-section">
 					<div class="section-label hstack">스크랩목록&nbsp;<span class="section-count">48</span>&nbsp;개<span
 							class="ms-auto text-secondary-emphasis">스크랩 클릭 시 삭제됩니다</span></div>
-					<div class="section-content">
+					<input type="hidden" id="scrap-delete" name="scrap-delete" value="">
+					<div class="section-content" id="scrap-list">
 						<div class="section-line d-flex">
 							<div class="p-2"><span class="badge bg-primary-emphasis">아베무지카</span></div>
-							<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">사키코 너무 이쁜거 아님?</a></div>
+							<div class="p-2 flex-grow-1">
+								<a class="anchor-primary" href="#" data-id="123">사키코 너무 이쁜거 아님?</a>
+							</div>
+							<button type="button" class="btn btn-sm btn-outline-danger undo-btn d-none" data-id="123"
+								style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">되돌리기</button>
 							<div class="p-2">
 								<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
 							</div>
 						</div>
 						<div class="section-line d-flex">
 							<div class="p-2"><span class="badge bg-primary-emphasis">마이고</span></div>
-							<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">토모리 너무 이쁜거 아님?</a></div>
+							<div class="p-2 flex-grow-1">
+								<a class="anchor-primary" href="#" data-id="456">토모리 너무 이쁜거 아님?</a>
+							</div>
+							<button type="button" class="btn btn-sm btn-outline-danger undo-btn d-none" data-id="456"
+								style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">되돌리기</button>
 							<div class="p-2">
 								<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
 							</div>
 						</div>
 						<div class="section-line d-flex">
-							<div class="p-2"><span class="badge bg-primary-emphasis">최대열글자까지가능함</span></div>
-							<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">모모카 성격 진짜 나쁘다</a></div>
+							<div class="p-2"><span class="badge bg-primary-emphasis">걸즈 밴드 크라이</span></div>
+							<div class="p-2 flex-grow-1">
+								<a class="anchor-primary" href="#" data-id="789">모모카 성격 진짜 나쁘다</a>
+							</div>
+							<button type="button" class="btn btn-sm btn-outline-danger undo-btn d-none" data-id="789"
+								style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">되돌리기</button>
 							<div class="p-2">
 								<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
 							</div>
 						</div>
 						<div class="section-line d-flex">
 							<div class="p-2"><span class="badge bg-primary-emphasis">봇치 더 락!</span></div>
-							<div class="p-2 flex-grow-1"><a class="anchor-primary" href="#">내가 보기엔 키타가 봇치 기타 니퍼질했음</a>
+							<div class="p-2 flex-grow-1">
+								<a class="anchor-primary" href="#" data-id="1557">내가 보기엔 키타가 봇치 기타 니퍼질했음</a>
 							</div>
+							<button type="button" class="btn btn-sm btn-outline-danger undo-btn d-none" data-id="1557"
+								style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">되돌리기</button>
 							<div class="p-2">
 								<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
 							</div>
@@ -158,12 +198,13 @@
 						구독게시판목록&nbsp;<span class="section-count">48</span>&nbsp;개
 						<span class="ms-auto text-secondary-emphasis">게시판 이름을 끌어서 순서이동합니다.</span>
 					</div>
-					<div class="section-content p-1 sort-box-sub">
-						<th:block th:each="item : ${#numbers.sequence(1, 4)}">
+					<input type="hidden" id="subscribe-delete" name="subscribe-delete" value="">
+					<div class="section-content p-1 sort-box-sub" id="subscribe-list">
+						<th:block th:each="item : ${#numbers.sequence(0, 1)}">
 							<div class="d-flex sub-sortable align-items-center">
 								<div class="p-2 me-auto">
-									<button type="button" class="disable btn btn-primary-emphasis position-relative handle	"
-										th:data-sub-order="${item * 1}">
+									<button type="button" class="disable btn btn-primary-emphasis position-relative handle"
+										th:data-sub-order="${item * 2 + 1}" th:data-id="${item * 2 + 1}">
 										아베무지카
 										<span
 											class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary-emphasis z-1">
@@ -172,8 +213,8 @@
 									</button>
 								</div>
 								<div class="p-2 me-4">
-									<button type="button" class="btn btn-outline-secondary-emphasis sub-remove"
-										th:data-sub-order="${item * 1}">지우기</button>
+									<button type="button" class="btn btn-outline-secondary-emphasis undo-btn on-delete"
+										th:data-id="${item * 2 + 1}">지우기</button>
 								</div>
 								<div class="p-2">
 									<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
@@ -181,8 +222,8 @@
 							</div>
 							<div class="d-flex sub-sortable align-items-center">
 								<div class="p-2 me-auto">
-									<button type="button" class="disable btn btn-primary-emphasis position-relative handle	"
-										th:data-sub-order="${item * 1}">
+									<button type="button" class="disable btn btn-primary-emphasis position-relative handle"
+										th:data-sub-order="${item * 2 + 2}" th:data-id="${item * 2 + 2}">
 										마이고
 										<span
 											class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary-emphasis z-1">
@@ -191,8 +232,8 @@
 									</button>
 								</div>
 								<div class="p-2 me-4">
-									<button type="button" class="btn btn-outline-secondary-emphasis sub-remove"
-										th:data-sub-order="${item * 1}">지우기</button>
+									<button type="button" class="btn btn-outline-secondary-emphasis undo-btn on-delete"
+										th:data-id="${item * 2 + 2}">지우기</button>
 								</div>
 								<div class="p-2">
 									<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
@@ -207,32 +248,33 @@
 						보유 이모티콘&nbsp;<span class="section-count">23</span>&nbsp;개
 						<span class="ms-auto text-secondary-emphasis">이모티콘을 끌어서 이동/삭제합니다</span>
 					</div>
-					<div class="section-content intro">
+					<div class="section-content intro" id="emoji-list">
 						<div class="m-2 border-bottom fw-bold">사용중&nbsp;<span class="section-count">9</span>&nbsp;개</div>
-						<div class="d-flex flex-wrap sort-box-icon" id="icon-used">
+						<div class="d-flex flex-wrap sort-box-emoji" id="emoji-used">
 							<th:block th:each="item : ${#numbers.sequence(1, 9)}">
-								<img src="/img/uploads/icon/sakiko.png" th:data-icon-used="${item*1}" class="grid-item icon-used m-2"
+								<img src="/img/uploads/icon/sakiko.png" th:data-id="${item*1}" th:data-emoji-used="${item*1}" class="grid-item emoji-used m-2"
 									alt="이모티콘">
 							</th:block>
 						</div>
 						<div class="m-2 border-bottom fw-bold">보유중&nbsp;<span class="section-count">10</span>&nbsp;개</div>
-						<div class="d-flex flex-wrap sort-box-icon" id="icon-owned">
+						<div class="d-flex flex-wrap sort-box-emoji" id="emoji-owned">
 							<th:block th:each="item : ${#numbers.sequence(1, 10)}">
-								<img src="/img/uploads/icon/sakiko.png" th:data-icon-owned="${item*1}" class="m-2" alt="이모티콘">
+								<img src="/img/uploads/icon/sakiko.png" th:data-id="${item*1}" th:data-emoji-owned="${item*1}" class="m-2" alt="이모티콘">
 							</th:block>
 						</div>
 						<div class="m-2 border-bottom fw-bold hstack"><span class="text-secondary-emphasis">이모티콘&nbsp;삭제</span>
 							<span class="ms-auto text-danger">이모티콘을 끌어온 후 삭제버튼 클릭</span>
 						</div>
-						<div class="d-flex flex-wrap sort-box-icon" id="icon-delete">
-							<button type="button" class="delete-button m-2 btn btn-outline-secondary-emphasis">이모티콘<br>삭제</button>
+						<input type="hidden" id="emoji-delete" name="emoji-delete" value="">
+						<div class="d-flex flex-wrap sort-box-emoji" id="emoji-delete">
+							<button type="button" class="delete-button m-2 btn btn-outline-secondary-emphasis disabled">이모티콘<br>삭제</button>
 						</div>
 						<div class="m-2 border-bottom fw-bold hstack">만료됨&nbsp;<span class="section-count">4</span>&nbsp;개
 							<span class="ms-auto text-secondary-emphasis">이모티콘을 클릭하여 재구매합니다</span>
 						</div>
-						<div class="d-flex flex-wrap" id="icon-expired">
+						<div class="d-flex flex-wrap" id="emoji-expired">
 							<th:block th:each="item : ${#numbers.sequence(1, 4)}">
-								<img src="/img/uploads/icon/sakiko.png" th:data-icon-expired="${item*1}" class="m-2" alt="이모티콘">
+								<img src="/img/uploads/icon/sakiko.png" th:data-id="${item*1}" th:data-emoji-expired="${item*1}" class="m-2" alt="이모티콘">
 							</th:block>
 						</div>
 					</div>
