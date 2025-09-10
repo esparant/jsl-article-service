@@ -2,7 +2,6 @@ package com.projects.jslarticle.entity.emoji;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -20,12 +19,7 @@ import lombok.Getter;
  */
 @Table(
         name = "emoji_folder_content",
-        uniqueConstraints = {
-                @UniqueConstraint(
-                        name = "uk_emoji_folder_content_emoji_id_emoji_folder_id",
-                        columnNames = {"emoji_id", "emoji_folder_id"}
-                )
-        }
+        uniqueConstraints = @UniqueConstraint(columnNames = {"emoji_id", "emoji_folder_id"})
 )
 @Entity
 @Getter
@@ -36,18 +30,10 @@ public class EmojiFolderContent {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "emoji_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_emoji_folder_content_emoji_id")
-    )
+    @JoinColumn(name = "emoji_id", nullable = false)
     private Emoji emoji;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "emoji_folder_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_emoji_folder_content_emoji_folder_id")
-    )
+    @JoinColumn(name = "emoji_folder_id", nullable = false)
     private EmojiFolder emojiFolder;
 }

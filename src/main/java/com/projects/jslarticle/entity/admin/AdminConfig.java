@@ -3,7 +3,6 @@ package com.projects.jslarticle.entity.admin;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,10 +27,7 @@ public class AdminConfig {
     private Long id;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "owner_admin_id",
-            foreignKey = @ForeignKey(name = "fk_admin_config_owner_admin_id")
-    )
+    @JoinColumn(name = "owner_admin_id")
     private Admin ownerAdmin;
 
     @OneToOne(mappedBy = "adminConfig")

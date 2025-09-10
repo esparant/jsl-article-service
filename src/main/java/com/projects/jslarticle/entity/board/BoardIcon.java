@@ -4,7 +4,6 @@ import com.projects.jslarticle.entity.admin.Admin;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -30,11 +29,7 @@ public class BoardIcon {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "admin_id",
-            updatable = false,
-            foreignKey = @ForeignKey(name = "fk_board_icon_admin_id")
-    )
+    @JoinColumn(name = "admin_id", updatable = false)
     private Admin admin;
 
     @Column(nullable = false, length = 255)

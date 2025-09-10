@@ -3,7 +3,6 @@ package com.projects.jslarticle.entity.user;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -22,11 +21,7 @@ import lombok.Getter;
  */
 @Table(
         name = "user_block",
-        uniqueConstraints = {
-                @UniqueConstraint(
-                        name = "uk_user_block_user_id_blocked_user_id",
-                        columnNames = {"user_id", "blocked_user_id"})
-        }
+        uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "blocked_user_id"})
 )
 @Entity
 @Getter
@@ -37,19 +32,11 @@ public class UserBlock {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "user_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_user_block_user_id")
-    )
+    @JoinColumn(name = "user_id", nullable = false)
     private User users;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "blocked_user_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_user_blocked_user_id")
-    )
+    @JoinColumn(name = "blocked_user_id", nullable = false)
     private User blockedUsers;
 
     @Column(updatable = false, nullable = false)

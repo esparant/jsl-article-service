@@ -19,9 +19,7 @@ import lombok.Getter;
  */
 @Table(
         name = "role",
-        uniqueConstraints = {
-                @UniqueConstraint(name = "uk_role_role_name", columnNames = {"role_name"})
-        }
+        uniqueConstraints = @UniqueConstraint(columnNames = {"role_name"})
 )
 @Entity
 @Getter

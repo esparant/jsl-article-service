@@ -5,7 +5,6 @@ import com.projects.jslarticle.entity.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -31,34 +30,19 @@ public class Admin {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "board_id",
-            foreignKey = @ForeignKey(name = "fk_admin_board_id")
-    )
+    @JoinColumn(name = "board_id")
     private Board board;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "user_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_admin_user_id")
-    )
+    @JoinColumn(name = "user_id", nullable = false)
     private User users;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "role_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_admin_role_id")
-    )
+    @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "admin_config_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_admin_admin_config_id")
-    )
+    @JoinColumn(name = "admin_config_id", nullable = false)
     private AdminConfig adminConfig;
 
     @Column(updatable = false, nullable = false)

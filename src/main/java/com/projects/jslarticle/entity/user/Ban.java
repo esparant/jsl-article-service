@@ -4,7 +4,6 @@ import com.projects.jslarticle.entity.admin.Admin;
 import com.projects.jslarticle.entity.board.Board;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -29,27 +28,15 @@ public class Ban {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "admin_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_ban_admin_id")
-    )
+    @JoinColumn(name = "admin_id", nullable = false)
     private Admin admin;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "board_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_ban_board_id")
-    )
+    @JoinColumn(name = "board_id", nullable = false)
     private Board board;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "user_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_ban_user_id")
-    )
+    @JoinColumn(name = "user_id", nullable = false)
     private User users;
 
     private String content;

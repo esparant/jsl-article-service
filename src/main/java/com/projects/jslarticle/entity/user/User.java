@@ -19,12 +19,8 @@ import lombok.Getter;
 @Table(
         name = "user",
         uniqueConstraints = {
-                @UniqueConstraint(
-                        name = "uk_user_nickname_tag",
-                        columnNames = {"nickname", "tag"}
-                ),
-                @UniqueConstraint(name = "uk_user_email",
-                        columnNames = {"email"})
+                @UniqueConstraint(columnNames = {"nickname", "tag"}),
+                @UniqueConstraint(columnNames = {"email"})
         }
 )
 @Entity
