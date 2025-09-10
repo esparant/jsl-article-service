@@ -4,7 +4,6 @@ import com.projects.jslarticle.entity.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -23,12 +22,7 @@ import lombok.Getter;
  */
 @Table(
         name = "emoji_folder",
-        uniqueConstraints = {
-                @UniqueConstraint(
-                        name = "uk_emoji_folder_user_id_folder_name",
-                        columnNames = {"user_id", "folder_name"}
-                )
-        }
+        uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "folder_name"})
 )
 @Entity
 @Getter
@@ -39,11 +33,7 @@ public class EmojiFolder {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "user_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_emoji_folder_user_id")
-    )
+    @JoinColumn(name = "user_id", nullable = false)
     private User users;
 
     @Column(nullable = false)

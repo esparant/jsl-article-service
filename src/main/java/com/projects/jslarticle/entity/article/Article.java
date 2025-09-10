@@ -5,7 +5,6 @@ import com.projects.jslarticle.entity.content.Content;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
@@ -24,26 +23,15 @@ import lombok.Getter;
 @Table(name = "article")
 @Entity
 @Getter
-@PrimaryKeyJoinColumn(
-        name = "id",
-        foreignKey = @ForeignKey(name = "fk_article_content_id")
-)
+@PrimaryKeyJoinColumn(name = "id")
 public class Article extends Content {
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "article_category_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_article_article_category_id")
-    )
-
+    @JoinColumn(name = "article_category_id", nullable = false)
     private ArticleCategory articleCategory;
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "role_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_article_role_id")
-    )
+    @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
     @OneToMany(mappedBy = "article")

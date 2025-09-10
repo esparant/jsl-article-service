@@ -5,7 +5,6 @@ import com.projects.jslarticle.entity.content.Content;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
@@ -23,27 +22,15 @@ import lombok.Getter;
  */
 @Table(
         name = "board",
-        uniqueConstraints = {
-                @UniqueConstraint(
-                        name = "uk_board_board_config_id",
-                        columnNames = {"board_config_id"}
-                )
-        }
+        uniqueConstraints = @UniqueConstraint(columnNames = {"board_config_id"})
 )
 @Entity
 @Getter
-@PrimaryKeyJoinColumn(
-        name = "id",
-        foreignKey = @ForeignKey(name = "fk_board_content_id")
-)
+@PrimaryKeyJoinColumn(name = "id")
 public class Board extends Content {
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "board_config_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_board_board_config_id")
-    )
+    @JoinColumn(name = "board_config_id", nullable = false)
     private BoardConfig boardConfig;
 
     @OneToMany(mappedBy = "board")

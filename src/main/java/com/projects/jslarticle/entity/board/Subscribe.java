@@ -4,7 +4,6 @@ import com.projects.jslarticle.entity.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -23,9 +22,7 @@ import lombok.Getter;
  */
 @Table(
         name = "role",
-        uniqueConstraints = {
-                @UniqueConstraint(name = "uk_subscribe_user_id_board_id", columnNames = {"user_id", "board_id"})
-        }
+        uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "board_id"})
 )
 @Entity
 @Getter
@@ -36,19 +33,11 @@ public class Subscribe {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "user_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_subscribe_user_id")
-    )
+    @JoinColumn(name = "user_id", nullable = false)
     private User users;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "board_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_subscribe_board_id")
-    )
+    @JoinColumn(name = "board_id", nullable = false)
     private Board board;
 
     @Column(nullable = false)

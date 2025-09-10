@@ -3,7 +3,6 @@ package com.projects.jslarticle.entity.emoji;
 import com.projects.jslarticle.entity.content.Content;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -17,10 +16,7 @@ import lombok.Getter;
 @Table(name = "emoji")
 @Entity
 @Getter
-@PrimaryKeyJoinColumn(
-        name = "id",
-        foreignKey = @ForeignKey(name = "fk_emoji_content_id")
-)
+@PrimaryKeyJoinColumn(name = "id")
 public class Emoji extends Content {
 
 

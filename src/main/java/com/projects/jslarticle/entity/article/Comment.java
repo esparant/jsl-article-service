@@ -4,7 +4,6 @@ import com.projects.jslarticle.entity.content.Content;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
@@ -22,24 +21,15 @@ import lombok.Getter;
 @Table(name = "comment")
 @Entity
 @Getter
-@PrimaryKeyJoinColumn(
-        name = "id",
-        foreignKey = @ForeignKey(name = "fk_comment_content_id")
-)
+@PrimaryKeyJoinColumn(name = "id")
 public class Comment extends Content {
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(
-            name = "article_id",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "fk_comment_article_id")
-    )
+    @JoinColumn(name = "article_id", nullable = false)
     private Article article;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "parent_id",
-            foreignKey = @ForeignKey(name = "fk_comment_parent_id")
-    )
+    @JoinColumn(name = "parent_id")
     private Comment parent;
 
     @OneToMany(mappedBy = "parent")
