@@ -1,0 +1,8 @@
+<div class="dropdown">
+	<button class="btn btn-ghost dropdown-toggle" data-bs-toggle="dropdown">주요게시판</button>
+	<ul class="dropdown-menu">
+		<li th:each="item, stat : ${ {'방도리','걸방구','마이고아'} }">
+			<a href="" class="dropdown-item" th:text="${ stat.index + 1 } + '. ' + ${ item }"></a>
+		</li>
+	</ul>
+</div>
