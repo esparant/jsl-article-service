@@ -166,3 +166,20 @@
 	--bs-btn-disabled-bg: #AE93FF !important; /* 비활성화 시 배경색: 밝은 보라 */
 	--bs-btn-disabled-border-color: #AE93FF !important; /* 비활성화 시 테두리색: 밝은 보라 */
 }
+
+.btn-outline-primary {
+  --bs-btn-color: #65DFAD !important;
+  --bs-btn-border-color: #65DFAD !important;
+  --bs-btn-hover-color: #fff !important;
+  --bs-btn-hover-bg: #65DFAD !important;
+  --bs-btn-hover-border-color: #65DFAD !important;
+  --bs-btn-focus-shadow-rgb: 101, 223, 173 !important;
+  --bs-btn-active-color: #fff !important;
+  --bs-btn-active-bg: #65DFAD !important;
+  --bs-btn-active-border-color: #65DFAD !important;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+  --bs-btn-disabled-color: #65DFAD !important;
+  --bs-btn-disabled-bg: transparent !important;
+  --bs-btn-disabled-border-color: #65DFAD !important;
+  --bs-gradient: none !important;
+}
