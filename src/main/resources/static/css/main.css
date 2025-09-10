@@ -220,3 +220,7 @@ body {
 .scrollbar-width-none {
   scrollbar-width: none;
 }
+
+.btn-no-arrow.dropdown-toggle::after {
+  display: none !important;
+}
