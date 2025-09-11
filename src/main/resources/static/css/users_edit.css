@@ -1,0 +1,115 @@
+@import url("/css/users.css");
+
+.info-section {
+	margin-bottom: 15px;
+	transition: none;
+}
+
+.info-section:hover {
+	transform: none;
+}
+
+.anchor-primary {
+	color: var(--bs-secondary-emphasis);
+	text-decoration: none;
+}
+
+.anchor-primary:hover {
+	color: var(--bs-red);
+	text-decoration: underline;
+}
+
+/* 드래그 관련 스타일 개선 */
+#delete-zone {
+    transition: all 0.3s ease;
+    border: 2px dashed transparent;
+}
+
+#delete-zone.drag-over {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-color: var(--bs-danger);
+    color: var(--bs-danger);
+    transform: scale(1.02);
+}
+
+/* 드래그 가능한 버튼 스타일 */
+.btn[draggable="true"] {
+    cursor: grab;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.btn[draggable="true"]:active {
+    cursor: grabbing;
+}
+
+/* 드래그 중인 플레이스홀더 스타일 */
+.dragging-placeholder {
+    pointer-events: none;
+    opacity: 0.6;
+    transform: scale(0.95);
+    transition: none !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 2px dashed var(--bs-primary);
+    background-color: rgba(var(--bs-primary-rgb), 0.1) !important;
+}
+
+/* 드래그 컨테이너 스타일 */
+.d-flex.flex-wrap {
+    min-height: 60px;
+    transition: all 0.2s ease;
+}
+
+/* 드래그 중 부드러운 재배열을 위한 스타일 */
+.btn {
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+/* 드래그 존 호버 효과 */
+#sortable-container {
+    transition: all 0.2s ease;
+}
+
+#sortable-container:hover {
+    background-color: rgba(0,0,0,0.02);
+    border-radius: 8px;
+}
+
+/* 스크롤바 스타일링 (선택사항) */
+.section-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.section-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.section-content::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.section-content::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+.delete-button {
+    width: 100px;
+    height: 100px;
+    padding: 0; /* 버튼 내 기본 패딩 제거 */
+}
+
+.anchor-primary.on-delete {
+    color: var(--bs-danger); /* 예: 빨간색으로 변경 */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.undo-btn {
+    margin-left: 10px;
+}
+
+#emoji-expired img{
+	cursor: pointer;
+}

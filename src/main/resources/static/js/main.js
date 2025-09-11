@@ -13,14 +13,18 @@ function scrollChannels(direction) {
         currentScrollPosition = maxScroll;
     }
 
-    scrollContainer.style.transform = `translateX(-${currentScrollPosition}px)`;
+    if (scrollContainer) {
+        scrollContainer.style.transform = `translateX(-${currentScrollPosition}px)`;
+    }
 
     // 버튼 표시/숨김 처리
     const leftBtn = document.querySelector('.scroll-btn-left');
     const rightBtn = document.querySelector('.scroll-btn-right');
 
-    leftBtn.style.display = currentScrollPosition > 0 ? 'flex' : 'none';
-    rightBtn.style.display = currentScrollPosition < maxScroll ? 'flex' : 'none';
+    if (leftBtn && rightBtn) {
+        leftBtn.style.display = currentScrollPosition > 0 ? 'flex' : 'none';
+        rightBtn.style.display = currentScrollPosition < maxScroll ? 'flex' : 'none';
+    }
 }
 
 // 초기 버튼 상태 설정
@@ -29,10 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const leftBtn = document.querySelector('.scroll-btn-left');
     const rightBtn = document.querySelector('.scroll-btn-right');
 
-    leftBtn.style.display = 'none';
+    // 요소가 존재할 때만 실행
+    if (leftBtn && scrollContainer && rightBtn) {
+        leftBtn.style.display = 'none';
 
-    if (scrollContainer.scrollWidth <= scrollContainer.clientWidth) {
-        rightBtn.style.display = 'none';
+        if (scrollContainer.scrollWidth <= scrollContainer.clientWidth) {
+            rightBtn.style.display = 'none';
+        }
     }
 });
 

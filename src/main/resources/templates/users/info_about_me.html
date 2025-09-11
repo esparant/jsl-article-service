@@ -7,9 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>회원정보</title>
 	<link rel="stylesheet" href="/css/users.css">
-	<th:block layout:fragment="head">
-
-	</th:block>
 </head>
 
 <body>
@@ -20,18 +17,18 @@
 				<div class="profile-info">
 					<h2>사키코사랑개 #1557</h2>
 				</div>
-				<a href="/user/edit" class="btn btn-primary ms-auto">편집</a>
+				<a href="info_about_me_edit" class="btn btn-primary ms-auto">편집</a>
 			</div>
 
 			<div class="info-section">
-				<div class="section-label">자기소개</div>
-				<div class="section-content intro">
+				<div class="section-label hstack">자기소개</div>
+				<div class="section-content intro pb-2">
 					안녕하세요. 사키코를 좋아하는 군필여고생 입니다.
 				</div>
 			</div>
 
 			<div class="info-section">
-				<div class="section-label">작성글 <span class="section-count">48</span>개</div>
+				<div class="section-label hstack">작성글&nbsp;<span class="section-count">48</span>&nbsp;개</div>
 				<div class="section-content">
 					<div class="section-line d-flex">
 						<div class="p-2"><span class="badge  bg-primary-emphasis">아베무지카</span></div>
@@ -66,7 +63,7 @@
 			</div>
 
 			<div class="info-section">
-				<div class="section-label">작성댓글 <span class="section-count">48</span>개</div>
+				<div class="section-label hstack">작성댓글&nbsp;<span class="section-count">48</span>&nbsp;개</div>
 				<div class="section-content">
 					<div class="section-line d-flex">
 						<div class="p-2"><span class="badge  bg-primary-emphasis">마이고</span></div>
@@ -93,7 +90,7 @@
 			</div>
 
 			<div class="info-section">
-				<div class="section-label">스크랩목록 <span class="section-count">48</span>개</div>
+				<div class="section-label hstack">스크랩목록&nbsp;<span class="section-count">48</span>&nbsp;개</div>
 				<div class="section-content">
 					<div class="section-line d-flex">
 						<div class="p-2"><span class="badge  bg-primary-emphasis">아베무지카</span></div>
@@ -128,34 +125,80 @@
 			</div>
 
 			<div class="info-section">
-				<div class="section-label">구독게시판목록 <span class="section-count">48</span>개</div>
-				<div class="section-content">
-					구독한 게시판 짧음
+				<div class="section-label hstack">구독게시판목록&nbsp;<span class="section-count">48</span>&nbsp;개</div>
+				<div class="section-content p-1">
+					<th:block th:each="item : ${#numbers.sequence(1, 5)}">
+						<div class="d-flex">
+							<div class="p-2">
+								<button type="button" class="btn btn-primary-emphasis position-relative">
+									아베무지카
+									<span
+										class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary-emphasis z-1">
+										99+
+										<span class="visually-hidden">unread messages</span>
+									</span>
+								</button>
+							</div>
+							<div class="p-2 ms-auto">
+								<span class="anchor-day fs-3">2025-15-57</span><span class="anchor-time fs-3"> 88:48:16</span>
+							</div>
+						</div>
+					</th:block>
 				</div>
 			</div>
 
 			<div class="info-section">
-				<div class="section-label">보유 이모티콘 <span class="section-count">48</span>개</div>
+				<div class="section-label hstack">보유 이모티콘&nbsp;<span class="section-count">23</span>&nbsp;개</div>
 				<div class="section-content intro">
-					<div class="m-2 border-bottom fw-bold">사용중</div>
+					<div class="m-2 border-bottom fw-bold">사용중&nbsp;<span class="section-count">9</span>&nbsp;개</div>
 					<div class="d-flex flex-wrap">
-						<img th:each="item : ${#numbers.sequence(1, 9)}" src="/img/uploads/icon/sakiko.png" class="m-2" alt="이모티콘">
+						<th:block th:each="item : ${#numbers.sequence(1, 9)}">
+							<img src="/img/uploads/icon/sakiko.png" class="m-2" alt="이모티콘">
+						</th:block>
 					</div>
-					<div class="m-2 border-bottom fw-bold">보유중</div>
+					<div class="m-2 border-bottom fw-bold">보유중&nbsp;<span class="section-count">10</span>&nbsp;개</div>
 					<div class="d-flex flex-wrap">
-						<img th:each="item : ${#numbers.sequence(1, 10)}" src="/img/uploads/icon/sakiko.png" class="m-2" alt="이모티콘">
+						<th:block th:each="item : ${#numbers.sequence(1, 10)}">
+							<img src="/img/uploads/icon/sakiko.png" class="m-2" alt="이모티콘">
+						</th:block>
 					</div>
-					<div class="m-2 border-bottom fw-bold">만료됨</div>
+					<div class="m-2 border-bottom fw-bold">만료됨&nbsp;<span class="section-count">4</span>&nbsp;개</div>
 					<div class="d-flex flex-wrap">
-						<img th:each="item : ${#numbers.sequence(1, 4)}" src="/img/uploads/icon/sakiko.png" class="m-2" alt="이모티콘">
+						<th:block th:each="item : ${#numbers.sequence(1, 4)}">
+							<img src="/img/uploads/icon/sakiko.png" class="m-2" alt="이모티콘">
+						</th:block>
 					</div>
 				</div>
 			</div>
 
 			<div class="info-section">
-				<div class="section-label">차단 이용자 목록 <span class="section-count">48</span>개</div>
-				<div class="section-content">
-					차단한 이용자 짧음
+				<div class="section-label hstack">차단 이용자 목록&nbsp;<span class="section-count">48</span>&nbsp;개</div>
+				<div class="section-content outro">
+					<div class="d-flex flex-wrap p-1">
+						<th:block th:each="item : ${#numbers.sequence(1, 5)}">
+							<div class="section-line d-flex align-items-center my-1 px-2 border-start border-end">
+								<div class="p-2 flex-grow-1 fw-bold text-dark">냐무치가제일좋아#8848</div>
+								<div class="p-2">
+									<button class="btn btn-sm btn-outline-secondary disabled fw-bold"><span
+											class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span></button>
+								</div>
+							</div>
+							<div class="section-line d-flex align-items-center my-1 px-2 border-start border-end">
+								<div class="p-2 flex-grow-1 fw-bold text-dark">ㅇㅇ#1</div>
+								<div class="p-2">
+									<button class="btn btn-sm btn-outline-secondary disabled fw-bold"><span
+											class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span></button>
+								</div>
+							</div>
+							<div class="section-line d-flex align-items-center my-1 px-2 border-start border-end">
+								<div class="p-2 flex-grow-1 fw-bold text-dark">아논사랑개#333</div>
+								<div class="p-2">
+									<button class="btn btn-sm btn-outline-secondary disabled fw-bold"><span
+											class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span></button>
+								</div>
+							</div>
+						</th:block>
+					</div>
 				</div>
 			</div>
 		</div>
