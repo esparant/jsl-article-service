@@ -5,7 +5,7 @@
 			class="nav nav-tabs overflow-x-auto overflow-y-hidden flex-nowrap border-0 scrollbar-width-none">
 			<li class="nav-item" th:each="item : ${ {'전체','공지','공략','질문'} }">
 				<a
-					href=""
+					href="/board/list"
 					th:class="'nav-link text-nowrap text-primary-emphasis ' + (${item} == '전체' ? 'active' : '')"
 					th:text="${ item }">
 				</a>
