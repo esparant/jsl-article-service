@@ -1,0 +1,13 @@
+<div class="dropdown">
+	<button class="btn btn-ghost dropdown-toggle" data-bs-toggle="dropdown">구독게시판</button>
+	<ul class="dropdown-menu">
+		<li th:if="${ false }">
+			<a class="dropdown-item">
+				구독한 게시판이 없습니다.
+			</a>
+		</li>
+		<li th:each="item : ${ {'방도리','걸방구','마이고아'} }">
+			<a href="" class="dropdown-item" th:text="${ item }"></a>
+		</li>
+	</ul>
+</div>

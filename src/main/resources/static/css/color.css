@@ -168,6 +168,7 @@
 	--bs-btn-disabled-bg: #AE93FF !important; /* 비활성화 시 배경색: 밝은 보라 */
 	--bs-btn-disabled-border-color: #AE93FF !important; /* 비활성화 시 테두리색: 밝은 보라 */
 }
+
 .btn-outline-primary {
     --bs-btn-color: var(--bs-primary) !important;
     --bs-btn-border-color: var(--bs-primary) !important;
