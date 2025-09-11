@@ -13,7 +13,7 @@
 
 <body>
 	<div layout:fragment="content">
-		<form action="#" method="get" name="user_edit">
+		<form action="#" method="get" name="userEdit" id="userEdit">
 			<div class="profile-container">
 				<div class="profile-header bg-primary-gradient">
 					<img src="/img/uploads/icon/sakiko.png" alt="사용자 아이콘" class="profile-icon">
@@ -244,28 +244,27 @@
 				</div>
 
 				<div class="info-section">
-					<div class="section-label hstack">
-						보유 이모티콘&nbsp;<span class="section-count">23</span>&nbsp;개
+					<div class="section-label hstack">보유 이모티콘&nbsp;<span class="section-count">23</span>&nbsp;개
 						<span class="ms-auto text-secondary-emphasis">이모티콘을 끌어서 이동/삭제합니다</span>
 					</div>
 					<div class="section-content intro" id="emoji-list">
 						<div class="m-2 border-bottom fw-bold">사용중&nbsp;<span class="section-count">9</span>&nbsp;개</div>
 						<div class="d-flex flex-wrap sort-box-emoji" id="emoji-used">
 							<th:block th:each="item : ${#numbers.sequence(1, 9)}">
-								<img src="/img/uploads/icon/sakiko.png" th:data-id="${item*1}" th:data-emoji-used="${item*1}" class="grid-item emoji-used m-2"
+								<img src="/img/uploads/icon/sakiko.png" th:data-emoji-used="${item*1}" th:data-id="${item*1}" class="grid-item emoji-used m-2"
 									alt="이모티콘">
 							</th:block>
 						</div>
 						<div class="m-2 border-bottom fw-bold">보유중&nbsp;<span class="section-count">10</span>&nbsp;개</div>
 						<div class="d-flex flex-wrap sort-box-emoji" id="emoji-owned">
 							<th:block th:each="item : ${#numbers.sequence(1, 10)}">
-								<img src="/img/uploads/icon/sakiko.png" th:data-id="${item*1}" th:data-emoji-owned="${item*1}" class="m-2" alt="이모티콘">
+								<img src="/img/uploads/icon/sakiko.png" th:data-emoji-owned="${item*1}" th:data-id="${item*1}" class="m-2" alt="이모티콘">
 							</th:block>
 						</div>
 						<div class="m-2 border-bottom fw-bold hstack"><span class="text-secondary-emphasis">이모티콘&nbsp;삭제</span>
 							<span class="ms-auto text-danger">이모티콘을 끌어온 후 삭제버튼 클릭</span>
 						</div>
-						<input type="hidden" id="emoji-delete" name="emoji-delete" value="">
+						<input type="hidden" id="emoji-delete-input" name="emoji-delete" value="">
 						<div class="d-flex flex-wrap sort-box-emoji" id="emoji-delete">
 							<button type="button" class="delete-button m-2 btn btn-outline-secondary-emphasis disabled">이모티콘<br>삭제</button>
 						</div>
@@ -274,7 +273,8 @@
 						</div>
 						<div class="d-flex flex-wrap" id="emoji-expired">
 							<th:block th:each="item : ${#numbers.sequence(1, 4)}">
-								<img src="/img/uploads/icon/sakiko.png" th:data-id="${item*1}" th:data-emoji-expired="${item*1}" class="m-2" alt="이모티콘">
+								<img src="/img/uploads/icon/sakiko.png" th:data-id="${item*1}" th:data-emoji-expired="${item*1}"
+									class="m-2" alt="이모티콘" data-bs-toggle="modal" data-bs-target="#emojiPurchaseModal">
 							</th:block>
 						</div>
 					</div>
@@ -285,28 +285,32 @@
 						차단 이용자 목록&nbsp;<span class="section-count">48</span>&nbsp;개
 						<span class="ms-auto text-secondary-emphasis">날짜 클릭 시 차단취소됩니다</span>
 					</div>
-					<div class="section-content outro">
+					<input type="hidden" id="block-delete" name="block-delete" value="">
+					<div class="section-content outro" id="block-list">
 						<div class="d-flex flex-wrap p-1">
-							<th:block th:each="item : ${#numbers.sequence(1, 5)}">
+							<th:block th:each="item : ${#numbers.sequence(0, 2)}">
 								<div class="section-line d-flex align-items-center my-1 px-2 border-start border-end">
 									<div class="p-2 flex-grow-1 fw-bold text-dark">냐무치가제일좋아#8848</div>
 									<div class="p-2">
-										<button type="button" class="btn btn-sm btn-outline-secondary fw-bold"><span
-												class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span></button>
+										<button type="button" class="btn btn-sm btn-outline-secondary fw-bold" th:data-id="${item * 3 + 1}">
+											<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
+										</button>
 									</div>
 								</div>
 								<div class="section-line d-flex align-items-center my-1 px-2 border-start border-end">
 									<div class="p-2 flex-grow-1 fw-bold text-dark">ㅇㅇ#1</div>
 									<div class="p-2">
-										<button type="button" class="btn btn-sm btn-outline-secondary fw-bold"><span
-												class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span></button>
+										<button type="button" class="btn btn-sm btn-outline-secondary fw-bold" th:data-id="${item * 3 + 2}">
+											<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
+										</button>
 									</div>
 								</div>
 								<div class="section-line d-flex align-items-center my-1 px-2 border-start border-end">
 									<div class="p-2 flex-grow-1 fw-bold text-dark">아논사랑개#333</div>
 									<div class="p-2">
-										<button type="button" class="btn btn-sm btn-outline-secondary fw-bold"><span
-												class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span></button>
+										<button type="button" class="btn btn-sm btn-outline-secondary fw-bold on-delete" th:data-id="${item * 3 + 3}">
+											<span class="anchor-day">2025-15-57</span><span class="anchor-time"> 88:48:16</span>
+										</button>
 									</div>
 								</div>
 							</th:block>
@@ -316,6 +320,21 @@
 				<div class="ms-auto">
 					<button type="submit" class="btn btn-secondary-emphasis ms-auto">저장</button>
 					<a href="/users/info_about_me" class="btn btn-secondary-emphasis ms-auto">취소</a>
+				</div>
+			</div>
+
+			<!-- Expired Emoji Re Purchase Modal -->
+			<div class="modal fade" id="emojiPurchaseModal" tabindex="-1" aria-labelledby="emojiPurchaseModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body">
+							이모티콘을 재구매 하시겠습니까?
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+							<button type="button" class="btn btn-primary" id="emojiPurchase">구매</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</form>

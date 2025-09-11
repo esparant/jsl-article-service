@@ -109,3 +109,7 @@
 .undo-btn {
     margin-left: 10px;
 }
+
+#emoji-expired img{
+	cursor: pointer;
+}
