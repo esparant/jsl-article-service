@@ -1,0 +1,41 @@
+<!-- login not yet -->
+<a th:if="${ false }" href="/login" class="btn btn-outline-primary rounded-circle">
+	<i class="bi bi-person-fill"></i>
+</a>
+
+<!-- logined -->
+<div th:if="${ true }" class="dropdown">
+	<button class="btn btn-outline-primary dropdown-toggle rounded-circle btn-no-arrow" data-bs-toggle="dropdown">
+		<i class="bi bi-person-fill"></i>
+	</button>
+	<ul class="dropdown-menu dropdown-menu-end dropdown-menu-start">
+		<li class="dropdown-header">
+			아카기지배
+		</li>
+		<li class="dropdown-item">
+			1,557 P
+		</li>
+		<li class="dropdown-divider">
+			
+		</li>
+		<li>
+			<a href="" class="dropdown-item">내 정보</a>
+		</li>
+		<li>
+			<a href="/logout" class="dropdown-item">로그아웃</a>
+		</li>
+		<li>
+			<a href="/logout" class="dropdown-item">게시판 생성</a>
+		</li>
+		<li>
+			<a href="/logout" class="dropdown-item">스크랩 목록</a>
+		</li>
+		<li>
+			<a href="/logout" class="dropdown-item">이모티콘</a>
+		</li>
+		<li>
+			<a href="/logout" class="dropdown-item">비밀번호 변경</a>
+		</li>
+		</li>
+	</ul>
+</div>

@@ -10,33 +10,26 @@
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav me-auto">
-				<li class="nav-item"><a class="nav-link active" href="/">홈</a></li>
-				<li class="nav-item"><a class="nav-link" href="/board/list">게시판 목록</a></li>
+			<ul class="navbar-nav me-auto gap-2">
+				<li class="nav-item">
+					<th:block th:replace="~{ fragments/header/subscribe }"/>
+				</li>
+				<li class="nav-item">
+					<th:block th:replace="~{ fragments/header/topten }"/>
+				</li>
+				<li class="nav-item">
+					<th:block th:replace="~{ fragments/header/search }"/>
+				</li>
 			</ul>
 
-			<div class="navbar-nav">
-				<div class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
-						<i class="bi bi-person-circle"></i> 사용자명 (1,250P)
-					</a>
-					<ul class="dropdown-menu dropdown-menu-end">
-						<li><a class="dropdown-item" href="/board/create">
-								<i class="bi bi-plus-circle"></i> 게시판 개설하기
-							</a></li>
-						<li>
-							<hr class="dropdown-divider">
-						</li>
-						<li><a class="dropdown-item" href="/user/profile">내 정보</a></li>
-						<li><a class="dropdown-item" href="/user/point">포인트 내역</a></li>
-						<li><a class="dropdown-item" href="/user/scrap">스크랩</a></li>
-						<li>
-							<hr class="dropdown-divider">
-						</li>
-						<li><a class="dropdown-item" href="/user/logout">로그아웃</a></li>
-					</ul>
-				</div>
-			</div>
+			<ul class="navbar-nav gap-2">
+				<li class="nav-item">
+					<th:block th:replace="~{ fragments/header/notification }"/>
+				</li>
+				<li class="nav-item">
+					<th:block th:replace="~{ fragments/header/login }"/>
+				</li>
+			</ul>
 		</div>
 	</div>
 </header>
