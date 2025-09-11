@@ -1,36 +1,15 @@
-<footer class="bg-dark text-light mt-5">
+<footer class="bg-dark bg-gradient text-light mt-5 py-4">
 	<div class="container">
-		<div class="row py-4">
-			<div class="col-md-6">
-				<h5>MinaBoard</h5>
-				<p class="mb-0">모두가 만드는 커뮤니티 플랫폼</p>
-				<p class="small text-muted">every one can write</p>
-			</div>
-			<div class="col-md-6">
-				<div class="row">
-					<div class="col-6">
-						<h6>서비스</h6>
-						<ul class="list-unstyled small">
-							<li><a href="#" class="text-light text-decoration-none">게시판 개설</a></li>
-							<li><a href="#" class="text-light text-decoration-none">포인트 안내</a></li>
-							<li><a href="#" class="text-light text-decoration-none">이모티콘</a></li>
-						</ul>
-					</div>
-					<div class="col-6">
-						<h6>고객지원</h6>
-						<ul class="list-unstyled small">
-							<li><a href="#" class="text-light text-decoration-none">공지사항</a></li>
-							<li><a href="#" class="text-light text-decoration-none">자주묻는질문</a></li>
-							<li><a href="#" class="text-light text-decoration-none">문의하기</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
+		<div class="nav gap-4">
+			<a href="" class="nav-item"
+				th:each="icon : ${ {'Apache Tomcat','Bootstrap','CSS3','Eclipse IDE','Github','HTML5','IntelliJ IDEA','Java','JavaScript','MySQL','Spring','Visual Studio Code (VS Code)'} }">
+				<img th:src="'/img/tech/' + ${ icon } + '.svg'" th:alt="${ icon }" style="width: 3rem;">
+			</a>
 		</div>
 		<hr class="border-secondary">
-		<div class="row py-3">
+		<div class="row">
 			<div class="col-12 text-center">
-				<p class="mb-0 small text-muted">© 2025 MinnaBoard. All rights reserved.</p>
+			© 2025 JSL Nasakenaiyatsura | Developed : 2025-10-0X | ☎ 042-242-4412
 			</div>
 		</div>
 	</div>
