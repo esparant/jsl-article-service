@@ -1,0 +1,14 @@
+<div class="dropdown">
+	<button class="btn btn-outline-primary rounded-circle dropdown-toggle btn-no-arrow" data-bs-toggle="dropdown">
+		<i class="bi bi-bell-fill"></i>
+	</button>
+	<ul class="dropdown-menu dropdown-menu-end dropdown-menu-start">
+		<li>
+			<h5 class="dropdown-item">주요 알림!!</h5>
+		</li>
+		<li class="dropdown-divider"></li>
+		<li th:each="item : ${ {'게시글에 좋아요~','댓글 달렸습니다.','게시글 신고됨!!!'} }">
+			<a href="" class="dropdown-item" th:text="${ item }"></a>
+		</li>
+	</ul>
+</div>
