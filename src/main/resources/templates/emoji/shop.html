@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{layouts/base}">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>이모티콘 샵</title>
-<th:block layout:fragment="head">
-	<link rel="stylesheet" href="/css/emoji.css">
-	<script defer src="/js/emoji.js"></script>
-</th:block>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>이모티콘 샵</title>
+	<th:block layout:fragment="head">
+		<link rel="stylesheet" href="/css/emoji.css">
+		<script defer src="/js/emoji.js"></script>
+	</th:block>
 </head>
 
 <body>
 	<div layout:fragment="content" class="container mt-4">
-
 		<div class="d-flex justify-content-between align-items-center my-4">
 			<div class="d-flex gap-2 align-items-center">
 				<button class="btn btn-primary text-nowrap">전체 이모티콘</button>
@@ -30,7 +28,6 @@
 			</div>
 		</div>
 		<div class="row g-4 my-4">
-
 			<div class="col-md-6">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<h2 class="h5 mb-0">인기 이모티콘</h2>
@@ -45,8 +42,7 @@
 						<div class="row row-cols-md-5 row-cols-1 g-2 mt-auto">
 							<div class="col">
 								<div class="card text-center h-100">
-									<img src="/img/uploads/emoji/dororong1.gif" alt="이모티콘 사진"
-										class="card-img-top p-2">
+									<img src="/img/uploads/emoji/dororong1.gif" alt="이모티콘 사진" class="card-img-top p-2">
 									<div class="card-body p-2">
 										<h6 class="card-title fw-bold">도로롱1</h6>
 										<p class="card-text mb-0">도롱도롱</p>
@@ -64,7 +60,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="col-md-6">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<h2 class="h5 mb-0">인기 이모티콘 세트</h2>
@@ -79,8 +74,7 @@
 						<div class="row row-cols-md-5 row-cols-1 g-2 mt-auto">
 							<div class="col">
 								<div class="card text-center h-100">
-									<img src="/img/uploads/emoji/dororong2.gif" alt="이모티콘 사진"
-										class="card-img-top p-2">
+									<img src="/img/uploads/emoji/dororong2.gif" alt="이모티콘 사진" class="card-img-top p-2">
 									<div class="card-body p-2">
 										<h6 class="card-title fw-bold">도로롱1</h6>
 										<p class="card-text mb-0">도롱도롱</p>
@@ -98,83 +92,182 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
-
-		<div class="card">
+		<div class="card py-auto my-4">
 			<div class="card-body">
 				<h3 class="card-title text-center mb-3">최신 이모티콘</h3>
-				<div
-					class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3">
+				<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3">
 					<div class="col">
 						<div class="card text-center">
-							<img src="/img/uploads/emoji/dororong5.gif" alt="이모티콘 사진"
-								class="card-img-top p-2">
+							<img src="/img/uploads/emoji/dororong1.gif" alt="이모티콘 사진" class="card-img-top p-2">
 							<div class="card-body p-2">
-								<h6 class="card-title fw-bold">이모티콘 이름</h6>
-								<p class="card-text mb-0">작성자</p>
-								<p class="card-text">
-									<small class="text-muted">판매수</small>
+								<h6 class="card-title fw-bold">도로롱1</h6>
+								<p class="card-text mb-0">도롱도롱</p>
+								<p class="card-text mb-0">
+									<small class="text-muted">판매수: 250</small>
 								</p>
+								<p class="card-text mb-2">
+									<small class="text-muted">포인트: 10p</small>
+								</p>
+								<a href="#" class="btn btn-primary">구매</a>
 							</div>
 						</div>
 					</div>
 					<div class="col">
 						<div class="card text-center">
-							<img src="/img/uploads/emoji/dororong5.gif" alt="이모티콘 사진"
-								class="card-img-top p-2">
+							<img src="/img/uploads/emoji/dororong2.gif" alt="이모티콘 사진" class="card-img-top p-2">
 							<div class="card-body p-2">
-								<h6 class="card-title fw-bold">이모티콘 이름</h6>
-								<p class="card-text mb-0">작성자</p>
-								<p class="card-text">
-									<small class="text-muted">판매수</small>
+								<h6 class="card-title fw-bold">도로롱1</h6>
+								<p class="card-text mb-0">도롱도롱</p>
+								<p class="card-text mb-0">
+									<small class="text-muted">판매수: 250</small>
 								</p>
+								<p class="card-text mb-2">
+									<small class="text-muted">포인트: 10p</small>
+								</p>
+								<a href="#" class="btn btn-primary">구매</a>
 							</div>
 						</div>
 					</div>
 					<div class="col">
 						<div class="card text-center">
-							<img src="/img/uploads/emoji/dororong5.gif" alt="이모티콘 사진"
-								class="card-img-top p-2">
+							<img src="/img/uploads/emoji/dororong3.gif" alt="이모티콘 사진" class="card-img-top p-2">
 							<div class="card-body p-2">
-								<h6 class="card-title fw-bold">이모티콘 이름</h6>
-								<p class="card-text mb-0">작성자</p>
-								<p class="card-text">
-									<small class="text-muted">판매수</small>
+								<h6 class="card-title fw-bold">도로롱1</h6>
+								<p class="card-text mb-0">도롱도롱</p>
+								<p class="card-text mb-0">
+									<small class="text-muted">판매수: 250</small>
 								</p>
+								<p class="card-text mb-2">
+									<small class="text-muted">포인트: 10p</small>
+								</p>
+								<a href="#" class="btn btn-primary">구매</a>
 							</div>
 						</div>
 					</div>
 					<div class="col">
 						<div class="card text-center">
-							<img src="/img/uploads/emoji/dororong5.gif" alt="이모티콘 사진"
-								class="card-img-top p-2">
+							<img src="/img/uploads/emoji/dororong4.gif" alt="이모티콘 사진" class="card-img-top p-2">
 							<div class="card-body p-2">
-								<h6 class="card-title fw-bold">이모티콘 이름</h6>
-								<p class="card-text mb-0">작성자</p>
-								<p class="card-text">
-									<small class="text-muted">판매수</small>
+								<h6 class="card-title fw-bold">도로롱1</h6>
+								<p class="card-text mb-0">도롱도롱</p>
+								<p class="card-text mb-0">
+									<small class="text-muted">판매수: 250</small>
 								</p>
+								<p class="card-text mb-2">
+									<small class="text-muted">포인트: 10p</small>
+								</p>
+								<a href="#" class="btn btn-primary">구매</a>
 							</div>
 						</div>
 					</div>
 					<div class="col">
 						<div class="card text-center">
-							<img src="/img/uploads/emoji/dororong5.gif" alt="이모티콘 사진"
-								class="card-img-top p-2">
+							<img src="/img/uploads/emoji/dororong5.gif" alt="이모티콘 사진" class="card-img-top p-2">
 							<div class="card-body p-2">
-								<h6 class="card-title fw-bold">이모티콘 이름</h6>
-								<p class="card-text mb-0">작성자</p>
-								<p class="card-text">
-									<small class="text-muted">판매수</small>
+								<h6 class="card-title fw-bold">도로롱1</h6>
+								<p class="card-text mb-0">도롱도롱</p>
+								<p class="card-text mb-0">
+									<small class="text-muted">판매수: 250</small>
 								</p>
+								<p class="card-text mb-2">
+									<small class="text-muted">포인트: 10p</small>
+								</p>
+								<a href="#" class="btn btn-primary">구매</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
+		<div class="card py-auto my-4">
+			<div class="card-body">
+				<h3 class="card-title text-center mb-3">최신 이모티콘</h3>
+				<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3">
+					<div class="col">
+						<div class="card text-center">
+							<img src="/img/uploads/emoji/dororong1.gif" alt="이모티콘 사진" class="card-img-top p-2">
+							<div class="card-body p-2">
+								<h6 class="card-title fw-bold">도로롱1</h6>
+								<p class="card-text mb-0">도롱도롱</p>
+								<p class="card-text mb-0">
+									<small class="text-muted">판매수: 250</small>
+								</p>
+								<p class="card-text mb-2">
+									<small class="text-muted">포인트: 10p</small>
+								</p>
+								<a href="#" class="btn btn-primary">구매</a>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card text-center">
+							<img src="/img/uploads/emoji/dororong2.gif" alt="이모티콘 사진" class="card-img-top p-2">
+							<div class="card-body p-2">
+								<h6 class="card-title fw-bold">도로롱1</h6>
+								<p class="card-text mb-0">도롱도롱</p>
+								<p class="card-text mb-0">
+									<small class="text-muted">판매수: 250</small>
+								</p>
+								<p class="card-text mb-2">
+									<small class="text-muted">포인트: 10p</small>
+								</p>
+								<a href="#" class="btn btn-primary">구매</a>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card text-center">
+							<img src="/img/uploads/emoji/dororong3.gif" alt="이모티콘 사진" class="card-img-top p-2">
+							<div class="card-body p-2">
+								<h6 class="card-title fw-bold">도로롱1</h6>
+								<p class="card-text mb-0">도롱도롱</p>
+								<p class="card-text mb-0">
+									<small class="text-muted">판매수: 250</small>
+								</p>
+								<p class="card-text mb-2">
+									<small class="text-muted">포인트: 10p</small>
+								</p>
+								<a href="#" class="btn btn-primary">구매</a>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card text-center">
+							<img src="/img/uploads/emoji/dororong4.gif" alt="이모티콘 사진" class="card-img-top p-2">
+							<div class="card-body p-2">
+								<h6 class="card-title fw-bold">도로롱1</h6>
+								<p class="card-text mb-0">도롱도롱</p>
+								<p class="card-text mb-0">
+									<small class="text-muted">판매수: 250</small>
+								</p>
+								<p class="card-text mb-2">
+									<small class="text-muted">포인트: 10p</small>
+								</p>
+								<a href="#" class="btn btn-primary">구매</a>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card text-center">
+							<img src="/img/uploads/emoji/dororong5.gif" alt="이모티콘 사진" class="card-img-top p-2">
+							<div class="card-body p-2">
+								<h6 class="card-title fw-bold">도로롱1</h6>
+								<p class="card-text">도롱도롱</p>
+								<p class="card-text">
+									<small class="text-muted">판매수: 250</small>
+								</p>
+								<p class="card-text mb-2">
+									<small class="text-muted">포인트: 10p</small>
+								</p>
+								<a href="#" class="btn btn-primary">구매</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
+
 </html>
