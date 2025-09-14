@@ -1,10 +1,10 @@
 <!-- login not yet -->
-<a th:if="${ false }" href="/login" class="btn btn-outline-primary rounded-circle">
+<a sec:authorize="isAnonymous()" href="/account/select" class="btn btn-outline-primary rounded-circle">
 	<i class="bi bi-person-fill"></i>
 </a>
 
 <!-- logined -->
-<div th:if="${ true }" class="dropdown">
+<div sec:authorize="isAuthenticated()" class="dropdown">
 	<button class="btn btn-outline-primary dropdown-toggle rounded-circle btn-no-arrow" data-bs-toggle="dropdown">
 		<i class="bi bi-person-fill"></i>
 	</button>
@@ -22,7 +22,9 @@
 			<a href="" class="dropdown-item">내 정보</a>
 		</li>
 		<li>
-			<a href="/logout" class="dropdown-item">로그아웃</a>
+			<form th:action="@{/logout}" method="post">
+				<button class="dropdown-item">로그아웃</button>
+			</form>
 		</li>
 		<li>
 			<a href="/logout" class="dropdown-item">게시판 생성</a>
