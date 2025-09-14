@@ -50,7 +50,7 @@ public class TemplateGlobalViewerController {
 		return filename;
 	}
 
-	@GetMapping("{folder:account|board|users}/{filename}")
+	@GetMapping("{folder:account|board|users|emoji}/{filename}")
 	String show(@PathVariable("folder") String folder, @PathVariable("filename") String filename) {
 		return folder + "/" + filename;
 	}

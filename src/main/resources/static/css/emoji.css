@@ -1,125 +1,148 @@
 /* 기본 스타일 */
 .emoticon-shop-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
+	padding: 20px;
+	font-family: Arial, sans-serif;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
+	text-align: center;
+	margin-bottom: 20px;
 }
 
 /* 인기 이모티콘 섹션 */
 .header-section {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    margin-bottom: 30px;
+	display: flex;
+	justify-content: space-around;
+	gap: 20px;
+	margin-bottom: 30px;
 }
 
 .popular-emoticons, .popular-emoticon-sets {
-    border: 1px solid #ccc;
-    padding: 15px;
-    border-radius: 8px;
-    flex-basis: 45%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	border: 1px solid #ccc;
+	padding: 15px;
+	border-radius: 8px;
+	flex-basis: 45%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .tabs {
-    display: flex;
-    gap: 5px;
-    margin: 10px 0;
+	display: flex;
+	gap: 5px;
+	margin: 10px 0;
 }
 
 .tab-button {
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    background-color: #f0f0f0;
-    cursor: pointer;
-    border-radius: 5px;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	background-color: #f0f0f0;
+	cursor: pointer;
+	border-radius: 5px;
 }
 
 .emoticon-display-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	margin-bottom: 10px;
 }
 
 .emoticon-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-    width: 120px;
-    text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid #ddd;
+	padding: 10px;
+	border-radius: 5px;
+	width: 120px;
+	text-align: center;
 }
 
 .emoticon-img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 5px;
+	width: 80px;
+	height: 80px;
+	margin-bottom: 5px;
 }
 
 .full-list-button {
-    padding: 8px 15px;
-    border: 1px solid #ccc;
-    background-color: #e9e9e9;
-    cursor: pointer;
-    border-radius: 5px;
+	padding: 8px 15px;
+	border: 1px solid #ccc;
+	background-color: #e9e9e9;
+	cursor: pointer;
+	border-radius: 5px;
 }
 
 /* 검색 및 등록 섹션 */
 .search-and-register {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 30px;
+	justify-content: center;
+	gap: 10px;
+	margin-bottom: 30px;
 }
 
 .search-input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    flex-grow: 1;
-    max-width: 400px;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	flex-grow: 1;
+	max-width: 400px;
 }
 
 .register-button {
-    padding: 8px 15px;
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+	padding: 8px 15px;
+	background-color: #5cb85c;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 /* 최신순 이모티콘 섹션 */
 .latest-emoticons-section {
-    border: 1px solid #ccc;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
+	border: 1px solid #ccc;
+	padding: 15px;
+	border-radius: 8px;
+	text-align: center;
 }
 
 .emoticon-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-    justify-items: center;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 15px;
+	justify-items: center;
 }
 
 .emoticon-item-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid #ddd;
+	padding: 10px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+/* 예시 CSS 코드 */
+.popular-section-container {
+	display: flex;
+	justify-content: space-between; /* 양 끝 정렬 */
+	gap: 20px; /* 섹션 사이 여백 */
+}
+
+.action-buttons-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.left-buttons {
+	display: flex;
+	gap: 10px;
+}
+
+.center-search {
+	flex-grow: 1; /* 남은 공간을 채우도록 */
+	text-align: center;
 }
