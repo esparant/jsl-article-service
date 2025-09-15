@@ -27,6 +27,11 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
+    /**
+     * @param signUpDto - Controller 에서 signUpDto 를 받습니다.
+     * @return userDto - 최종적으로 등록후 유저한테 반환할때 userDto 로 매핑후 반환
+     * @desciption - 회원가입 기능
+     */
     public UserDto save(SignUpDto signUpDto) {
 
         // 이메일 중복시 예외를 던집니다.
