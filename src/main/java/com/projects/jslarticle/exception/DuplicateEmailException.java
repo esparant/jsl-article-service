@@ -7,6 +7,11 @@ package com.projects.jslarticle.exception;
  * @since 2025-09-15
  */
 public class DuplicateEmailException extends RuntimeException {
+
+    public DuplicateEmailException() {
+        super();
+    }
+
     public DuplicateEmailException(String message) {
         super(message);
     }
