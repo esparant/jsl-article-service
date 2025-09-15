@@ -8,12 +8,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 import java.time.LocalDateTime;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 /**
  * @author 탁영복
- * @version 1.0.0
+ * @version 1.0.1
  * @description User Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
+ * @updated 2025-09-15
+ * @change 2025-08-27 - Entity 최초 생성 및 기분 구조 작성 (1.0.0) 2025-09-15 - Dto 대응 Builder 추가 (1.0.1)
  * @since 2025-08-27
  */
 @Table(
@@ -25,7 +29,16 @@ import lombok.Getter;
 )
 @Entity
 @Getter
+@NoArgsConstructor
 public class User {
+
+    @Builder
+    public User(String email, String password, String nickname, String tag) {
+        this.email = email;
+        this.password = password;
+        this.nickname = nickname;
+        this.tag = tag;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
