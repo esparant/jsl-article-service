@@ -51,6 +51,13 @@ dependencies {
 	// p6spy 추가: 쿼리추적용 라이브러리
 	// Author: 탁영복
 	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0'
+
+	// MapStruct 추가: Dto <-> Entity 자동 매핑
+	// Author: 탁영복
+	implementation 'org.mapstruct:mapstruct:1.6.3'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
+	testAnnotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3' // 테스트 코드에서 사용할 경우
+}
 }
 
 tasks.named('test') {
