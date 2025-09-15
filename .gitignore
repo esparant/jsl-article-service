@@ -38,3 +38,10 @@ out/
 
 ### DB ###
 ./data/*
+
+### generated ###
+src/main/generated/*
+src/test/generated_tests/*
+
+### data ###
+data/*
