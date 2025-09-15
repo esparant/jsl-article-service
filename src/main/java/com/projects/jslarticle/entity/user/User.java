@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
  * @version 1.0.1
  * @description User Entity 입니다. 추가 Entity 제작후 수정필요 합니다.
  * @updated 2025-09-15
+ * @modifier 탁영복
  * @change 2025-08-27 - Entity 최초 생성 및 기분 구조 작성 (1.0.0) 2025-09-15 - Dto 대응 Builder 추가 (1.0.1)
  * @since 2025-08-27
  */
