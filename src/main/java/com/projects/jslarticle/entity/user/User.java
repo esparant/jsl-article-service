@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
  * @since 2025-08-27
  */
 @Table(
-        name = "user",
+        name = "users",
         uniqueConstraints = {
                 @UniqueConstraint(columnNames = {"nickname", "tag"}),
                 @UniqueConstraint(columnNames = {"email"})
