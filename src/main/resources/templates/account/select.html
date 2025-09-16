@@ -6,15 +6,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<th:block layout:fragment="head">
-		<link rel="stylesheet" href="/css/account.css">
-		<script src="/js/account.js"></script>
-	</th:block>
+	<link rel="stylesheet" href="/css/account.css">
+	<script src="/js/account.js"></script>
 </head>
 
 <body>
 	<th:block layout:fragment="content">
-		<div class=" bg-gradient-custom">
+		<div class="bg-primary-gradient">
 
 			<div class="container h-dvh">
 				<div class="d-flex h-100 justify-content-center align-items-center">
@@ -25,12 +23,12 @@
 							<div class="card-body">
 								<h2 class="text-center py-4">로그인</h2>
 								<div class="d-flex flex-column gap-2">
-									<a class="btn bg-primary text-white" id="member" href="login">회원 로그인</a>
-									<button class="btn bg-secondary-custom text-white" id="social" onclick="showSocialButtons()">소셜 로그인</button>
+									<a class="btn btn-primary text-white" id="member" href="login">회원 로그인</a>
+									<button class="btn btn-secondary text-white" id="social" onclick="showSocialButtons()">소셜 로그인</button>
 									<button class="btn btn-danger" id="back" hidden onclick="hideSocialButtons()">돌아가기</button>
 									<button class="btn bg-body-tertiary" id="google" hidden>구글 로그인</button>
 									<button class="btn btn-warning" id="kakao" hidden>카카오 로그인</button>
-									<button class="btn btn-danger" id="naver" hidden>네이버 로그인</button>
+									<button class="btn btn-success" id="naver" hidden>네이버 로그인</button>
 								</div>
 							</div>
 						</div>
