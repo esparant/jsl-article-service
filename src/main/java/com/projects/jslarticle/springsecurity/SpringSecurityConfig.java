@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -31,10 +30,10 @@ public class SpringSecurityConfig {
          * @logout - spring security 의 기본 로그아웃 기능을 이용하지 않고 커스텀해서 사용한다.
          */
         http.authorizeHttpRequests(auth -> auth
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
                 .formLogin(form -> form
-                        .loginPage("/login")
+                        .loginPage("/account/login")
                         .defaultSuccessUrl("/")
                         .permitAll()
                 )

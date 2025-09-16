@@ -21,7 +21,7 @@ spring:
       # jpa ddl-auto 를 validate 로 설정했습니다.
       # 이 경우 애플리케이션이 실행시 DB 의 스키마와 jpa 로 작성된 entity 의 규칙을 확인하고
       # 문제가 없을시 spring 이 실행이됩니다.
-      ddl-auto: validate
+      ddl-auto: create
     # hibernate 방언 설정
     database-platform: org.hibernate.dialect.MariaDBDialect
     # 실제 운영시 이것을 주석을 해제한다.
